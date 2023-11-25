@@ -5,6 +5,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
+import ExpandedMenu from "./components/navbar/ExpandedMenu";
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -17,15 +18,9 @@ function App() {
       )}
       {/* <h1>My Portfolio</h1> */}
       <div className="lg:w-2/3 mx-auto bg-black">
-        {/* {showExpandedMenu && (
-          <ExpandedMenu
-            setShowExpandedMenu={setShowExpandedMenu}
-            setShouldScroll={setShouldScroll}
-            setScrollPosition={setScrollPosition}
-            // We send the scroll position since all components will be unmounted on onmounting expanded menu
-            scrollPosition={scrollPosition}
-          />
-        )} */}
+        {showExpandedMenu && (
+          <ExpandedMenu setShowExpandedMenu={setShowExpandedMenu} />
+        )}
         {!showExpandedMenu && <Intro />}
         {!showExpandedMenu && <About />}
         {!showExpandedMenu && <Projects />}

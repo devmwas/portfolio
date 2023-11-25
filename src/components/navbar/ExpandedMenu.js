@@ -1,13 +1,7 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
-function ExpandedMenu({
-  setShowExpandedMenu,
-  setShouldScroll,
-  setScrollPosition,
-  scrollPosition,
-}) {
-  console.log("scroll pos", scrollPosition);
+function ExpandedMenu({ setShowExpandedMenu }) {
   return (
     <div
       className="flex flex-col justify-center"
@@ -23,8 +17,6 @@ function ExpandedMenu({
         <div
           className="cursor-pointer text-center"
           onClick={() => {
-            setScrollPosition(scrollPosition);
-            setShouldScroll(true);
             setShowExpandedMenu((show) => !show);
           }}
         >
