@@ -3,6 +3,8 @@ import Intro from "./components/Intro";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Footer from "./components/Footer";
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -27,8 +29,8 @@ function App() {
         {!showExpandedMenu && <Intro />}
         {!showExpandedMenu && <About />}
         {!showExpandedMenu && <Projects />}
-        {/* {!showExpandedMenu && <Education />}
-        {!showExpandedMenu && <Footer />}   */}
+        {!showExpandedMenu && <Education />}
+        {!showExpandedMenu && <Footer />}
       </div>
     </div>
   );
