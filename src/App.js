@@ -2,6 +2,7 @@ import { useState } from "react";
 import Intro from "./components/Intro";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -25,9 +26,9 @@ function App() {
         )} */}
         {!showExpandedMenu && <Intro />}
         {!showExpandedMenu && <About />}
-        {/* {!showExpandedMenu && <Projects />}
-        {!showExpandedMenu && <Education />}
-        {!showExpandedMenu && <Footer />}  */}
+        {!showExpandedMenu && <Projects />}
+        {/* {!showExpandedMenu && <Education />}
+        {!showExpandedMenu && <Footer />}   */}
       </div>
     </div>
   );
