@@ -10,7 +10,6 @@ function Projects() {
       style={{
         backgroundImage: "radial-gradient( black, blue, yellow)",
         position: "relative",
-        // opacity: 0.3,
       }}
     >
       <div className="text-white">My Projects</div>

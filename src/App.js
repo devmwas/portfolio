@@ -29,7 +29,14 @@ function App() {
         {!showExpandedMenu && <Intro />}
         {!showExpandedMenu && <About />}
         {!showExpandedMenu && <Projects />}
-        {!showExpandedMenu && <Education />}
+        {!showExpandedMenu && (
+          <div
+            className="bg-red-500 mx-auto lg:w-4/5 px-2 md:p-0"
+            style={{ maxWidth: "750px" }}
+          >
+            <Education />
+          </div>
+        )}
         {!showExpandedMenu && <Footer />}
       </div>
     </div>
