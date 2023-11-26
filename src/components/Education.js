@@ -4,6 +4,12 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import PlaceIcon from "@mui/icons-material/Place";
+import SchoolIcon from "@mui/icons-material/School";
+import TimelapseIcon from "@mui/icons-material/Timelapse";
+import SportsScoreIcon from "@mui/icons-material/SportsScore";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { Chip } from "@mui/material";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,6 +74,7 @@ export default function Education() {
           borderRight: 1,
           borderColor: "divider",
           bgcolor: "green",
+          minWidth: "100px",
         }}
       >
         <Tab label="University" {...a11yProps(0)} />
@@ -77,30 +84,257 @@ export default function Education() {
         <Tab label="Petanns" {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <div>Murang'a University of Technology</div>
-        <div>Bsc Software Engineering</div>
-        <div>2016 - 2022</div>
-        <div>I'll add some or all of the units covered</div>
+        <div className="flex space-x-2">
+          <SchoolIcon color="primary" />
+          <div>Murang'a University of Technology</div>
+        </div>
+        <div className="flex space-x-2">
+          <LibraryBooksIcon color="primary" />
+          <div>Bsc Software Engineering</div>
+        </div>
+        <div className="flex space-x-2">
+          <TimelapseIcon color="primary" />
+          <div>2016 - 2022</div>
+        </div>
+        <div className="flex space-x-2">
+          <PlaceIcon color="primary" />
+          <div>Murang'a, Kenya</div>
+        </div>
+        <div
+          className="flex mt-2 flex-wrap overflow-auto border-2"
+          style={{ maxHeight: "70px" }}
+        >
+          <Chip
+            label="Data Structures & Algorithms"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Artificial Intelligence"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Distributed Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Database Management Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Calculus"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Probality & Statistics"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Distributed Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Database Management Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Calculus"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Probality & Statistics"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Distributed Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Database Management Systems"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Calculus"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Probality & Statistics"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div>St. Joseph's High School Githunguri</div>
-        <div>2012 - 2015</div>
-        <div>B+</div>
-        <div>I'll add individual subjects and marks</div>
+        <div className="flex space-x-2">
+          <SchoolIcon color="primary" />
+          <div>St. Joseph's High School Githunguri</div>
+        </div>
+        <div className="flex space-x-2">
+          <TimelapseIcon color="primary" />
+          <div>2012 - 2015</div>
+        </div>
+        <div className="flex space-x-2">
+          <SportsScoreIcon color="primary" />
+          <div>B+</div>
+        </div>
+        <div className="flex space-x-2">
+          <PlaceIcon color="primary" />
+          <div>Kiambu, Kenya</div>
+        </div>
+        <div
+          style={{ maxHeight: "70px" }}
+          className="flex mt-2 flex-wrap overflow-auto border-2"
+        >
+          <Chip
+            label="Mathematics"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip label="English" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="Kiswahili"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip label="Physics" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip label="Biology" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="Chemistry"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Geography"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Christian Religious Education (C.R.E)"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div>Kongo Primary School</div>
-        <div>2004 - 2021</div>
-        <div>340</div>
-        <div>I'll add individual subjects and marks</div>
+        <div className="flex space-x-2">
+          <SchoolIcon color="primary" />
+          <div>Kongo Primary School</div>
+        </div>
+        <div className="flex space-x-2">
+          <TimelapseIcon color="primary" />
+          <div>2004 - 2011</div>
+        </div>
+        <div className="flex space-x-2">
+          <SportsScoreIcon color="primary" />
+          <div>340</div>
+        </div>
+        <div className="flex space-x-2">
+          <PlaceIcon color="primary" />
+          <div>Kiambu, Kenya</div>
+        </div>
+        <div
+          style={{ maxHeight: "70px" }}
+          className="flex mt-2 flex-wrap overflow-auto border-2"
+        >
+          <Chip
+            label="Mathematics"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip label="English" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="Kiswahili"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Social Studies & Christian Religious Education (C.R.E)"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip label="Science" sx={{ marginRight: "2px", marginTop: "2px" }} />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <div>Frontend Web Development with ReactJS</div>
-        <div>2020 - Present</div>
+        <div className="flex space-x-2">
+          <SchoolIcon color="primary" />
+          <div>Youtube</div>
+        </div>
+        <div className="flex space-x-2">
+          <LibraryBooksIcon color="primary" />
+          <div>Frontend Web Development with ReactJS</div>
+        </div>
+        <div className="flex space-x-2">
+          <PlaceIcon color="primary" />
+          <div>Everywhere</div>
+        </div>
+        <div className="flex space-x-2">
+          <TimelapseIcon color="primary" />
+          <div>2020 - Present</div>
+        </div>
+        <div
+          style={{ maxHeight: "70px" }}
+          className="flex mt-2 flex-wrap overflow-auto border-2"
+        >
+          <Chip label="HTML" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip label="CSS" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="JavaScript"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip label="React" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="Redux & Redux Toolkit"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Tailwind"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="MaterialUI"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Framer Motion"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <div>Computer Packages</div>
-        <div>2017</div>
+        <div className="flex space-x-2">
+          <SchoolIcon color="primary" />
+          <div>Petanns Driving School and Computer Packages</div>
+        </div>
+        <div className="flex space-x-2">
+          <LibraryBooksIcon color="primary" />
+          <div>Computer Packages</div>
+        </div>
+        <div className="flex space-x-2">
+          <SportsScoreIcon color="primary" />
+          <div>A</div>
+        </div>
+        <div className="flex space-x-2">
+          <TimelapseIcon color="primary" />
+          <div>2017</div>
+        </div>
+        <div className="flex space-x-2">
+          <PlaceIcon color="primary" />
+          <div>Kiambu, Kenya</div>
+        </div>
+        <div
+          style={{ maxHeight: "70px" }}
+          className="flex mt-2 flex-wrap overflow-auto border-2"
+        >
+          <Chip label="MS Word" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip label="MsExcel" sx={{ marginRight: "2px", marginTop: "2px" }} />
+          <Chip
+            label="Ms PowerPoint"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Ms Access"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="Ms Publisher"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+          <Chip
+            label="MS Paint"
+            sx={{ marginRight: "2px", marginTop: "2px" }}
+          />
+        </div>
       </TabPanel>
     </Box>
   );
