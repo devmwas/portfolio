@@ -1,14 +1,22 @@
 import { Copyright } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import React from "react";
 
 function Footer() {
   return (
     <div
-      className="bg-slate-400 text-center text-xl flex flex-col justify-center"
-      style={{ height: "50px" }}
+      className="bg-sky-600 text-center text-xl flex justify-between p-2"
+      style={{ height: "90px" }}
     >
-      <div>
-        Copyright <Copyright /> Devmwas 2023
+      <div className="flex flex-col justify-center">
+        <Button variant="contained" color="warning" size="small">
+          Make Contact
+        </Button>
+      </div>
+      <div className="flex flex-col justify-center">
+        <div>
+          Copyright <Copyright /> Devmwas 2023
+        </div>
       </div>
     </div>
   );

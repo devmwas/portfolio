@@ -51,8 +51,8 @@ export default function Education() {
         bgcolor: "background.paper",
         display: "flex",
         height: "224px",
-        marginY: "50px",
-        // maxWidth: "500px",
+        marginBottom: "50px",
+        marginTop: "80px",
         marginX: "auto",
         position: "relative",
       }}
