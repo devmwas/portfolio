@@ -1,13 +1,18 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import { createPortal } from "react-dom";
 
-function ExpandedMenu({ setShowExpandedMenu }) {
-  return (
+function ExpandedMenu({ setShowExpandedMenu, showExpandedMenu }) {
+  if (!showExpandedMenu) return null;
+  return createPortal(
     <div
       className="flex flex-col justify-center"
       style={{
-        width: "100vw",
-        height: "100vh",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
         zIndex: 100,
         opacity: 1,
         backgroundColor: "black",
@@ -17,7 +22,7 @@ function ExpandedMenu({ setShowExpandedMenu }) {
         <div
           className="cursor-pointer text-center"
           onClick={() => {
-            setShowExpandedMenu((show) => !show);
+            setShowExpandedMenu(false);
           }}
         >
           <CloseIcon fontSize="large" color="primary" />
@@ -30,7 +35,8 @@ function ExpandedMenu({ setShowExpandedMenu }) {
           <div className="cursor-pointer">Resume</div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.querySelector("#expandedMenuPortal")
   );
 }
 

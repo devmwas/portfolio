@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
-import React from "react";
 import Lines from "./Lines";
+import MessageModal from "./MessageModal";
 
-function Intro() {
+function Intro({ setIsMessageOpen, isMessageOpen }) {
   return (
     <div className="p-2 sm:p-0 flex flex-col" style={{ height: "100vh" }}>
       <div className="my-auto">
@@ -23,9 +23,18 @@ function Intro() {
             <div className="text-md sm:text-lg text-sky-400 md:text-xl mt-4 font-bold font-mono z-10">
               - Devmwas
             </div>
-            <Button variant="outlined" color="info" sx={{ marginTop: 4 }}>
+            <Button
+              variant="outlined"
+              color="info"
+              sx={{ marginTop: 4 }}
+              onClick={() => setIsMessageOpen(true)}
+            >
               Make Contact
             </Button>
+            <MessageModal
+              isMessageOpen={isMessageOpen}
+              setIsMessageOpen={setIsMessageOpen}
+            />
           </div>
           {/* These points will be on small devices and larger */}
           <div

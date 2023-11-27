@@ -86,19 +86,21 @@ export default function Education() {
       <TabPanel value={value} index={0}>
         <div className="flex space-x-2">
           <SchoolIcon color="primary" />
-          <div>Murang'a University of Technology</div>
+          <div className="text-sm md:text-md">
+            Murang'a University of Technology
+          </div>
         </div>
         <div className="flex space-x-2">
           <LibraryBooksIcon color="primary" />
-          <div>Bsc Software Engineering</div>
+          <div className="text-sm md:text-md">Bsc Software Engineering</div>
         </div>
         <div className="flex space-x-2">
           <TimelapseIcon color="primary" />
-          <div>2016 - 2022</div>
+          <div className="text-sm md:text-md">2016 - 2022</div>
         </div>
         <div className="flex space-x-2">
           <PlaceIcon color="primary" />
-          <div>Murang'a, Kenya</div>
+          <div className="text-sm md:text-md">Murang'a, Kenya</div>
         </div>
         <div
           className="flex mt-2 flex-wrap overflow-auto"
@@ -106,78 +108,93 @@ export default function Education() {
         >
           <Chip
             label="Data Structures & Algorithms"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Artificial Intelligence"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Distributed Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Database Management Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Calculus"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Probality & Statistics"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Distributed Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Database Management Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Calculus"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Probality & Statistics"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Distributed Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Database Management Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Calculus"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Probality & Statistics"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className="flex space-x-2">
           <SchoolIcon color="primary" />
-          <div>St. Joseph's High School Githunguri</div>
+          <div className="text-sm md:text-md">
+            St. Joseph's High School Githunguri
+          </div>
         </div>
         <div className="flex space-x-2">
           <SportsScoreIcon color="primary" />
-          <div>B+</div>
+          <div className="text-sm md:text-md">B+</div>
         </div>
         <div className="flex space-x-2">
           <TimelapseIcon color="primary" />
-          <div>2012 - 2015</div>
+          <div className="text-sm md:text-md">2012 - 2015</div>
         </div>
         <div className="flex space-x-2">
           <PlaceIcon color="primary" />
-          <div>Kiambu, Kenya</div>
+          <div className="text-sm md:text-md">Kiambu, Kenya</div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -185,55 +202,63 @@ export default function Education() {
         >
           <Chip
             label="Mathematics"
+            size="small"
             sx={{
               marginRight: "2px",
               marginTop: "2px",
-              fontSize: "12px",
+              fontSize: "10px",
             }}
           />
           <Chip
             label="English"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Kiswahili"
+            size="small"
             sx={{
               marginRight: "2px",
               marginTop: "2px",
-              fontSize: "12px",
+              fontSize: "10px",
             }}
           />
           <Chip
             label="Physics"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Biology"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Chemistry"
+            size="small"
             sx={{
               marginRight: "2px",
               marginTop: "2px",
-              fontSize: "12px",
+              fontSize: "10px",
             }}
           />
           <Chip
             label="Geography"
+            size="small"
             sx={{
               marginRight: "2px",
               marginTop: "2px",
-              fontSize: "12px",
+              fontSize: "10px",
             }}
           />
           <Chip
             label="Christian Religious Education (C.R.E)"
+            size="small"
             sx={{
               marginRight: "2px",
               marginTop: "2px",
               color: "red",
-              fontSize: "12px",
+              fontSize: "10px",
             }}
           />
         </div>
@@ -241,19 +266,19 @@ export default function Education() {
       <TabPanel value={value} index={2}>
         <div className="flex space-x-2">
           <SchoolIcon color="primary" />
-          <div>Kongo Primary School</div>
+          <div className="text-sm md:text-md">Kongo Primary School</div>
         </div>
         <div className="flex space-x-2">
           <SportsScoreIcon color="primary" />
-          <div>340</div>
+          <div className="text-sm md:text-md">340</div>
         </div>
         <div className="flex space-x-2">
           <TimelapseIcon color="primary" />
-          <div>2004 - 2011</div>
+          <div className="text-sm md:text-md">2004 - 2011</div>
         </div>
         <div className="flex space-x-2">
           <PlaceIcon color="primary" />
-          <div>Kiambu, Kenya</div>
+          <div className="text-sm md:text-md">Kiambu, Kenya</div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -261,42 +286,49 @@ export default function Education() {
         >
           <Chip
             label="Mathematics"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="English"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Kiswahili"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Social Studies & C.R.E"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Science"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <div className="flex space-x-2">
           <SchoolIcon color="primary" />
-          <div>Youtube</div>
+          <div className="text-sm md:text-md">Youtube</div>
         </div>
         <div className="flex space-x-2">
           <LibraryBooksIcon color="primary" />
-          <div>Frontend Web Development with ReactJS</div>
+          <div className="text-sm md:text-md">
+            Frontend Web Development with ReactJS
+          </div>
         </div>
         <div className="flex space-x-2">
           <TimelapseIcon color="primary" />
-          <div>2020 - Present</div>
+          <div className="text-sm md:text-md">2020 - Present</div>
         </div>
         <div className="flex space-x-2">
           <PlaceIcon color="primary" />
-          <div>Everywhere</div>
+          <div className="text-sm md:text-md">Everywhere</div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -304,58 +336,68 @@ export default function Education() {
         >
           <Chip
             label="HTML"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="CSS"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="JavaScript"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="React"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Redux & Redux Toolkit"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Tailwind"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="MaterialUI"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Framer Motion"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
         </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
         <div className="flex space-x-2">
           <SchoolIcon color="primary" />
-          <div>Petanns Driving School and Computer Packages</div>
+          <div className="text-sm md:text-md">
+            Petanns Driving School and Computer College
+          </div>
         </div>
         <div className="flex space-x-2">
           <LibraryBooksIcon color="primary" />
-          <div>Computer Packages</div>
+          <div className="text-sm md:text-md">Computer Packages</div>
         </div>
         <div className="flex space-x-2">
           <SportsScoreIcon color="primary" />
-          <div>A</div>
+          <div className="text-sm md:text-md">A</div>
         </div>
         <div className="flex space-x-2">
           <TimelapseIcon color="primary" />
-          <div>2017</div>
+          <div className="text-sm md:text-md">2017</div>
         </div>
         <div className="flex space-x-2">
           <PlaceIcon color="primary" />
-          <div>Kiambu, Kenya</div>
+          <div className="text-sm md:text-md">Kiambu, Kenya</div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -363,27 +405,33 @@ export default function Education() {
         >
           <Chip
             label="MS Word"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
+            size="small"
             label="MsExcel"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
             label="Ms PowerPoint"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            size="small"
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
+            size="small"
             label="Ms Access"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
+            size="small"
             label="Ms Publisher"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
           <Chip
+            size="small"
             label="MS Paint"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "12px" }}
+            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
           />
         </div>
       </TabPanel>

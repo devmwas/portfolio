@@ -2,14 +2,19 @@ import { Copyright } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React from "react";
 
-function Footer() {
+function Footer({ setIsMessageOpen }) {
   return (
     <div
       className="bg-sky-600 text-center text-xl flex justify-between p-2"
       style={{ height: "90px" }}
     >
       <div className="flex flex-col justify-center">
-        <Button variant="contained" color="warning" size="small">
+        <Button
+          variant="contained"
+          color="warning"
+          size="small"
+          onClick={() => setIsMessageOpen(true)}
+        >
           Make Contact
         </Button>
       </div>

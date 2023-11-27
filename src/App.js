@@ -9,30 +9,30 @@ import ExpandedMenu from "./components/navbar/ExpandedMenu";
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
+  const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   return (
     <div className="text-white bg-black w-full">
-      {!showExpandedMenu && (
-        // We dont want any other component to be mounted on the DOM whenever the menu is open
-        <Navbar setShowExpandedMenu={setShowExpandedMenu} />
-      )}
-      {/* <h1>My Portfolio</h1> */}
+      <Navbar setShowExpandedMenu={setShowExpandedMenu} />
       <div className="lg:w-2/3 mx-auto bg-black">
-        {showExpandedMenu && (
-          <ExpandedMenu setShowExpandedMenu={setShowExpandedMenu} />
-        )}
-        {!showExpandedMenu && <Intro />}
-        {!showExpandedMenu && <About />}
-        {!showExpandedMenu && <Projects />}
-        {!showExpandedMenu && (
-          <div
-            className="bg-red-500 mx-auto lg:w-4/5 px-2 md:p-0"
-            style={{ maxWidth: "750px" }}
-          >
-            <Education />
-          </div>
-        )}
-        {!showExpandedMenu && <Footer />}
+        <ExpandedMenu
+          setShowExpandedMenu={setShowExpandedMenu}
+          showExpandedMenu={showExpandedMenu}
+        />
+        <Intro
+          isMessageOpen={isMessageOpen}
+          setIsMessageOpen={setIsMessageOpen}
+        />
+        <About />
+        <Projects />
+
+        <div
+          className="bg-red-500 mx-auto lg:w-4/5 px-2 md:p-0"
+          style={{ maxWidth: "750px" }}
+        >
+          <Education />
+        </div>
+        <Footer setIsMessageOpen={setIsMessageOpen} />
       </div>
     </div>
   );
