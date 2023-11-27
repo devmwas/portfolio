@@ -14,7 +14,10 @@ function Footer() {
         </Button>
       </div>
       <div className="flex flex-col justify-center">
-        <div>
+        <div className="text-sm md:text-xl md:hidden">
+          Copyright <Copyright fontSize="small" /> Devmwas 2023
+        </div>
+        <div className="text-sm md:text-xl hidden md:block">
           Copyright <Copyright /> Devmwas 2023
         </div>
       </div>
