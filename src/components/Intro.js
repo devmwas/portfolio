@@ -1,8 +1,7 @@
 import { Button } from "@mui/material";
 import Lines from "./Lines";
-import MessageModal from "./MessageModal";
 
-function Intro({ setIsMessageOpen, isMessageOpen }) {
+function Intro({ setIsMessageOpen }) {
   return (
     <div className="p-2 sm:p-0 flex flex-col" style={{ height: "100vh" }}>
       <div className="my-auto">
@@ -31,10 +30,6 @@ function Intro({ setIsMessageOpen, isMessageOpen }) {
             >
               Make Contact
             </Button>
-            <MessageModal
-              isMessageOpen={isMessageOpen}
-              setIsMessageOpen={setIsMessageOpen}
-            />
           </div>
           {/* These points will be on small devices and larger */}
           <div
