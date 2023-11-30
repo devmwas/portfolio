@@ -6,9 +6,10 @@ function Projects() {
   let reverse = null;
   return (
     <div
-      className="p-2 sm:p-0 flex flex-col text-black space-y-4 lg:w-4/5 mx-auto"
+      id="projects"
+      className="p-2 sm:p-0 flex flex-col text-black space-y-2 lg:w-4/5 mx-auto mt-16"
       style={{
-        backgroundImage: "radial-gradient( black, blue, yellow)",
+        backgroundImage: "linear-gradient(black, darkBlue, black)",
         position: "relative",
       }}
     >

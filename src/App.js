@@ -37,7 +37,7 @@ function App() {
         <About />
         <Projects />
         <div
-          className="bg-red-500 mx-auto lg:w-4/5 px-2 md:p-0"
+          className="mx-auto lg:w-full px-2 md:p-0"
           style={{ maxWidth: "750px" }}
         >
           <Education />

@@ -63,7 +63,9 @@ export default function Education() {
         position: "relative",
       }}
     >
-      <div className="absolute -top-7 h-7">Education</div>
+      <div className="absolute -top-7 h-7" id="education">
+        Education
+      </div>
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -73,8 +75,8 @@ export default function Education() {
         sx={{
           borderRight: 1,
           borderColor: "divider",
-          bgcolor: "green",
           minWidth: "100px",
+          bgcolor: "green",
         }}
       >
         <Tab label="University" {...a11yProps(0)} />

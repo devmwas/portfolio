@@ -4,7 +4,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 function SendMessageStatus({ sent, setSent }) {
   useEffect(() => {
-    setTimeout(() => setSent(undefined), 100000);
+    setTimeout(() => setSent(undefined), 2000);
   });
 
   // If we haven't opened the MessageModal
@@ -24,7 +24,7 @@ function SendMessageStatus({ sent, setSent }) {
         }}
       >
         <div
-          className="flex bg-white text-green-500 text-sm space-x-2 p-2 m-2 mx-auto"
+          className="flex bg-white text-green-500 text-sm space-x-2 p-2 m-2 sm:mx-auto"
           style={{
             marginTop: "50px",
             maxWidth: "400px",
@@ -49,7 +49,7 @@ function SendMessageStatus({ sent, setSent }) {
       }}
     >
       <div
-        className="flex bg-white text-red-500 text-sm space-x-2 p-2 m-2 mx-auto"
+        className="flex bg-white text-red-500 text-sm space-x-2 p-2 m-2 sm:mx-auto"
         style={{
           marginTop: "50px",
           maxWidth: "400px",

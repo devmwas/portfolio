@@ -6,10 +6,10 @@ import emailJS from "@emailjs/browser";
 
 function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   const [messageData, setMessageData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: undefined,
+    email: undefined,
+    subject: undefined,
+    message: undefined,
   });
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -30,14 +30,47 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
     "Other",
   ];
 
+  // We dont want all textfields to start on error state as it's unaesthetic, so we use many useEffects
+  // We validate the name after every change is made to it
   useEffect(() => {
-    console.log(messageData);
-  }, [{ ...messageData }]);
+    if (!(messageData.name === undefined)) {
+      messageData.name === "" ? setNameError(true) : setNameError(false);
+    }
+  }, [messageData.name]);
 
+  // We validate the email after every change is made to it
+  useEffect(() => {
+    if (!(messageData.email === undefined)) {
+      !validateEmail(messageData.email)
+        ? setEmailError(true)
+        : setEmailError(false);
+    }
+  }, [messageData.email]);
+
+  // We validate the subject after every change is made to it
+  useEffect(() => {
+    if (!(messageData.subject === undefined)) {
+      messageData.subject === ""
+        ? setSubjectError(true)
+        : setSubjectError(false);
+    }
+  }, [messageData.subject]);
+
+  // We validate the message after every change is made to it
+  useEffect(() => {
+    if (!(messageData.message === undefined)) {
+      messageData.message === ""
+        ? setMessageError(true)
+        : setMessageError(false);
+    }
+  }, [messageData.message]);
+
+  // Updating the state after every change
   const handleChange = (e) => {
     setMessageData((prevData) => {
       return {
         ...prevData,
+        // We set the state variable to empty string if target is empty
         [e.target.name]: e.target.value,
       };
     });
@@ -52,19 +85,26 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
       );
   };
 
-  const handleSendMessage = () => {
-    // We do data validation before sending any message
-    messageData.name === "" ? setNameError(true) : setNameError(false);
-    !validateEmail(messageData.email)
-      ? setEmailError(true)
-      : setEmailError(false);
-    messageData.subject === "" ? setSubjectError(true) : setSubjectError(false);
-    messageData.message === "" ? setMessageError(true) : setMessageError(false);
+  // This function will check if we have any errors and return a Boolean indicating the presence of errors
+  const checkErrors = () => {
+    if (!nameError) {
+      if (!emailError) {
+        if (!subjectError) {
+          if (!messageError) {
+            return false;
+          } else return true;
+        } else return true;
+      } else return true;
+    } else return true;
+  };
 
+  const handleSendMessage = () => {
     // If we have no errors, we send the message
-    if (!(nameError && emailError && subjectError && messageError)) {
-      // We update the Button Text
+    if (!checkErrors()) {
+      // We first update the Button Text
       setSendingMessageStatus("Sending...");
+
+      // Sending the message
       emailJS
         .send(
           "service_rhaf2b9",
@@ -97,13 +137,18 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   if (!isMessageOpen) return null;
 
   return createPortal(
-    <div className="fixed top-0 left-0 right-0 bottom-0 bg-orange-400 opacity-100">
+    <div className="fixed top-0 left-0 right-0 bottom-0 opacity-100 z-40">
       <div
-        className="bg-white z-20 mt-20 opacity-100 space-y-4 p-4 mx-auto"
-        style={{ maxWidth: "500px" }}
+        className="bg-white mt-20 opacity-100 space-y-4 p-2 sm:p-4 m-2 sm:mx-auto"
+        style={{
+          maxWidth: "500px",
+          borderRadius: "2%",
+          backgroundImage:
+            "linear-gradient(to bottom right, white, cyan, white)",
+        }}
       >
         <div className="flex justify-between">
-          <div>Send Me a Message</div>
+          <div className="text-blue-400 font-bold">Send Me a Message</div>
           <CloseIcon
             fontSize="medium"
             onClick={() => setIsMessageOpen(false)}
@@ -123,7 +168,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             />
           ) : (
             <TextField
-              label="Your Name"
+              label="Name"
               fullWidth
               size="small"
               name="name"
@@ -135,7 +180,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
         <div>
           {emailError ? (
             <TextField
-              label="Your Email"
+              label="Email"
               fullWidth
               size="small"
               name="email"
@@ -146,7 +191,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             />
           ) : (
             <TextField
-              label="Your Email"
+              label="Email"
               fullWidth
               size="small"
               name="email"
@@ -158,7 +203,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
         <div>
           {subjectError ? (
             <TextField
-              label="Your Subject"
+              label="Subject"
               select
               size="small"
               fullWidth
@@ -178,7 +223,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             </TextField>
           ) : (
             <TextField
-              label="Your Subject"
+              label="Subject"
               select
               size="small"
               fullWidth
@@ -199,7 +244,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
         <div>
           {messageError ? (
             <TextField
-              label="Your Message"
+              label="Message"
               multiline
               name="message"
               error
@@ -212,7 +257,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             />
           ) : (
             <TextField
-              label="Your Message"
+              label="Message"
               multiline
               name="message"
               value={messageData.message}
@@ -223,10 +268,17 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             />
           )}
         </div>
-        <div className="text-center">
-          <Button variant="contained" onClick={handleSendMessage}>
-            {sendingMessageStatus}
-          </Button>
+        <div className="text-center ">
+          {/* We disable Sending button if we have any errors */}
+          {checkErrors() ? (
+            <Button variant="contained" disabled onClick={handleSendMessage}>
+              {sendingMessageStatus}
+            </Button>
+          ) : (
+            <Button variant="contained" onClick={handleSendMessage}>
+              {sendingMessageStatus}
+            </Button>
+          )}
         </div>
       </div>
     </div>,

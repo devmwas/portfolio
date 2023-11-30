@@ -14,7 +14,15 @@ function About() {
     );
   }
   return (
-    <div style={{ height: "100vh" }} className="p-2 sm:p:0">
+    <div
+      style={{
+        height: "80vh",
+        backgroundImage:
+          "linear-gradient(to bottom right, black, darkBlue, black)",
+      }}
+      className="p-2 sm:p:0"
+      id="about"
+    >
       {/* These points will be on small devices and larger */}
       <div
         style={{
@@ -22,8 +30,10 @@ function About() {
           width: "50vw",
           height: "70vh",
           overflow: "hidden",
-          zIndez: 100,
-          left: "16.5vw",
+          left: "16.67vw",
+          opacity: 0.6,
+          backgroundImage:
+            "linear-gradient(to top right, darkBlue, black, darkBlue)",
         }}
         className="sm:flex flex-wrap hidden"
       >
@@ -37,7 +47,9 @@ function About() {
           width: "70vw",
           height: "70vh",
           overflow: "hidden",
-          zIndez: 100,
+          opacity: 0.6,
+          backgroundImage:
+            "linear-gradient(to top right, darkBlue, black, darkBlue)",
         }}
         className="flex flex-wrap sm:hidden"
       >
@@ -45,7 +57,7 @@ function About() {
       </div>
       <div className="flex flex-col justify-center" style={{ height: "70vh" }}>
         <div className="flex justify-end">
-          <div className="sm:w-3/4">
+          <div className="sm:w-3/4 z-30">
             <div className="text-right text-xs sm:text-sm text-sky-400 font-mono">
               About Me
             </div>
