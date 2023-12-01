@@ -15,7 +15,7 @@ function Footer({ setIsMessageOpen }) {
           size="small"
           onClick={() => setIsMessageOpen(true)}
         >
-          Make Contact
+          Let's Talk
         </Button>
       </div>
       <div className="flex flex-col justify-center">

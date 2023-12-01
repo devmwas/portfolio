@@ -33,15 +33,19 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   // We dont want all textfields to start on error state as it's unaesthetic, so we use many useEffects
   // We validate the name after every change is made to it
   useEffect(() => {
+    // We ensure that we're not setting error on the first render when our state will be undefined
     if (!(messageData.name === undefined)) {
-      messageData.name === "" ? setNameError(true) : setNameError(false);
+      // We check for empty strings or whitespaces
+      messageData.name.trim() === "" ? setNameError(true) : setNameError(false);
     }
   }, [messageData.name]);
 
   // We validate the email after every change is made to it
   useEffect(() => {
+    // We ensure that we're not setting error on the first render when our state will be undefined
     if (!(messageData.email === undefined)) {
-      !validateEmail(messageData.email)
+      // We trim the email before any validation starts
+      !validateEmail(messageData.email.trim())
         ? setEmailError(true)
         : setEmailError(false);
     }
@@ -49,8 +53,9 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   // We validate the subject after every change is made to it
   useEffect(() => {
+    // We ensure that we're not setting error on the first render when our state will be undefined
     if (!(messageData.subject === undefined)) {
-      messageData.subject === ""
+      messageData.subject.trim() === ""
         ? setSubjectError(true)
         : setSubjectError(false);
     }
@@ -58,8 +63,9 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   // We validate the message after every change is made to it
   useEffect(() => {
+    // We ensure that we're not setting error on the first render when our state will be undefined
     if (!(messageData.message === undefined)) {
-      messageData.message === ""
+      messageData.message.trim() === ""
         ? setMessageError(true)
         : setMessageError(false);
     }
@@ -67,10 +73,12 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   // Updating the state after every change
   const handleChange = (e) => {
+    console.log("Check Errors: ", checkErrors());
+    console.log("Check Undefineds: ", checkUndefined());
+    console.log("Check checkErrorsAndUndefined: ", checkErrorsOrUndefined());
     setMessageData((prevData) => {
       return {
         ...prevData,
-        // We set the state variable to empty string if target is empty
         [e.target.name]: e.target.value,
       };
     });
@@ -98,18 +106,57 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
     } else return true;
   };
 
+  // This function will check if we have any undefined state variables and help in data validation
+  const checkUndefined = () => {
+    if (!(messageData.name == undefined)) {
+      if (!(messageData.email == undefined)) {
+        if (!(messageData.subject == undefined)) {
+          if (!(messageData.message == undefined)) {
+            return false;
+          } else return true;
+        } else return true;
+      } else return true;
+    } else return true;
+  };
+
+  // We check for both undefined and errors
+  const checkErrorsOrUndefined = () => {
+    // If we have errors or undefineds
+    if (checkErrors() || checkUndefined()) return true;
+    // If we have no errors or undefineds
+    return false;
+  };
+
   const handleSendMessage = () => {
     // If we have no errors, we send the message
     if (!checkErrors()) {
       // We first update the Button Text
       setSendingMessageStatus("Sending...");
 
+      // We trimm all user inputs off any leading or trailing whitespaces
+      const trimmedMessageData = {
+        name: messageData.name.trim(),
+        email: messageData.email.trim(),
+        subject: messageData.subject.trim(),
+        message: messageData.message.trim(),
+      };
+
+      // Would have trimmed this way, but then updating state is async and we might send untrimmed data to server
+      // setMessageData((prevData) => {
+      //   return {
+      //     name: prevData.name.trim(),
+      //     email: prevData.name.trim(),
+      //     subject: prevData.name.trim(),
+      //     message: prevData.name.trim(),
+      //   }
+      // });
+
       // Sending the message
       emailJS
         .send(
           "service_rhaf2b9",
           "template_693sejm",
-          messageData,
+          trimmedMessageData,
           "7eCZNeRns-eBVEZAe"
         )
         .then(
@@ -269,12 +316,13 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
           )}
         </div>
         <div className="text-center ">
-          {/* We disable Sending button if we have any errors */}
-          {checkErrors() ? (
+          {checkErrorsOrUndefined() ? (
+            // We disable Sending button if we have any errors or any undefined variables
             <Button variant="contained" disabled onClick={handleSendMessage}>
               {sendingMessageStatus}
             </Button>
           ) : (
+            //  We only enable he send button if we don't have undefineds or errors
             <Button variant="contained" onClick={handleSendMessage}>
               {sendingMessageStatus}
             </Button>

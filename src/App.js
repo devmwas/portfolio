@@ -12,7 +12,7 @@ import MessageModal from "./components/MessageModal";
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
-  const [sent, setSent] = useState(true);
+  const [sent, setSent] = useState();
 
   return (
     <div className="text-white bg-black w-full">

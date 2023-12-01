@@ -24,8 +24,8 @@ function Intro({ setIsMessageOpen }) {
             <div className="text-md sm:text-lg">
               I am a software engineer with a specialization in frontend web
               development. I build elegant and highly interactive user
-              interfaces, which are responsive and accessible, using
-              state-of-the art libraries and frameworks.
+              interfaces using state-of-the art libraries and frameworks. I
+              prioritize responsivesness and accessibility in my designs.
             </div>
             <div className="text-md sm:text-lg text-sky-400 md:text-xl mt-4 font-bold font-mono">
               - Devmwas
@@ -36,7 +36,7 @@ function Intro({ setIsMessageOpen }) {
               sx={{ marginTop: 4 }}
               onClick={() => setIsMessageOpen(true)}
             >
-              Make Contact
+              Let's Talk
             </Button>
           </div>
           {/* These lines will be on small devices and larger */}

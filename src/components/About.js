@@ -30,6 +30,7 @@ function About() {
           width: "50vw",
           height: "70vh",
           overflow: "hidden",
+          borderRadius: "2%",
           left: "16.67vw",
           opacity: 0.6,
           backgroundImage:
@@ -47,6 +48,7 @@ function About() {
           width: "70vw",
           height: "70vh",
           overflow: "hidden",
+          borderRadius: "2%",
           opacity: 0.6,
           backgroundImage:
             "linear-gradient(to top right, darkBlue, black, darkBlue)",
