@@ -43,11 +43,13 @@ function Intro({ setIsMessageOpen }) {
           <div
             style={{
               position: "absolute",
-              width: "50vw",
+              // Width is 70% of container width(2/3) for some reason
+              width: "46.667vw",
               height: "70vh",
               overflow: "hidden",
               borderRadius: "2%",
-              right: "16.67vw",
+              // right: "16.67vw",
+              right: "18vw",
               opacity: 0.6,
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
@@ -61,7 +63,8 @@ function Intro({ setIsMessageOpen }) {
             style={{
               position: "absolute",
               right: 0,
-              width: "70vw",
+              width: "48vw",
+              margin: "2vw",
               height: "70vh",
               overflow: "hidden",
               borderRadius: "2%",
