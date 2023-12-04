@@ -153,6 +153,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
       // Sending the message
       emailJS
+        // WE NEED TO HIDE THIS DATA IN THE .ENV FILE FOR A LIL MORE SECURITY
         .send(
           "service_rhaf2b9",
           "template_693sejm",
