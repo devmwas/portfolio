@@ -15,6 +15,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   const [emailError, setEmailError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+  const [isCloseIconHovered, setIsCloseIconHovered] = useState(false);
   const [sendingMessageStatus, setSendingMessageStatus] =
     useState("Send Message");
 
@@ -133,7 +134,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
       // We first update the Button Text
       setSendingMessageStatus("Sending...");
 
-      // We trimm all user inputs off any leading or trailing whitespaces
+      // We trim all user inputs off any leading or trailing whitespaces
       const trimmedMessageData = {
         name: messageData.name.trim(),
         email: messageData.email.trim(),
@@ -195,15 +196,42 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
           maxWidth: "500px",
           borderRadius: "2%",
           backgroundImage:
-            "linear-gradient(to bottom right, white, cyan, white)",
+            "linear-gradient(to bottom right, white, #eee, white)",
         }}
       >
         <div className="flex justify-between">
           <div className="text-blue-400 font-bold">Send Me a Message</div>
-          <CloseIcon
-            fontSize="medium"
-            onClick={() => setIsMessageOpen(false)}
-          />
+          {/* We set the icon color to red on hovering it */}
+          {isCloseIconHovered ? (
+            <div
+              className="bg cursor-pointer"
+              onMouseEnter={() => setIsCloseIconHovered(true)}
+              onMouseLeave={() => setIsCloseIconHovered(false)}
+            >
+              <CloseIcon
+                fontSize="medium"
+                sx={{ color: "red" }}
+                onClick={() => {
+                  setIsMessageOpen(false);
+                  setIsCloseIconHovered(false);
+                }}
+              />
+            </div>
+          ) : (
+            <div
+              className="cursor-pointer"
+              onMouseEnter={() => setIsCloseIconHovered(true)}
+              onMouseLeave={() => setIsCloseIconHovered(false)}
+            >
+              <CloseIcon
+                fontSize="medium"
+                onClick={() => {
+                  setIsMessageOpen(false);
+                  setIsCloseIconHovered(false);
+                }}
+              />
+            </div>
+          )}
         </div>
         <div>
           {nameError ? (

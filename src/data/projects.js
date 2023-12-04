@@ -29,7 +29,7 @@ export const projects = [
   {
     title: "Personal Portfolio",
     description:
-      "This is my personal portfolio, which you're currently viewing.... I have presented my information elegantly and in a user friendly manner, which you can attest to. You can check out the source code in the GitHub Link below.",
+      "This is my personal portfolio, which you're currently viewing. I have presented my information elegantly and in a user friendly manner, which you can attest to. You can check out the source code in the GitHub Link below.",
     screenshot: "portfolio_screenshot.png",
     techStack: ["React", "MUI", "Tailwind", "EmailJS"],
     githubLink: "https://github.com/devmwas/portfolio",
