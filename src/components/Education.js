@@ -321,7 +321,7 @@ export default function Education() {
         <div className="flex space-x-2">
           <LibraryBooksIcon color="primary" />
           <div className="text-sm md:text-md">
-            Frontend Web Development with ReactJS
+            Frontend Web Development with the ReactJS ecosystem
           </div>
         </div>
         <div className="flex space-x-2">
