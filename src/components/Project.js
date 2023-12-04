@@ -8,7 +8,7 @@ function Project({ project, reverse }) {
   return (
     <div
       style={{ borderRadius: "2%", overflow: "hidden" }}
-      className={`lg:flex ${reverseClass} my-2 w-full lg:4/5 bg-white-600 lg:justify-center`}
+      className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto bg-white-600 lg:justify-center`}
     >
       <div
         style={{ maxWidth: "500px" }}
