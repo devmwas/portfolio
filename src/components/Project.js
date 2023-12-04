@@ -57,7 +57,13 @@ function Project({ project, reverse }) {
           } space-x-2 m-2 font-mono text-xs`}
         >
           {project.techStack.map((language, index) => {
-            return <div key={index}>- {language} </div>;
+            return (
+              <div key={index}>
+                {language}
+                {/* We separate the items using commas, except for the last item */}
+                {index !== project.techStack.length - 1 ? "," : ""}{" "}
+              </div>
+            );
           })}
         </div>
         {/* Links to view more about project */}

@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Resume from "../../Files/Resume.pdf";
 
 function Links() {
   return (
@@ -19,7 +20,7 @@ function Links() {
             <a href="#education">Education</a>
           </div>
           <div className="cursor-pointer -mt-0.5" style={{}}>
-            <a href="#resume">
+            <a href={Resume} target="blank">
               <Button variant="outlined" size="small">
                 Resume
               </Button>

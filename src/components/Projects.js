@@ -13,7 +13,7 @@ function Projects() {
         position: "relative",
       }}
     >
-      <div className="text-white">My Projects</div>
+      <div className="text-sky-400 text-xl pl-24">My Projects</div>
       {projects.map((project, index) => {
         index % 2 === 0 ? (reverse = false) : (reverse = true);
         return <Project project={project} key={index} reverse={reverse} />;
