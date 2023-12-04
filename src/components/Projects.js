@@ -7,7 +7,7 @@ function Projects() {
   return (
     <div
       id="projects"
-      className="p-2 sm:p-0 flex flex-col text-black space-y-2 lg:w-4/5 mx-auto mt-16"
+      className="p-2 sm:p-0 flex flex-col text-black space-y-2 lg:w-full mx-auto mt-16"
       style={{
         backgroundImage: "linear-gradient(black, darkBlue, black)",
         position: "relative",

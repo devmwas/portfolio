@@ -108,10 +108,10 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   // This function will check if we have any undefined state variables and help in data validation
   const checkUndefined = () => {
-    if (!(messageData.name == undefined)) {
-      if (!(messageData.email == undefined)) {
-        if (!(messageData.subject == undefined)) {
-          if (!(messageData.message == undefined)) {
+    if (!(messageData.name === undefined)) {
+      if (!(messageData.email === undefined)) {
+        if (!(messageData.subject === undefined)) {
+          if (!(messageData.message === undefined)) {
             return false;
           } else return true;
         } else return true;
@@ -151,14 +151,17 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
       //   }
       // });
 
+      const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_API_KEY } =
+        process.env;
+
       // Sending the message
       emailJS
         // WE NEED TO HIDE THIS DATA IN THE .ENV FILE FOR A LIL MORE SECURITY
         .send(
-          "service_rhaf2b9",
-          "template_693sejm",
+          REACT_APP_SERVICE_ID,
+          REACT_APP_TEMPLATE_ID,
           trimmedMessageData,
-          "7eCZNeRns-eBVEZAe"
+          REACT_APP_API_KEY
         )
         .then(
           (response) => {

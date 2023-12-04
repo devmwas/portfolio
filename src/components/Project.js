@@ -7,10 +7,11 @@ function Project({ project, reverse }) {
   let reverseClass = reverse ? "flex-row-reverse" : "";
   return (
     <div
-      className={`lg:flex ${reverseClass} my-2 w-full bg-white-600 lg:justify-center`}
+      style={{ borderRadius: "2%", overflow: "hidden" }}
+      className={`lg:flex ${reverseClass} my-2 w-full lg:4/5 bg-white-600 lg:justify-center`}
     >
       <div
-        style={{ maxWidth: "500px", borderRadius: "2%" }}
+        style={{ maxWidth: "500px" }}
         className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
       >
         <a href={`${project.liveLink}`} target="blank">
@@ -23,7 +24,7 @@ function Project({ project, reverse }) {
       </div>
       <div
         className="flex flex-col justify-center bg-slate-300 mx-auto lg:w-1/2"
-        style={{ maxWidth: "500px", borderRadius: "2%" }}
+        style={{ maxWidth: "500px" }}
       >
         <div
           className={`flex justify-center ${
