@@ -76,33 +76,67 @@ export default function Education() {
           borderRight: 1,
           borderColor: "divider",
           minWidth: "100px",
-          bgcolor: "green",
+          bgcolor: "darkGreen",
         }}
       >
-        <Tab label="University" {...a11yProps(0)} />
-        <Tab label="Secondary" {...a11yProps(1)} />
-        <Tab label="Primary" {...a11yProps(2)} />
-        <Tab label="YouTube" {...a11yProps(3)} />
-        <Tab label="Petanns" {...a11yProps(4)} />
+        <Tab label="University" {...a11yProps(0)} sx={{ color: "black" }} />
+        <Tab label="Secondary" {...a11yProps(1)} sx={{ color: "black" }} />
+        <Tab label="Primary" {...a11yProps(2)} sx={{ color: "black" }} />
+        <Tab label="YouTube" {...a11yProps(3)} sx={{ color: "black" }} />
+        <Tab label="Petanns" {...a11yProps(4)} sx={{ color: "black" }} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <div className="flex space-x-2">
-          <SchoolIcon color="primary" />
-          <div className="text-sm md:text-md">
+          {/* This icon will only show on small devices and lower */}
+          <div className="md:hidden">
+            <SchoolIcon color="primary" fontSize="small" />
+          </div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SchoolIcon color="primary" fontSize="medium" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
             Murang'a University of Technology
           </div>
         </div>
         <div className="flex space-x-2">
-          <LibraryBooksIcon color="primary" />
-          <div className="text-sm md:text-md">Bsc Software Engineering</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <LibraryBooksIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <LibraryBooksIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Bsc Software Engineering
+          </div>
         </div>
         <div className="flex space-x-2">
-          <TimelapseIcon color="primary" />
-          <div className="text-sm md:text-md">2016 - 2022</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <TimelapseIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <TimelapseIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            2016 - 2022
+          </div>
         </div>
         <div className="flex space-x-2">
-          <PlaceIcon color="primary" />
-          <div className="text-sm md:text-md">Murang'a, Kenya</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <PlaceIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <PlaceIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Murang'a, Kenya
+          </div>
         </div>
         <div
           className="flex mt-2 flex-wrap overflow-auto"
@@ -181,22 +215,56 @@ export default function Education() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className="flex space-x-2">
-          <SchoolIcon color="primary" />
-          <div className="text-sm md:text-md">
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SchoolIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SchoolIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
             St. Joseph's High School Githunguri
           </div>
         </div>
         <div className="flex space-x-2">
-          <SportsScoreIcon color="primary" />
-          <div className="text-sm md:text-md">B+</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SportsScoreIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SportsScoreIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            B+
+          </div>
         </div>
         <div className="flex space-x-2">
-          <TimelapseIcon color="primary" />
-          <div className="text-sm md:text-md">2012 - 2015</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <TimelapseIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <TimelapseIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            2012 - 2015
+          </div>
         </div>
         <div className="flex space-x-2">
-          <PlaceIcon color="primary" />
-          <div className="text-sm md:text-md">Kiambu, Kenya</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <PlaceIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <PlaceIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Kiambu, Kenya
+          </div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -267,20 +335,56 @@ export default function Education() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className="flex space-x-2">
-          <SchoolIcon color="primary" />
-          <div className="text-sm md:text-md">Kongo Primary School</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SchoolIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SchoolIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Kongo Primary School
+          </div>
         </div>
         <div className="flex space-x-2">
-          <SportsScoreIcon color="primary" />
-          <div className="text-sm md:text-md">340</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SportsScoreIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SportsScoreIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            340
+          </div>
         </div>
         <div className="flex space-x-2">
-          <TimelapseIcon color="primary" />
-          <div className="text-sm md:text-md">2004 - 2011</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <TimelapseIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <TimelapseIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            2004 - 2011
+          </div>
         </div>
         <div className="flex space-x-2">
-          <PlaceIcon color="primary" />
-          <div className="text-sm md:text-md">Kiambu, Kenya</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <PlaceIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <PlaceIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Kiambu, Kenya
+          </div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -315,22 +419,56 @@ export default function Education() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <div className="flex space-x-2">
-          <SchoolIcon color="primary" />
-          <div className="text-sm md:text-md">Youtube</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SchoolIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SchoolIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Youtube
+          </div>
         </div>
         <div className="flex space-x-2">
-          <LibraryBooksIcon color="primary" />
-          <div className="text-sm md:text-md">
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <LibraryBooksIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <LibraryBooksIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
             Frontend Web Development with the ReactJS ecosystem
           </div>
         </div>
         <div className="flex space-x-2">
-          <TimelapseIcon color="primary" />
-          <div className="text-sm md:text-md">2020 - Present</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <TimelapseIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <TimelapseIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            2020 - Present
+          </div>
         </div>
         <div className="flex space-x-2">
-          <PlaceIcon color="primary" />
-          <div className="text-sm md:text-md">Everywhere</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <PlaceIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <PlaceIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Everywhere
+          </div>
         </div>
         <div
           style={{ maxHeight: "70px" }}
@@ -380,26 +518,69 @@ export default function Education() {
       </TabPanel>
       <TabPanel value={value} index={4}>
         <div className="flex space-x-2">
-          <SchoolIcon color="primary" />
-          <div className="text-sm md:text-md">
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SchoolIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SchoolIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
             Petanns Driving School and Computer College
           </div>
         </div>
         <div className="flex space-x-2">
-          <LibraryBooksIcon color="primary" />
-          <div className="text-sm md:text-md">Computer Packages</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <LibraryBooksIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <LibraryBooksIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Computer Packages
+          </div>
         </div>
         <div className="flex space-x-2">
-          <SportsScoreIcon color="primary" />
-          <div className="text-sm md:text-md">A</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <SportsScoreIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <SportsScoreIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            A
+          </div>
         </div>
         <div className="flex space-x-2">
-          <TimelapseIcon color="primary" />
-          <div className="text-sm md:text-md">2017</div>
+          {/* This ico will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <TimelapseIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <TimelapseIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            2017
+          </div>
         </div>
         <div className="flex space-x-2">
-          <PlaceIcon color="primary" />
-          <div className="text-sm md:text-md">Kiambu, Kenya</div>
+          {/* This icon will only show on medium-sized devices and larger */}
+          <div className="hidden md:block">
+            <PlaceIcon color="primary" />
+          </div>
+          {/* This icon will only show on mobile phones */}
+          <div className="md:hidden">
+            <PlaceIcon color="primary" fontSize="small" />
+          </div>
+          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
+            Kiambu, Kenya
+          </div>
         </div>
         <div
           style={{ maxHeight: "70px" }}

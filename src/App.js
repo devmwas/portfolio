@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Intro from "./components/Intro";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/About";
@@ -13,10 +13,37 @@ function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
   const [sent, setSent] = useState();
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [prevScrollTop, setPrevScrollTop] = useState(0);
+
+  // We hide the Navbar while scrolling down and make it reappear on scrolling up or on refresh
+  const handleScroll = () => {
+    const currentScrollTop = window.scrollY;
+    // Hiding the Navbar on scrolling down and vice versa
+    prevScrollTop < currentScrollTop
+      ? setShowNavbar(false)
+      : setShowNavbar(true);
+    // Showing the Navbar on refresh
+    prevScrollTop == 0 && setShowNavbar(true);
+    // We then set the previous scrollTop value to the current scrollTop
+    setPrevScrollTop(currentScrollTop);
+  };
+
+  // We hide or show the Navbar deending on the scrollY direction
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollTop]);
 
   return (
     <div className="text-white bg-black w-full">
-      <Navbar setShowExpandedMenu={setShowExpandedMenu} />
+      <Navbar
+        setShowExpandedMenu={setShowExpandedMenu}
+        showNavbar={showNavbar}
+      />
       <div className="lg:w-2/3 mx-auto bg-black">
         {/* This will be the message component users will use to send us messages */}
         <MessageModal
@@ -36,10 +63,7 @@ function App() {
         />
         <About />
         <Projects />
-        <div
-          className="mx-auto px-2 md:p-0 bg-green-400"
-          style={{ maxWidth: "750px" }}
-        >
+        <div className="mx-auto px-2 md:p-0" style={{ maxWidth: "750px" }}>
           <Education />
         </div>
         <Footer setIsMessageOpen={setIsMessageOpen} />
