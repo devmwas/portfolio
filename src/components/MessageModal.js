@@ -15,6 +15,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   const [emailError, setEmailError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+  const [messageModalMarginTop, setMessageModalMarginTop] = useState("mt-20");
   const [isCloseIconHovered, setIsCloseIconHovered] = useState(false);
   const [sendingMessageStatus, setSendingMessageStatus] =
     useState("Send Message");
@@ -74,15 +75,18 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   // Updating the state after every change
   const handleChange = (e) => {
-    console.log("Check Errors: ", checkErrors());
-    console.log("Check Undefineds: ", checkUndefined());
-    console.log("Check checkErrorsAndUndefined: ", checkErrorsOrUndefined());
     setMessageData((prevData) => {
       return {
         ...prevData,
         [e.target.name]: e.target.value,
       };
     });
+  };
+
+  // Moving the MessageModal up for phones since their keyboards will block the message TextField
+  const handleFocus = () => {
+    console.log("Message TextField is in Focus");
+    setMessageModalMarginTop("mt-0px");
   };
 
   // This function will validate emails and return a Boolean result
@@ -191,7 +195,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   return createPortal(
     <div className="fixed top-0 left-0 right-0 bottom-0 opacity-100 z-40">
       <div
-        className="bg-white mt-20 opacity-100 space-y-4 p-2 sm:p-4 m-2 sm:mx-auto"
+        className={`bg-white ${messageModalMarginTop} md:mt-20 opacity-100 space-y-4 p-2 sm:p-4 m-2 sm:mx-auto`}
         style={{
           maxWidth: "500px",
           borderRadius: "2%",
@@ -328,6 +332,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
               name="message"
               error
               helperText="Please provide a valid message."
+              onFocus={handleFocus}
               value={messageData.message}
               onChange={handleChange}
               rows={4}
@@ -339,6 +344,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
               label="Message"
               multiline
               name="message"
+              onFocus={handleFocus}
               value={messageData.message}
               onChange={handleChange}
               rows={4}
