@@ -24,7 +24,7 @@ function App() {
       ? setShowNavbar(false)
       : setShowNavbar(true);
     // Showing the Navbar on refresh
-    prevScrollTop == 0 && setShowNavbar(true);
+    prevScrollTop === 0 && setShowNavbar(true);
     // We then set the previous scrollTop value to the current scrollTop
     setPrevScrollTop(currentScrollTop);
   };

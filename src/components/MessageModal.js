@@ -124,7 +124,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
     } else return true;
   };
 
-  // We check for both undefined and errors
+  // We check for both undefineds and errors
   const checkErrorsOrUndefined = () => {
     // If we have errors or undefineds
     if (checkErrors() || checkUndefined()) return true;
@@ -134,6 +134,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
 
   const handleSendMessage = () => {
     // If we have no errors, we send the message
+    // This check is not so useful and I will remove it in future. We cannot reach this function if we have any errors or undefineds because the Send Message button will be disabled in either case
     if (!checkErrors()) {
       // We first update the Button Text
       setSendingMessageStatus("Sending...");

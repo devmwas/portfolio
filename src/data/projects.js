@@ -1,3 +1,4 @@
+// This is the data for all my projects. Adding an item(object) in this list will add anwe project on the website
 export const projects = [
   {
     title: "Know Thy Weather",

@@ -19,10 +19,10 @@ function Footer({ setIsMessageOpen }) {
         </Button>
       </div>
       <div className="flex flex-col justify-center">
-        <div className="text-xs md:text-xl md:hidden">
+        <div className="text-sm md:hidden">
           Copyright <Copyright fontSize="small" /> Devmwas 2023
         </div>
-        <div className="text-sm md:text-xl hidden md:block">
+        <div className="text-xl hidden md:block">
           Copyright <Copyright /> Devmwas 2023
         </div>
       </div>

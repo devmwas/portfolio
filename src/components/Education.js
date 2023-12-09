@@ -4,12 +4,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import PlaceIcon from "@mui/icons-material/Place";
-import SchoolIcon from "@mui/icons-material/School";
-import TimelapseIcon from "@mui/icons-material/Timelapse";
-import SportsScoreIcon from "@mui/icons-material/SportsScore";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import { Chip } from "@mui/material";
+import { institutionsData } from "../data/education";
+import { useState } from "react";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,15 +38,67 @@ function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
     "aria-controls": `vertical-tabpanel-${index}`,
+    sx: { color: "black" },
   };
 }
 
 export default function Education() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // This approach appealed to me since it eliminated a lot of Lines of Code (LOCs)
+  const tabPanels = institutionsData.map((institutionData, index) => {
+    return (
+      <TabPanel value={value} index={index} key={index}>
+        {institutionData["mainData"].map((item, index) => {
+          // It's very important that OurIcon starts with a capital letter just like normal component-naming convention
+          const [OurIcon, ourText] = item;
+          return (
+            <div className="flex" key={index}>
+              {/* This icon will only show on medium-sized devices and larger */}
+              <div className="hidden md:block mr-2">
+                <OurIcon color="primary" fontSize="medium" />
+              </div>
+              {/* This icon will only show on small devices and lower */}
+              <div className="md:hidden mr-2">
+                <OurIcon color="primary" fontSize="small" />
+              </div>
+              <div
+                className="text-sm md:text-md"
+                style={{ lineHeight: "28px" }}
+              >
+                {ourText}
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Here are our subjects/units covered in the institution  */}
+        <div
+          className="flex mt-2 flex-wrap overflow-auto"
+          style={{ maxHeight: "70px" }}
+        >
+          {institutionData["units"].map((unit, index) => {
+            return (
+              <Chip
+                key={index}
+                label={unit}
+                size="small"
+                sx={{
+                  marginRight: "2px",
+                  marginTop: "2px",
+                  fontSize: "10px",
+                }}
+              />
+            );
+          })}
+        </div>
+      </TabPanel>
+    );
+  });
 
   return (
     <Box
@@ -79,545 +128,13 @@ export default function Education() {
           bgcolor: "darkGreen",
         }}
       >
-        <Tab label="University" {...a11yProps(0)} sx={{ color: "black" }} />
-        <Tab label="Secondary" {...a11yProps(1)} sx={{ color: "black" }} />
-        <Tab label="Primary" {...a11yProps(2)} sx={{ color: "black" }} />
-        <Tab label="YouTube" {...a11yProps(3)} sx={{ color: "black" }} />
-        <Tab label="Petanns" {...a11yProps(4)} sx={{ color: "black" }} />
+        <Tab label="University" {...a11yProps(0)} />
+        <Tab label="Secondary" {...a11yProps(1)} />
+        <Tab label="Primary" {...a11yProps(2)} />
+        <Tab label="YouTube" {...a11yProps(3)} />
+        <Tab label="Petanns" {...a11yProps(4)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        <div className="flex">
-          {/* This icon will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SchoolIcon color="primary" fontSize="medium" />
-          </div>
-          {/* This icon will only show on small devices and lower */}
-          <div className="md:hidden mr-2">
-            <SchoolIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Murang'a University of Technology
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <LibraryBooksIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <LibraryBooksIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Bsc Software Engineering
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <TimelapseIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <TimelapseIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            2016 - 2022
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <PlaceIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <PlaceIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Murang'a, Kenya
-          </div>
-        </div>
-        <div
-          className="flex mt-2 flex-wrap overflow-auto"
-          style={{ maxHeight: "70px" }}
-        >
-          <Chip
-            label="Data Structures & Algorithms"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Artificial Intelligence"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Distributed Systems"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Database Management Systems"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Calculus"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Probality & Statistics"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Distributed Systems"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Database Management Systems"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Calculus"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Probality & Statistics"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Distributed Systems"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Database Management Systems"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Calculus"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Probality & Statistics"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SchoolIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SchoolIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            St. Joseph's High School Githunguri
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SportsScoreIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SportsScoreIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            B+
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <TimelapseIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <TimelapseIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            2012 - 2015
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <PlaceIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <PlaceIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Kiambu, Kenya
-          </div>
-        </div>
-        <div
-          style={{ maxHeight: "70px" }}
-          className="flex mt-2 flex-wrap overflow-auto"
-        >
-          <Chip
-            label="Mathematics"
-            size="small"
-            sx={{
-              marginRight: "2px",
-              marginTop: "2px",
-              fontSize: "10px",
-            }}
-          />
-          <Chip
-            label="English"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Kiswahili"
-            size="small"
-            sx={{
-              marginRight: "2px",
-              marginTop: "2px",
-              fontSize: "10px",
-            }}
-          />
-          <Chip
-            label="Physics"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Biology"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Chemistry"
-            size="small"
-            sx={{
-              marginRight: "2px",
-              marginTop: "2px",
-              fontSize: "10px",
-            }}
-          />
-          <Chip
-            label="Geography"
-            size="small"
-            sx={{
-              marginRight: "2px",
-              marginTop: "2px",
-              fontSize: "10px",
-            }}
-          />
-          <Chip
-            label="Christian Religious Education (C.R.E)"
-            size="small"
-            sx={{
-              marginRight: "2px",
-              marginTop: "2px",
-              color: "red",
-              fontSize: "10px",
-            }}
-          />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SchoolIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SchoolIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Kongo Primary School
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SportsScoreIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SportsScoreIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            340
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <TimelapseIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <TimelapseIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            2004 - 2011
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <PlaceIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <PlaceIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Kiambu, Kenya
-          </div>
-        </div>
-        <div
-          style={{ maxHeight: "70px" }}
-          className="flex mt-2 flex-wrap overflow-auto"
-        >
-          <Chip
-            label="Mathematics"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="English"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Kiswahili"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Social Studies & C.R.E"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Science"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SchoolIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SchoolIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Youtube
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <LibraryBooksIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <LibraryBooksIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Frontend Web Development with the ReactJS ecosystem
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <TimelapseIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <TimelapseIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            2020 - Present
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <PlaceIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <PlaceIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Everywhere
-          </div>
-        </div>
-        <div
-          style={{ maxHeight: "70px" }}
-          className="flex mt-2 flex-wrap overflow-auto"
-        >
-          <Chip
-            label="HTML"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="CSS"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="JavaScript"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="React"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Redux & Redux Toolkit"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Tailwind"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="MaterialUI"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Framer Motion"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SchoolIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SchoolIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Petanns Driving School and Computer College
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <LibraryBooksIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <LibraryBooksIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Computer Packages
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <SportsScoreIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <SportsScoreIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            A
-          </div>
-        </div>
-        <div className="flex">
-          {/* This ico will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <TimelapseIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <TimelapseIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            2017
-          </div>
-        </div>
-        <div className="flex">
-          {/* This icon will only show on medium-sized devices and larger */}
-          <div className="hidden md:block mr-2">
-            <PlaceIcon color="primary" />
-          </div>
-          {/* This icon will only show on mobile phones */}
-          <div className="md:hidden mr-2">
-            <PlaceIcon color="primary" fontSize="small" />
-          </div>
-          <div className="text-sm md:text-md" style={{ lineHeight: "28px" }}>
-            Kiambu, Kenya
-          </div>
-        </div>
-        <div
-          style={{ maxHeight: "70px" }}
-          className="flex mt-2 flex-wrap overflow-auto"
-        >
-          <Chip
-            label="MS Word"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            size="small"
-            label="MsExcel"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            label="Ms PowerPoint"
-            size="small"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            size="small"
-            label="Ms Access"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            size="small"
-            label="Ms Publisher"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-          <Chip
-            size="small"
-            label="MS Paint"
-            sx={{ marginRight: "2px", marginTop: "2px", fontSize: "10px" }}
-          />
-        </div>
-      </TabPanel>
+      {tabPanels}
     </Box>
   );
 }
