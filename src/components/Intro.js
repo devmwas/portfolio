@@ -56,6 +56,10 @@ function Intro({ setIsMessageOpen }) {
                 Let's Talk
               </Button>
             </div>
+            <div className="flex bg-green-400">
+              <div className="flex bg-blue-400 flex-grow">One</div>
+              <div className="flex bg-red-400 flex-grow">Two</div>
+            </div>
           </div>
           {/* These lines will be on small devices and larger */}
           <div

@@ -8,6 +8,7 @@ import { Chip } from "@mui/material";
 import { institutionsData } from "../data/education";
 import { useState } from "react";
 
+// Tab panels for our tab
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -20,7 +21,12 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3, color: "black" }}>
+        <Box
+          sx={{
+            p: 2,
+            color: "black",
+          }}
+        >
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -28,12 +34,14 @@ function TabPanel(props) {
   );
 }
 
+// TypeScript tings
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
 };
 
+// Props for our Tabs
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
@@ -42,6 +50,7 @@ function a11yProps(index) {
   };
 }
 
+// Our main componet
 export default function Education() {
   const [value, setValue] = useState(0);
 
@@ -49,7 +58,8 @@ export default function Education() {
     setValue(newValue);
   };
 
-  // This approach appealed to me since it eliminated a lot of Lines of Code (LOCs)
+  // This approach appealed to me since it eliminated a lot of Lines of Code (LOCs), from 678 to 148
+  // Maintenance will also be easier and quicker. Couldn't feel prouder.
   const tabPanels = institutionsData.map((institutionData, index) => {
     return (
       <TabPanel value={value} index={index} key={index}>
@@ -78,21 +88,26 @@ export default function Education() {
 
         {/* Here are our subjects/units covered in the institution  */}
         <div
-          className="flex mt-2 flex-wrap overflow-auto"
-          style={{ maxHeight: "70px" }}
+          className="flex mt-2 mr-2 flex-wrap overflow-auto"
+          style={{
+            maxHeight: "70px",
+          }}
         >
           {institutionData["units"].map((unit, index) => {
             return (
-              <Chip
-                key={index}
-                label={unit}
-                size="small"
-                sx={{
-                  marginRight: "2px",
-                  marginTop: "2px",
-                  fontSize: "10px",
-                }}
-              />
+              <div className="w-full">
+                <Chip
+                  key={index}
+                  label={unit}
+                  size="small"
+                  sx={{
+                    marginRight: "2px",
+                    marginLeft: "28px",
+                    marginTop: "2px",
+                    fontSize: "10px",
+                  }}
+                />
+              </div>
             );
           })}
         </div>
@@ -100,12 +115,13 @@ export default function Education() {
     );
   });
 
+  // This is our tab
   return (
     <Box
       sx={{
         bgcolor: "background.paper",
         display: "flex",
-        height: "235px",
+        height: "240px",
         marginBottom: "50px",
         marginTop: "80px",
         marginX: "auto",
@@ -134,6 +150,7 @@ export default function Education() {
         <Tab label="YouTube" {...a11yProps(3)} />
         <Tab label="Petanns" {...a11yProps(4)} />
       </Tabs>
+      {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
       {tabPanels}
     </Box>
   );

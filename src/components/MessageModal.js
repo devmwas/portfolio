@@ -157,6 +157,7 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
       //   }
       // });
 
+      // We destructure our environment variables
       const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_API_KEY } =
         process.env;
 
@@ -354,14 +355,14 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
             />
           )}
         </div>
-        <div className="text-center ">
+        <div className="text-center">
           {checkErrorsOrUndefined() ? (
             // We disable Sending button if we have any errors or any undefined variables
             <Button variant="contained" disabled onClick={handleSendMessage}>
               {sendingMessageStatus}
             </Button>
           ) : (
-            //  We only enable he send button if we don't have undefineds or errors
+            //  We only enable he send button if we don't have any undefineds or errors
             <Button variant="contained" onClick={handleSendMessage}>
               {sendingMessageStatus}
             </Button>

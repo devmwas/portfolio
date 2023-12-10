@@ -18,11 +18,20 @@ const collegeUnits = [
   "Human Computer Interaction",
   "Network Practicum",
   "Network Design",
-  "Machine Laerning",
+  "Machine Learning",
   "Research Methods in Computing",
   "Project",
   "Cryptology",
   "System Analysis & Design",
+  "Web Development",
+  "Software Quality Assurance",
+  "Database Management Systems",
+  "Database Practicum",
+  "Open Source Trends",
+  "Knowledge Based Systems",
+  "Business Process Outsourcing",
+  "Design & Analysis of Algorithms",
+  "Business Intelligence",
 ];
 
 const highSchoolUnits = [
@@ -41,7 +50,7 @@ const primarySchoolUnits = [
   "English",
   "Kiswahili",
   "Science",
-  "Social Studies & Christian Religious Eduation (C.R.E)",
+  "Social Studies & Christian Religious Education (C.R.E)",
 ];
 
 const youtubeUnits = [
@@ -107,7 +116,7 @@ export const institutionsData = [
     mainData: [
       [SchoolIcon, "Petanns Driving School and Computer College"],
       [LibraryBooksIcon, "Computer Packages"],
-      [SportsScoreIcon, "A"],
+      //   [SportsScoreIcon, "A"],
       [TimelapseIcon, "2017"],
       [PlaceIcon, "Kiambu, Kenya."],
     ],
