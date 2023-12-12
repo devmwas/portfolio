@@ -9,7 +9,7 @@ function MenuIconComp({ setShowExpandedMenu }) {
         setShowExpandedMenu((show) => !show);
       }}
     >
-      <MenuIcon fontSize="large" color="primary" />
+      <MenuIcon fontSize="medium" color="primary" />
     </div>
   );
 }

@@ -197,7 +197,7 @@ function Intro({ setIsMessageOpen }) {
               </Button>
             </div>
 
-            {/* This will show on mobile phones and smaller devices  */}
+            {/* These lines will only show on mobile phones and smaller devices  */}
             <div className="mt-8 sm:hidden">
               <Button
                 variant="outlined"
@@ -210,7 +210,7 @@ function Intro({ setIsMessageOpen }) {
             </div>
           </div>
 
-          {/* These lines will be on small devices and larger */}
+          {/* These lines will only show on small devices and larger */}
           <div
             style={{
               position: "absolute",
