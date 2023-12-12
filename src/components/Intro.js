@@ -15,48 +15,201 @@ function Intro({ setIsMessageOpen }) {
       <div className="my-auto">
         <div className="flex " style={{ height: "70vh" }}>
           <div className="my-auto z-30">
+            {/* We'll include several divs containing the same items for responsiveness */}
+            {/* This will only show on large devices and above */}
             <div
-              className="text-xs sm:text-sm text-sky-400 font-mono ml-1.5"
-              style={{ lineHeight: "10px" }}
+              style={{
+                fontSize: "18px",
+                lineHeight: "27px",
+                letterSpacing: "3px",
+              }}
+              className="text-sky-400 hidden lg:block"
             >
               Hello. It's your
             </div>
+
+            {/* This will show on small and medium-sized devices  */}
             <div
-              style={{ lineHeight: "40px", letterSpacing: "-12px" }}
-              className="text-2xl sm:text-4xl md:text-6xl font-extrabold font-mono"
+              style={{
+                fontSize: "16px",
+                lineHeight: "24px",
+                letterSpacing: "2px",
+              }}
+              className="text-sky-400 hidden sm:block lg:hidden"
+            >
+              Hello. It's your
+            </div>
+
+            {/* This will show on mobile phones and smaller devices  */}
+            <div
+              style={{
+                fontSize: "14px",
+                lineHeight: "21px",
+                letterSpacing: "1px",
+              }}
+              className="text-sky-400 sm:hidden"
+            >
+              Hello. It's your
+            </div>
+
+            {/* This will show on large screens */}
+            <div
+              style={{
+                lineHeight: "44px",
+                fontSize: "40px",
+                letterSpacing: "-1px",
+              }}
+              className="font-extrabold hidden lg:block"
             >
               Frontend Web Developer
               <div style={{ display: "inline-block", color: "orange" }}>.</div>
             </div>
+            {/* This will show on small and medium-sized screens */}
             <div
               style={{
-                lineHeight: "28px",
-                letterSpacing: "2px",
-                wordSpacing: "2px",
+                lineHeight: "35.2px",
+                fontSize: "32px",
+                letterSpacing: ".64px",
               }}
-              className="text-md sm:text-lg ml-1.5 mt-8 bg-green-400"
+              className="font-extrabold hidden sm:block lg:hidden"
+            >
+              Frontend Web Developer
+              <div style={{ display: "inline-block", color: "orange" }}>.</div>
+            </div>
+            {/* This will show on mobile phones and smaller devices */}
+            <div
+              style={{
+                lineHeight: "26.4px",
+                fontSize: "24px",
+                letterSpacing: "-.48px",
+              }}
+              className="font-extrabold sm:hidden"
+            >
+              Frontend Web Developer
+              <div style={{ display: "inline-block", color: "orange" }}>.</div>
+            </div>
+
+            {/* This will on;y show on large screens and above */}
+            <div
+              style={{
+                fontSize: "18px",
+                lineHeight: "27px",
+                letterSpacing: "3px",
+                wordSpacing: "6px",
+              }}
+              className="mt-8 hidden lg:block"
             >
               I am a software engineer with a specialization in frontend web
               development. I build elegant and highly interactive user
               interfaces using state-of-the art libraries and frameworks. I
               prioritize responsivesness and accessibility in my designs.
             </div>
+
+            {/* This will show on small and medium-sized devices  */}
             <div
-              style={{ lineHeight: "16px" }}
-              className="text-md ml-1.5 bg-red-400 sm:text-lg text-sky-400 md:text-xl font-bold font-mono"
+              style={{
+                fontSize: "16px",
+                lineHeight: "24px",
+                letterSpacing: "2px",
+                wordSpacing: "4px",
+              }}
+              className="mt-8 hidden sm:block lg:hidden"
+            >
+              I am a software engineer with a specialization in frontend web
+              development. I build elegant and highly interactive user
+              interfaces using state-of-the art libraries and frameworks. I
+              prioritize responsivesness and accessibility in my designs.
+            </div>
+
+            {/* This will show on mobile phones and smaller devices  */}
+            <div
+              style={{
+                fontSize: "14px",
+                lineHeight: "21px",
+                letterSpacing: "1px",
+                wordSpacing: "2px",
+              }}
+              className="mt-8 sm:hidden"
+            >
+              I am a software engineer with a specialization in frontend web
+              development. I build elegant and highly interactive user
+              interfaces using state-of-the art libraries and frameworks. I
+              prioritize responsivesness and accessibility in my designs.
+            </div>
+
+            {/* This will only show on large devices and above */}
+            <div
+              style={{
+                fontSize: "18px",
+                lineHeight: "27px",
+                letterSpacing: "3px",
+              }}
+              className="text-sky-400 hidden lg:block mt-2"
             >
               - Devmwas
             </div>
-            <div className="ml-1.5 mt-8">
+
+            {/* This will show on small and medium-sized devices  */}
+            <div
+              style={{
+                fontSize: "16px",
+                lineHeight: "24px",
+                letterSpacing: "2px",
+              }}
+              className="text-sky-400 hidden sm:block lg:hidden"
+            >
+              - Devmwas
+            </div>
+
+            {/* This will show on mobile phones and smaller devices  */}
+            <div
+              style={{
+                fontSize: "14px",
+                lineHeight: "21px",
+                letterSpacing: "1px",
+              }}
+              className="text-sky-400 sm:hidden"
+            >
+              - Devmwas
+            </div>
+
+            {/* This will only show on large devices and above */}
+            <div className="mt-8 hidden lg:block">
               <Button
-                variant="contained"
+                variant="outlined"
                 color="primary"
+                size="large"
                 onClick={() => setIsMessageOpen(true)}
               >
-                Let's Talk
+                <div className="font-bold">Let's Talk</div>
+              </Button>
+            </div>
+
+            {/* This will show on small and medium-sized devices  */}
+            <div className="mt-8 hidden sm:block lg:hidden">
+              <Button
+                variant="outlined"
+                color="primary"
+                size="medium"
+                onClick={() => setIsMessageOpen(true)}
+              >
+                <div className="font-bold">Let's Talk</div>
+              </Button>
+            </div>
+
+            {/* This will show on mobile phones and smaller devices  */}
+            <div className="mt-8 sm:hidden">
+              <Button
+                variant="outlined"
+                color="primary"
+                size="small"
+                onClick={() => setIsMessageOpen(true)}
+              >
+                <div className="font-bold">Let's Talk</div>
               </Button>
             </div>
           </div>
+
           {/* These lines will be on small devices and larger */}
           <div
             style={{

@@ -33,6 +33,7 @@ function Project({ project, reverse }) {
         >
           {project.title}
         </div>
+
         {/* We'll create two decriptions and only render them depending on the screen size */}
         {/* This will render only on small screens and larger */}
         <div
@@ -52,7 +53,7 @@ function Project({ project, reverse }) {
         </div>
         {/* Tech stacks */}
         <div
-          className={`flex justify-center text-red-400 ${
+          className={`flex justify-center text-orange-600 ${
             reverse ? "lg:justify-start" : "lg:justify-end"
           } space-x-2 m-2 font-mono text-xs`}
         >
