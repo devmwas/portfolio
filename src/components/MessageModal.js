@@ -215,7 +215,6 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
               onMouseLeave={() => setIsCloseIconHovered(false)}
             >
               <CloseIcon
-                fontSize="medium"
                 sx={{ color: "red" }}
                 onClick={() => {
                   setIsMessageOpen(false);
@@ -230,7 +229,6 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
               onMouseLeave={() => setIsCloseIconHovered(false)}
             >
               <CloseIcon
-                fontSize="medium"
                 onClick={() => {
                   setIsMessageOpen(false);
                   setIsCloseIconHovered(false);

@@ -99,12 +99,17 @@ export default function Education() {
                 <Chip
                   key={index}
                   label={unit}
-                  size="small"
                   sx={{
+                    padding: "2px",
                     marginRight: "2px",
                     marginLeft: "28px",
                     marginTop: "2px",
                     fontSize: "10px",
+                    height: "auto",
+                    "& .MuiChip-label": {
+                      display: "block",
+                      whiteSpace: "normal",
+                    },
                   }}
                 />
               </div>
