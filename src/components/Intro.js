@@ -19,7 +19,7 @@ function Intro({ setIsMessageOpen }) {
             {/* This will only show on large devices and above */}
             <div
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
               }}
@@ -92,17 +92,18 @@ function Intro({ setIsMessageOpen }) {
             {/* This will on;y show on large screens and above */}
             <div
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
               }}
               className="mt-8 hidden lg:block"
             >
-              I am a software engineer with a specialization in frontend web
-              development. I build elegant and highly interactive user
-              interfaces using state-of-the art libraries and frameworks. I
-              prioritize responsivesness and accessibility in my designs.
+              Welcome to my digital realm, where I engineer captivating and
+              responsive frontend experiences. With a passion for quality, I
+              seamlessly blend creativity with cutting-edge technologies to
+              redefine the standards of frontend excellence. Explore my
+              portfolio, and let's elevate your online presence together.
             </div>
 
             {/* This will show on small and medium-sized devices  */}
@@ -115,10 +116,11 @@ function Intro({ setIsMessageOpen }) {
               }}
               className="mt-8 hidden sm:block lg:hidden"
             >
-              I am a software engineer with a specialization in frontend web
-              development. I build elegant and highly interactive user
-              interfaces using state-of-the art libraries and frameworks. I
-              prioritize responsivesness and accessibility in my designs.
+              Welcome to my digital realm, where I engineer captivating and
+              responsive frontend experiences. With a passion for quality, I
+              seamlessly blend creativity with cutting-edge technologies to
+              redefine the standards of frontend excellence. Explore my
+              portfolio, and let's elevate your online presence together.
             </div>
 
             {/* This will show on mobile phones and smaller devices  */}
@@ -131,16 +133,17 @@ function Intro({ setIsMessageOpen }) {
               }}
               className="mt-8 sm:hidden"
             >
-              I am a software engineer with a specialization in frontend web
-              development. I build elegant and highly interactive user
-              interfaces using state-of-the art libraries and frameworks. I
-              prioritize responsivesness and accessibility in my designs.
+              Welcome to my digital realm, where I engineer captivating and
+              responsive frontend experiences. With a passion for quality, I
+              seamlessly blend creativity with cutting-edge technologies to
+              redefine the standards of frontend excellence. Explore my
+              portfolio, and let's elevate your online presence together.
             </div>
 
             {/* This will only show on large devices and above */}
             <div
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
               }}
@@ -197,7 +200,7 @@ function Intro({ setIsMessageOpen }) {
               </Button>
             </div>
 
-            {/* These lines will only show on mobile phones and smaller devices  */}
+            {/* These BUTTON will only show on mobile phones and smaller devices  */}
             <div className="mt-8 sm:hidden">
               <Button
                 variant="outlined"
@@ -210,7 +213,7 @@ function Intro({ setIsMessageOpen }) {
             </div>
           </div>
 
-          {/* These lines will only show on small devices and larger */}
+          {/* These points will be only visible on larger devices and higher */}
           <div
             style={{
               position: "absolute",
@@ -225,11 +228,12 @@ function Intro({ setIsMessageOpen }) {
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
             }}
-            className="sm:flex flex-wrap hidden z-0"
+            className="lg:flex flex-wrap hidden z-0"
           >
             <Lines />
           </div>
-          {/* These lines will be visible on phones only */}
+
+          {/* These lines will be visible on medium-sized devices and lower */}
           <div
             style={{
               position: "absolute",
@@ -243,7 +247,7 @@ function Intro({ setIsMessageOpen }) {
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
             }}
-            className="flex flex-wrap sm:hidden"
+            className="flex flex-wrap lg:hidden"
           >
             <Lines />
           </div>

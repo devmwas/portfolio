@@ -23,7 +23,7 @@ function About() {
       className="p-2 sm:p:0"
       id="about"
     >
-      {/* These points will be on small devices and larger */}
+      {/* These points will be only visible on larger devices and higher */}
       <div
         style={{
           position: "absolute",
@@ -37,11 +37,12 @@ function About() {
           backgroundImage:
             "linear-gradient(to top right, darkBlue, black, darkBlue)",
         }}
-        className="sm:flex flex-wrap hidden"
+        className="lg:flex flex-wrap hidden"
       >
         <Lines angle={315} />
       </div>
-      {/* These lines will be visible on phones only */}
+
+      {/* These lines will be visible on medium-sized devices and lower */}
       <div
         style={{
           position: "absolute",
@@ -55,7 +56,7 @@ function About() {
           backgroundImage:
             "linear-gradient(to top right, darkBlue, black, darkBlue)",
         }}
-        className="flex flex-wrap sm:hidden"
+        className="flex flex-wrap lg:hidden"
       >
         <Lines angle={315} />
       </div>
@@ -67,7 +68,7 @@ function About() {
             <div
               className="text-right text-sky-400 font-semibold hidden lg:block"
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
@@ -106,18 +107,18 @@ function About() {
             <div
               className="text-right hidden lg:block"
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
               }}
             >
-              My name is Mwangi Morris Kinuthia alias Devmwas. I pursued Bsc
-              Software Engineering in campus, where I learned core concepts of
-              computer science. I got interested in web development at which
-              point I started learning about it. I now possess a great skillset
-              in building accessible and elegant user interfaces for various use
-              cases.
+              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+              Software Engineering graduate with a flair for web development. I
+              bring a solid foundation in computer science, channeling it into
+              crafting sleek, user-centric interfaces for various applications.
+              Let's collaborate and bring innovation to the forefront of web
+              development!
             </div>
 
             {/* This will only show on small and medium-sized devices */}
@@ -130,12 +131,12 @@ function About() {
                 wordSpacing: "4px",
               }}
             >
-              My name is Mwangi Morris Kinuthia alias Devmwas. I pursued Bsc
-              Software Engineering in campus, where I learned core concepts of
-              computer science. I got interested in web development at which
-              point I started learning about it. I now possess a great skillset
-              in building accessible and elegant user interfaces for various use
-              cases.
+              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+              Software Engineering graduate with a flair for web development. I
+              bring a solid foundation in computer science, channeling it into
+              crafting sleek, user-centric interfaces for various applications.
+              Let's collaborate and bring innovation to the forefront of web
+              development!
             </div>
 
             {/* This will only show on mobile phones and smaller devices */}
@@ -148,19 +149,19 @@ function About() {
                 wordSpacing: "2px",
               }}
             >
-              My name is Mwangi Morris Kinuthia alias Devmwas. I pursued Bsc
-              Software Engineering in campus, where I learned core concepts of
-              computer science. I got interested in web development at which
-              point I started learning about it. I now possess a great skillset
-              in building accessible and elegant user interfaces for various use
-              cases.
+              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+              Software Engineering graduate with a flair for web development. I
+              bring a solid foundation in computer science, channeling it into
+              crafting sleek, user-centric interfaces for various applications.
+              Let's collaborate and bring innovation to the forefront of web
+              development!
             </div>
 
             {/* This will only show on large devices and above */}
             <div
               className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden lg:block"
               style={{
-                fontSize: "18px",
+                fontSize: "16px",
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
