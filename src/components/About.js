@@ -1,6 +1,7 @@
 import React from "react";
 import TechStack from "./TechStack";
 import Lines from "./Lines";
+import AboutHeadingAnimation from "./animations/AboutHeadingAnimation";
 
 function About() {
   let points = [];
@@ -65,43 +66,58 @@ function About() {
           <div className="sm:w-3/4 z-30">
             {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
             {/* This will only show on large devices and above */}
-            <div
-              className="text-right text-sky-400 font-semibold hidden lg:block"
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-                wordSpacing: "6px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="16px"
+              lineHeight="27px"
+              letterSpacing="3px"
+              right={0}
             >
-              About Me
-            </div>
+              <div
+                className="text-right text-sky-400 font-semibold hidden lg:block"
+                style={{
+                  wordSpacing: "6px",
+                }}
+              >
+                About Me
+              </div>
+            </AboutHeadingAnimation>
 
             {/* This will only show on small and medium-sized devices */}
-            <div
-              className="text-right text-sky-400 mb-2 font-semibold hidden sm:block lg:hidden"
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-                wordSpacing: "4px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="16px"
+              lineHeight="24px"
+              letterSpacing="2px"
+              right={0}
             >
-              About Me
-            </div>
+              <div
+                className="text-right text-sky-400 mb-2 font-semibold hidden sm:block lg:hidden"
+                style={{
+                  wordSpacing: "4px",
+                }}
+              >
+                About Me
+              </div>
+            </AboutHeadingAnimation>
 
             {/* This will only show on mobile phones and smaller devices */}
-            <div
-              className="text-right text-sky-400 mb-2 font-semibold sm:hidden"
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-                wordSpacing: "2px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="14px"
+              lineHeight="21px"
+              letterSpacing="1px"
+              right={0}
             >
-              About Me
-            </div>
+              <div
+                className="text-right text-sky-400 mb-2 font-semibold sm:hidden"
+                style={{
+                  wordSpacing: "2px",
+                }}
+              >
+                About Me
+              </div>
+            </AboutHeadingAnimation>
 
             {/* This will only show on large devices and above */}
             <div
@@ -158,43 +174,60 @@ function About() {
             </div>
 
             {/* This will only show on large devices and above */}
-            <div
-              className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden lg:block"
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-                wordSpacing: "6px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="16px"
+              lineHeight="27px"
+              letterSpacing="3px"
+              right={0}
             >
-              Tech Stack
-            </div>
+              <div
+                className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden lg:block"
+                style={{
+                  wordSpacing: "6px",
+                }}
+              >
+                Tech Stack
+              </div>
+            </AboutHeadingAnimation>
 
             {/* This will only show on small and medium-sized devices */}
-            <div
-              className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden sm:block lg:hidden"
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-                wordSpacing: "4px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="16px"
+              lineHeight="24px"
+              letterSpacing="2px"
+              right={0}
             >
-              Tech Stack
-            </div>
+              <div
+                className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden sm:block lg:hidden"
+                style={{
+                  wordSpacing: "4px",
+                }}
+              >
+                Tech Stack
+              </div>
+            </AboutHeadingAnimation>
 
             {/* This will only show on mobile phones and smaller devices */}
-            <div
-              className="text-right text-sky-400 mt-8 mb-2 font-semibold sm:hidden"
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-                wordSpacing: "2px",
-              }}
+            {/* We include Framer Motion animations to make it fancy */}
+            <AboutHeadingAnimation
+              fontSize="14px"
+              lineHeight="21px"
+              letterSpacing="1px"
+              right={0}
             >
-              Tech Stack
-            </div>
+              <div
+                className="text-right text-sky-400 mt-8 mb-2 font-semibold sm:hidden"
+                style={{
+                  wordSpacing: "2px",
+                }}
+              >
+                Tech Stack
+              </div>
+            </AboutHeadingAnimation>
+
+            {/* TechStack Images */}
             <TechStack />
           </div>
         </div>

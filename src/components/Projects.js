@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "../data/projects";
 import Project from "./Project";
+import ProjectsHeadingAnimation from "./animations/ProjectsHeadingAnimation";
 
 function Projects() {
   let reverse = null;
@@ -21,45 +22,41 @@ function Projects() {
       >
         Projects
       </div>
+
       {/* We will include the same element multiple times and only show them at the intended breakpoints  */}
       {/* This will only show on large devices and above */}
-      <div
-        className="text-sky-400 pl-24 font-semibold hidden lg:block"
-        style={{
-          fontSize: "18px",
-          lineHeight: "27px",
-          letterSpacing: "3px",
-          wordSpacing: "6px",
-        }}
+      <ProjectsHeadingAnimation
+        fontSize="18px"
+        lineHeight="27px"
+        letterSpacing="3px"
+        wordSpacing="6px"
       >
-        My Projects
-      </div>
+        <div className="text-sky-400 pl-24 font-semibold hidden lg:block">
+          My Projects
+        </div>
+      </ProjectsHeadingAnimation>
 
       {/* This will only show on small and medium-sized devices */}
-      <div
-        className="text-sky-400 font-semibold hidden sm:block lg:hidden"
-        style={{
-          fontSize: "16px",
-          lineHeight: "24px",
-          letterSpacing: "2px",
-          wordSpacing: "4px",
-        }}
+      <ProjectsHeadingAnimation
+        fontSize="16px"
+        lineHeight="24px"
+        letterSpacing="2px"
+        wordSpacing="4px"
       >
-        My Projects
-      </div>
+        <div className="text-sky-400 font-semibold hidden sm:block lg:hidden">
+          My Projects
+        </div>
+      </ProjectsHeadingAnimation>
 
       {/* This will only show on mobile phones and smaller devices */}
-      <div
-        className="text-sky-400 font-semibold sm:hidden"
-        style={{
-          fontSize: "14px",
-          lineHeight: "21px",
-          letterSpacing: "1px",
-          wordSpacing: "2px",
-        }}
+      <ProjectsHeadingAnimation
+        fontSize="14px"
+        lineHeight="21px"
+        letterSpacing="1px"
+        wordSpacing="2px"
       >
-        My Projects
-      </div>
+        <div className="text-sky-400 font-semibold sm:hidden">My Projects</div>
+      </ProjectsHeadingAnimation>
 
       {projects.map((project, index) => {
         index % 2 === 0 ? (reverse = false) : (reverse = true);

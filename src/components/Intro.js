@@ -1,5 +1,7 @@
 import { Button } from "@mui/material";
 import Lines from "./Lines";
+import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
+import IntroButtonAnimation from "./animations/IntroButtonAnimation";
 
 function Intro({ setIsMessageOpen }) {
   return (
@@ -53,43 +55,58 @@ function Intro({ setIsMessageOpen }) {
             </div>
 
             {/* This will show on large screens */}
-            <div
-              style={{
-                lineHeight: "44px",
-                fontSize: "40px",
-                letterSpacing: "-1px",
-              }}
-              className="font-extrabold hidden lg:block"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="40px"
+              letterSpacing="-1px"
+              lineHeight="44px"
+              left={0}
+              startingLeft={"-200px"}
             >
-              Frontend Web Developer
-              <div style={{ display: "inline-block", color: "orange" }}>.</div>
-            </div>
+              <div className="font-extrabold hidden lg:block">
+                Frontend Web Developer
+                <div style={{ display: "inline-block", color: "orange" }}>
+                  .
+                </div>
+              </div>
+            </IntroHeadingAnimation>
+
             {/* This will show on small and medium-sized screens */}
-            <div
-              style={{
-                lineHeight: "35.2px",
-                fontSize: "32px",
-                letterSpacing: ".64px",
-              }}
-              className="font-extrabold hidden sm:block lg:hidden"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="32px"
+              letterSpacing=".64px"
+              lineHeight="35.2px"
+              left={0}
+              startingLeft={"-200px"}
             >
-              Frontend Web Developer
-              <div style={{ display: "inline-block", color: "orange" }}>.</div>
-            </div>
+              <div className="font-extrabold hidden sm:block lg:hidden">
+                Frontend Web Developer
+                <div style={{ display: "inline-block", color: "orange" }}>
+                  .
+                </div>
+              </div>
+            </IntroHeadingAnimation>
+
             {/* This will show on mobile phones and smaller devices */}
-            <div
-              style={{
-                lineHeight: "26.4px",
-                fontSize: "24px",
-                letterSpacing: "-.48px",
-              }}
-              className="font-extrabold sm:hidden"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="24px"
+              letterSpacing="-.48px"
+              lineHeight="26.4px"
+              left={0}
+              startingLeft={"-200px"}
             >
-              Frontend Web Developer
-              <div style={{ display: "inline-block", color: "orange" }}>.</div>
-            </div>
+              <div className="font-extrabold sm:hidden">
+                Frontend Web Developer
+                <div style={{ display: "inline-block", color: "orange" }}>
+                  .
+                </div>
+              </div>
+            </IntroHeadingAnimation>
 
             {/* This will on;y show on large screens and above */}
+
             <div
               style={{
                 fontSize: "16px",
@@ -141,75 +158,86 @@ function Intro({ setIsMessageOpen }) {
             </div>
 
             {/* This will only show on large devices and above */}
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-              }}
-              className="text-sky-400 hidden lg:block mt-2"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="16px"
+              lineHeight="27px"
+              letterSpacing="3px"
+              left={0}
+              startingLeft={"-100px"}
             >
-              - Devmwas
-            </div>
+              <div className="text-sky-400 hidden lg:block mt-2">- Devmwas</div>
+            </IntroHeadingAnimation>
 
             {/* This will show on small and medium-sized devices  */}
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-              }}
-              className="text-sky-400 hidden sm:block lg:hidden"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="16px"
+              lineHeight="24px"
+              letterSpacing="2px"
+              left={0}
+              startingLeft={"-100px"}
             >
-              - Devmwas
-            </div>
+              <div className="text-sky-400 hidden sm:block lg:hidden">
+                - Devmwas
+              </div>
+            </IntroHeadingAnimation>
 
             {/* This will show on mobile phones and smaller devices  */}
-            <div
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-              }}
-              className="text-sky-400 sm:hidden"
+            {/* We include Framer Motion animations to make it fancy */}
+            <IntroHeadingAnimation
+              fontSize="14px"
+              lineHeight="21px"
+              letterSpacing="1px"
+              left={0}
+              startingLeft={"-100px"}
             >
-              - Devmwas
-            </div>
+              <div className="text-sky-400 sm:hidden">- Devmwas</div>
+            </IntroHeadingAnimation>
 
             {/* This will only show on large devices and above */}
             <div className="mt-8 hidden lg:block">
-              <Button
-                variant="outlined"
-                color="primary"
-                size="large"
-                onClick={() => setIsMessageOpen(true)}
-              >
-                <div className="font-bold">Let's Talk</div>
-              </Button>
+              {/* We include Framer Motion animations to make it fancy */}
+              <IntroButtonAnimation>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  onClick={() => setIsMessageOpen(true)}
+                >
+                  <div className="font-bold">Let's Talk</div>
+                </Button>
+              </IntroButtonAnimation>
             </div>
 
             {/* This will show on small and medium-sized devices  */}
             <div className="mt-8 hidden sm:block lg:hidden">
-              <Button
-                variant="outlined"
-                color="primary"
-                size="medium"
-                onClick={() => setIsMessageOpen(true)}
-              >
-                <div className="font-bold">Let's Talk</div>
-              </Button>
+              {/* We include Framer Motion animations to make it fancy */}
+              <IntroButtonAnimation>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="medium"
+                  onClick={() => setIsMessageOpen(true)}
+                >
+                  <div className="font-bold">Let's Talk</div>
+                </Button>
+              </IntroButtonAnimation>
             </div>
 
             {/* These BUTTON will only show on mobile phones and smaller devices  */}
             <div className="mt-8 sm:hidden">
-              <Button
-                variant="outlined"
-                color="primary"
-                size="small"
-                onClick={() => setIsMessageOpen(true)}
-              >
-                <div className="font-bold">Let's Talk</div>
-              </Button>
+              {/* We include Framer Motion animations to make it fancy */}
+              <IntroButtonAnimation>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="small"
+                  onClick={() => setIsMessageOpen(true)}
+                >
+                  <div className="font-bold">Let's Talk</div>
+                </Button>
+              </IntroButtonAnimation>
             </div>
           </div>
 
