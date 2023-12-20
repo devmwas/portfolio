@@ -1,14 +1,11 @@
-import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
-function IntroHeadingAnimation({
+function ProjectTitleAnimation({
   children,
-  fontSize,
   letterSpacing,
   lineHeight,
-  left,
-  startingLeft,
-  marginTop,
+  fontSize,
 }) {
   // Creating a ref for our element
   const ourRef = useRef(null);
@@ -17,26 +14,26 @@ function IntroHeadingAnimation({
   const isInView = useInView(ourRef, { once: false });
 
   // This variable will help us control the animation programatically
-  const headingControls = useAnimation();
+  const projectTitleControls = useAnimation();
 
   // We execute this effect whenever our element is in view
   useEffect(() => {
     if (isInView) {
-      headingControls.start("normalSpace");
+      projectTitleControls.start("normalSpace");
     }
   }, [isInView]);
 
   // Our Variants
-  const headingVariants = {
+  const projectTitleVariants = {
     spacedOut: {
       letterSpacing: "24px",
-      width: "300vw",
-      left: startingLeft,
+      width: "300%",
+      marginLeft: "-100%",
     },
     normalSpace: {
-      left,
       letterSpacing,
-      width: "fit-content",
+      width: "100%",
+      marginLeft: "0%",
     },
   };
 
@@ -44,20 +41,20 @@ function IntroHeadingAnimation({
     <motion.div
       ref={ourRef}
       style={{
-        marginTop,
-        fontSize,
         lineHeight,
+        fontSize,
         position: "absolute",
-        overflow: "hidden",
+        top: 0,
+        zIndex: 30,
       }}
-      variants={headingVariants}
       initial="spacedOut"
-      animate={headingControls}
-      transition={{ duration: 1 }}
+      variants={projectTitleVariants}
+      animate={projectTitleControls}
+      transition={{ duration: 3 }}
     >
       {children}
     </motion.div>
   );
 }
 
-export default IntroHeadingAnimation;
+export default ProjectTitleAnimation;

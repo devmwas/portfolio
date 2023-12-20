@@ -1,15 +1,18 @@
 import React from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ProjectTitleAnimation from "./animations/ProjectTitleAnimation";
 
 function Project({ project, reverse }) {
   // We want to alter the order of project image and project details
   let reverseClass = reverse ? "flex-row-reverse" : "";
+
   return (
     <div
-      style={{ borderRadius: "2%", overflow: "hidden" }}
+      style={{ borderRadius: "2%", position: "relative" }}
       className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto bg-white-600 lg:justify-center`}
     >
+      {/* Project Image */}
       <div
         style={{ maxWidth: "500px" }}
         className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
@@ -22,35 +25,92 @@ function Project({ project, reverse }) {
           />
         </a>
       </div>
+
       <div
-        className="flex flex-col justify-center bg-slate-300 mx-auto lg:w-1/2"
+        className="flex flex-col relative justify-center bg-slate-300 mx-auto lg:w-1/2"
         style={{ maxWidth: "500px" }}
       >
-        <div
-          className={`flex justify-center ${
-            reverse ? "lg:justify-start" : "lg:justify-end"
-          } m-2 mt-4 font-bold font-mono text:sm sm:text-lg`}
+        {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
+        {/* This will only show on large devices and above */}
+        {/* We include Framer Motion animations to make it fancy */}
+        {/* Project Title */}
+        <ProjectTitleAnimation
+          letterSpacing="0px"
+          fontSize="16px"
+          lineHeight="27px"
         >
-          {project.title}
-        </div>
+          <div
+            className={`hidden lg:flex m-2 justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
+          >
+            {project.title}
+          </div>
+        </ProjectTitleAnimation>
+
+        {/* This will only show on small and medium-sized devices */}
+        {/* We include Framer Motion animations to make it fancy */}
+        {/* This will show on small devices and medium-sized devices */}
+        <ProjectTitleAnimation
+          letterSpacing="0px"
+          fontSize="16px"
+          lineHeight="24px"
+        >
+          <div
+            className={`hidden sm:flex m-2 lg:hidden justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
+          >
+            {project.title}
+          </div>
+        </ProjectTitleAnimation>
+
+        {/* This will only show on mobile phones and smaller devices */}
+        {/* We include Framer Motion animations to make it fancy */}
+        {/* This will only show on mobile phones */}
+        <ProjectTitleAnimation
+          letterSpacing="0px"
+          fontSize="14px"
+          lineHeight="21px"
+        >
+          <div
+            className={`flex sm:hidden m-2 justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
+          >
+            {project.title}
+          </div>
+        </ProjectTitleAnimation>
 
         {/* We'll create two decriptions and only render them depending on the screen size */}
-        {/* This will render only on small screens and larger */}
+        {/* This will render only on larger screens and above */}
         <div
           className={`text-center ${
             reverse ? "lg:text-start" : "lg:-left-1/3 lg:text-end"
-          } bg-slate-300 mx-auto px-2 font-mono text-xs md:text-sm hidden lg:block`}
-          style={{ position: "relative", width: "133%", borderRadius: "2%" }}
+          } bg-slate-300 mx-auto p-2 font-mono text-xs md:text-sm hidden lg:block`}
+          style={{
+            position: "relative",
+            width: "133%",
+            borderRadius: "2%",
+            top: "35px",
+          }}
         >
           {project.description}
         </div>
-        {/* This will only render on mobile phones */}
+
+        {/* This will render on medium devices and lower */}
         <div
           className="text-center md:text-end bg-slate-300 font-mono mx-auto px-2 text-xs lg:hidden"
-          style={{ position: "relative", width: "100%", maxWidth: "400px" }}
+          style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: "400px",
+            top: "32px",
+          }}
         >
           {project.description}
         </div>
+
         {/* Tech stacks */}
         <div
           className={`flex justify-center text-orange-600 ${

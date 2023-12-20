@@ -16,7 +16,7 @@ function Links() {
               activeLink === "#home" ? "text-orange-400 font-bold" : ""
             }`}
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: "27px",
               letterSpacing: "3px",
             }}
@@ -31,7 +31,7 @@ function Links() {
               activeLink === "#about" ? "text-orange-400 font-bold" : ""
             }`}
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: "27px",
               letterSpacing: "3px",
             }}
@@ -46,7 +46,7 @@ function Links() {
               activeLink === "#projects" ? "text-orange-400 font-bold" : ""
             }`}
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: "27px",
               letterSpacing: "3px",
             }}
@@ -61,7 +61,7 @@ function Links() {
               activeLink === "#education" ? "text-orange-400 font-bold" : ""
             }`}
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: "27px",
               letterSpacing: "3px",
             }}

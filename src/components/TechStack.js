@@ -2,7 +2,10 @@ import React from "react";
 
 function TechStack() {
   return (
-    <div className="flex flex-wrap justify-end space-x-2">
+    <div
+      style={{ marginTop: "54px" }}
+      className="flex flex-wrap justify-end space-x-2"
+    >
       <div className="flex space-x-2 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10">
         <img alt="JavaScript Logo" src="js_logo.png" />
       </div>

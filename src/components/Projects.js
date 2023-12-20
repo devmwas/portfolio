@@ -30,6 +30,7 @@ function Projects() {
         lineHeight="27px"
         letterSpacing="3px"
         wordSpacing="6px"
+        left={10}
       >
         <div className="text-sky-400 pl-24 font-semibold hidden lg:block">
           My Projects
@@ -42,6 +43,7 @@ function Projects() {
         lineHeight="24px"
         letterSpacing="2px"
         wordSpacing="4px"
+        left={10}
       >
         <div className="text-sky-400 font-semibold hidden sm:block lg:hidden">
           My Projects
@@ -54,14 +56,17 @@ function Projects() {
         lineHeight="21px"
         letterSpacing="1px"
         wordSpacing="2px"
+        left={10}
       >
         <div className="text-sky-400 font-semibold sm:hidden">My Projects</div>
       </ProjectsHeadingAnimation>
 
-      {projects.map((project, index) => {
-        index % 2 === 0 ? (reverse = false) : (reverse = true);
-        return <Project project={project} key={index} reverse={reverse} />;
-      })}
+      <div style={{ marginTop: "54px" }}>
+        {projects.map((project, index) => {
+          index % 2 === 0 ? (reverse = false) : (reverse = true);
+          return <Project project={project} key={index} reverse={reverse} />;
+        })}
+      </div>
     </div>
   );
 }

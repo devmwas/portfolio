@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { Chip } from "@mui/material";
 import { institutionsData } from "../data/education";
 import { useState } from "react";
+import DelayAnimation from "./animations/DelayAnimation";
 
 // Tab panels for our tab
 function TabPanel(props) {
@@ -120,43 +121,45 @@ export default function Education() {
     );
   });
 
-  // This is our tab
+  // This is our tab (our Education Component)
   return (
-    <Box
-      sx={{
-        bgcolor: "background.paper",
-        display: "flex",
-        height: "240px",
-        marginBottom: "50px",
-        marginTop: "80px",
-        marginX: "auto",
-        position: "relative",
-      }}
-    >
-      <div className="absolute -top-7 h-7" id="education">
-        Education
-      </div>
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
+    <DelayAnimation delay={0}>
+      <Box
         sx={{
-          borderRight: 1,
-          borderColor: "divider",
-          minWidth: "100px",
-          bgcolor: "darkGreen",
+          bgcolor: "background.paper",
+          display: "flex",
+          height: "240px",
+          marginBottom: "50px",
+          marginTop: "80px",
+          marginX: "auto",
+          position: "relative",
         }}
       >
-        <Tab label="University" {...a11yProps(0)} />
-        <Tab label="Secondary" {...a11yProps(1)} />
-        <Tab label="Primary" {...a11yProps(2)} />
-        <Tab label="YouTube" {...a11yProps(3)} />
-        <Tab label="Petanns" {...a11yProps(4)} />
-      </Tabs>
-      {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
-      {tabPanels}
-    </Box>
+        <div className="absolute -top-7 h-7" id="education">
+          Education
+        </div>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            minWidth: "100px",
+            bgcolor: "darkGreen",
+          }}
+        >
+          <Tab label="University" {...a11yProps(0)} />
+          <Tab label="Secondary" {...a11yProps(1)} />
+          <Tab label="Primary" {...a11yProps(2)} />
+          <Tab label="YouTube" {...a11yProps(3)} />
+          <Tab label="Petanns" {...a11yProps(4)} />
+        </Tabs>
+        {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
+        {tabPanels}
+      </Box>
+    </DelayAnimation>
   );
 }

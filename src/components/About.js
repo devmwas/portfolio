@@ -18,10 +18,11 @@ function About() {
     <div
       style={{
         height: "80vh",
+        position: "relative",
         backgroundImage:
           "linear-gradient(to bottom right, black, darkBlue, black)",
       }}
-      className="p-2 sm:p:0"
+      className="p-2"
       id="about"
     >
       {/* These points will be only visible on larger devices and higher */}
@@ -32,8 +33,7 @@ function About() {
           height: "70vh",
           overflow: "hidden",
           borderRadius: "2%",
-          // left: "16.67vw",
-          left: "18vw",
+          left: "1vw",
           opacity: 0.6,
           backgroundImage:
             "linear-gradient(to top right, darkBlue, black, darkBlue)",
@@ -49,7 +49,6 @@ function About() {
           position: "absolute",
           left: 0,
           width: "48vw",
-          margin: "2vw",
           height: "70vh",
           overflow: "hidden",
           borderRadius: "2%",
@@ -61,6 +60,7 @@ function About() {
       >
         <Lines angle={315} />
       </div>
+
       <div className="flex flex-col justify-center" style={{ height: "70vh" }}>
         <div className="flex justify-end">
           <div className="sm:w-3/4 z-30">
@@ -71,11 +71,12 @@ function About() {
               fontSize="16px"
               lineHeight="27px"
               letterSpacing="3px"
-              right={0}
+              right={10}
             >
               <div
                 className="text-right text-sky-400 font-semibold hidden lg:block"
                 style={{
+                  top: "0px",
                   wordSpacing: "6px",
                 }}
               >
@@ -89,7 +90,7 @@ function About() {
               fontSize="16px"
               lineHeight="24px"
               letterSpacing="2px"
-              right={0}
+              right={10}
             >
               <div
                 className="text-right text-sky-400 mb-2 font-semibold hidden sm:block lg:hidden"
@@ -107,7 +108,7 @@ function About() {
               fontSize="14px"
               lineHeight="21px"
               letterSpacing="1px"
-              right={0}
+              right={10}
             >
               <div
                 className="text-right text-sky-400 mb-2 font-semibold sm:hidden"
@@ -127,6 +128,7 @@ function About() {
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
+                marginTop: "27px",
               }}
             >
               Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
@@ -145,6 +147,7 @@ function About() {
                 lineHeight: "24px",
                 letterSpacing: "2px",
                 wordSpacing: "4px",
+                marginTop: "24px",
               }}
             >
               Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
@@ -163,6 +166,7 @@ function About() {
                 lineHeight: "21px",
                 letterSpacing: "1px",
                 wordSpacing: "2px",
+                marginTop: "21px",
               }}
             >
               Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
@@ -179,10 +183,10 @@ function About() {
               fontSize="16px"
               lineHeight="27px"
               letterSpacing="3px"
-              right={0}
+              right={10}
             >
               <div
-                className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden lg:block"
+                className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden lg:block"
                 style={{
                   wordSpacing: "6px",
                 }}
@@ -197,10 +201,10 @@ function About() {
               fontSize="16px"
               lineHeight="24px"
               letterSpacing="2px"
-              right={0}
+              right={10}
             >
               <div
-                className="text-right text-sky-400 mt-8 mb-2 font-semibold hidden sm:block lg:hidden"
+                className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden sm:block lg:hidden"
                 style={{
                   wordSpacing: "4px",
                 }}
@@ -215,10 +219,10 @@ function About() {
               fontSize="14px"
               lineHeight="21px"
               letterSpacing="1px"
-              right={0}
+              right={10}
             >
               <div
-                className="text-right text-sky-400 mt-8 mb-2 font-semibold sm:hidden"
+                className="text-right text-sky-400 mt-6 mb-2 font-semibold sm:hidden"
                 style={{
                   wordSpacing: "2px",
                 }}

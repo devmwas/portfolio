@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Hidden } from "@mui/material";
 import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
@@ -9,13 +9,14 @@ function Intro({ setIsMessageOpen }) {
       className="p-2 flex flex-col"
       style={{
         height: "100vh",
+        maxWidth: "100%",
         backgroundImage:
           "linear-gradient(to bottom right, darkBlue, black, darkBlue)",
       }}
       id="home"
     >
       <div className="my-auto">
-        <div className="flex " style={{ height: "70vh" }}>
+        <div className="flex relative" style={{ height: "70vh" }}>
           <div className="my-auto z-30">
             {/* We'll include several divs containing the same items for responsiveness */}
             {/* This will only show on large devices and above */}
@@ -61,7 +62,7 @@ function Intro({ setIsMessageOpen }) {
               letterSpacing="-1px"
               lineHeight="44px"
               left={0}
-              startingLeft={"-200px"}
+              startingLeft={"-16.5%"}
             >
               <div className="font-extrabold hidden lg:block">
                 Frontend Web Developer
@@ -78,7 +79,7 @@ function Intro({ setIsMessageOpen }) {
               letterSpacing=".64px"
               lineHeight="35.2px"
               left={0}
-              startingLeft={"-200px"}
+              startingLeft={"-16.5%"}
             >
               <div className="font-extrabold hidden sm:block lg:hidden">
                 Frontend Web Developer
@@ -95,7 +96,7 @@ function Intro({ setIsMessageOpen }) {
               letterSpacing="-.48px"
               lineHeight="26.4px"
               left={0}
-              startingLeft={"-200px"}
+              startingLeft={"-16.5%"}
             >
               <div className="font-extrabold sm:hidden">
                 Frontend Web Developer
@@ -105,7 +106,7 @@ function Intro({ setIsMessageOpen }) {
               </div>
             </IntroHeadingAnimation>
 
-            {/* This will on;y show on large screens and above */}
+            {/* This will only show on large screens and above */}
 
             <div
               style={{
@@ -113,8 +114,9 @@ function Intro({ setIsMessageOpen }) {
                 lineHeight: "27px",
                 letterSpacing: "3px",
                 wordSpacing: "6px",
+                marginTop: "56px",
               }}
-              className="mt-8 hidden lg:block"
+              className="hidden lg:block"
             >
               Welcome to my digital realm, where I engineer captivating and
               responsive frontend experiences. With a passion for quality, I
@@ -130,8 +132,9 @@ function Intro({ setIsMessageOpen }) {
                 lineHeight: "24px",
                 letterSpacing: "2px",
                 wordSpacing: "4px",
+                marginTop: "56px",
               }}
-              className="mt-8 hidden sm:block lg:hidden"
+              className="hidden sm:block lg:hidden"
             >
               Welcome to my digital realm, where I engineer captivating and
               responsive frontend experiences. With a passion for quality, I
@@ -147,8 +150,9 @@ function Intro({ setIsMessageOpen }) {
                 lineHeight: "21px",
                 letterSpacing: "1px",
                 wordSpacing: "2px",
+                marginTop: "56px",
               }}
-              className="mt-8 sm:hidden"
+              className="sm:hidden"
             >
               Welcome to my digital realm, where I engineer captivating and
               responsive frontend experiences. With a passion for quality, I
@@ -196,7 +200,10 @@ function Intro({ setIsMessageOpen }) {
             </IntroHeadingAnimation>
 
             {/* This will only show on large devices and above */}
-            <div className="mt-8 hidden lg:block">
+            <div
+              style={{ marginTop: "56px" }}
+              className="mt-20 hidden lg:block"
+            >
               {/* We include Framer Motion animations to make it fancy */}
               <IntroButtonAnimation>
                 <Button
@@ -211,7 +218,10 @@ function Intro({ setIsMessageOpen }) {
             </div>
 
             {/* This will show on small and medium-sized devices  */}
-            <div className="mt-8 hidden sm:block lg:hidden">
+            <div
+              style={{ marginTop: "56px" }}
+              className="mt-20 hidden sm:block lg:hidden"
+            >
               {/* We include Framer Motion animations to make it fancy */}
               <IntroButtonAnimation>
                 <Button
@@ -226,7 +236,7 @@ function Intro({ setIsMessageOpen }) {
             </div>
 
             {/* These BUTTON will only show on mobile phones and smaller devices  */}
-            <div className="mt-8 sm:hidden">
+            <div style={{ marginTop: "56px" }} className="mt-12 sm:hidden">
               {/* We include Framer Motion animations to make it fancy */}
               <IntroButtonAnimation>
                 <Button
@@ -250,8 +260,7 @@ function Intro({ setIsMessageOpen }) {
               height: "70vh",
               overflow: "hidden",
               borderRadius: "2%",
-              // right: "16.67vw",
-              right: "18vw",
+              right: "1vw",
               opacity: 0.6,
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
@@ -265,9 +274,8 @@ function Intro({ setIsMessageOpen }) {
           <div
             style={{
               position: "absolute",
-              right: 0,
+              right: "1vw",
               width: "48vw",
-              margin: "2vw",
               height: "70vh",
               overflow: "hidden",
               borderRadius: "2%",

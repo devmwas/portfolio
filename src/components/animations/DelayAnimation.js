@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-function IntroButtonAnimation({ children }) {
+function DelayAnimation({ children, delay }) {
   // We create refs to grab our animation element
   const ourRef = useRef(null);
 
   // We'll use this to control our animation programatically
-  const introButtonControls = useAnimation();
+  const delayAnimationControls = useAnimation();
 
   // This will tell us whether our element is in view or not
   const isInView = useInView(ourRef, { once: true });
@@ -14,19 +14,19 @@ function IntroButtonAnimation({ children }) {
   // We execute this effect whenever our element is in view
   useEffect(() => {
     if (isInView) {
-      introButtonControls.start("show");
+      delayAnimationControls.start("show");
     }
   }, [isInView]);
 
   // Our Variants
-  const introButtonVariants = {
+  const delayAnimationVariants = {
     hidden: {
       opacity: 0,
-      transform: "scaleY(0)",
+      transform: "scale(0)",
     },
     show: {
       opacity: 1,
-      transform: "scaleY(1)",
+      transform: "scale(1)",
     },
   };
 
@@ -34,13 +34,13 @@ function IntroButtonAnimation({ children }) {
     <motion.div
       ref={ourRef}
       initial="hidden"
-      animate={introButtonControls}
-      variants={introButtonVariants}
-      transition={{ duration: 0.5, delay: 1.5 }}
+      animate={delayAnimationControls}
+      variants={delayAnimationVariants}
+      transition={{ delay: delay, duration: 0.7 }}
     >
       {children}
     </motion.div>
   );
 }
 
-export default IntroButtonAnimation;
+export default DelayAnimation;

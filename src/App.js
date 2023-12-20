@@ -39,7 +39,7 @@ function App() {
   }, [prevScrollTop]);
 
   return (
-    <div className="text-white bg-black w-full">
+    <div style={{ overflow: "hidden" }} className="text-white bg-black w-full">
       <Navbar
         setShowExpandedMenu={setShowExpandedMenu}
         showNavbar={showNavbar}

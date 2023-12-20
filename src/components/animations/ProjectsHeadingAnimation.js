@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 function ProjectsHeadingAnimation({
   children,
@@ -8,7 +7,25 @@ function ProjectsHeadingAnimation({
   lineHeight,
   letterSpacing,
   wordSpacing,
+  left,
 }) {
+  // Creating a ref for our element
+  const ourRef = useRef(null);
+
+  // This will help us know whenever our Headings are in view for the first time
+  const isInView = useInView(ourRef, { once: false });
+
+  // This variable will help us control the animation programatically
+  const projectHeadingControls = useAnimation();
+
+  // We execute this effect whenever our element is in view
+  useEffect(() => {
+    if (isInView) {
+      projectHeadingControls.start("normalSpace");
+    }
+  }, [isInView]);
+
+  // Our Variants
   const headingVariants = {
     spacedOut: {
       fontSize,
@@ -22,19 +39,20 @@ function ProjectsHeadingAnimation({
       lineHeight,
       letterSpacing,
       wordSpacing,
-      left: "0px",
+      left: left,
     },
   };
 
   return (
     <motion.div
+      ref={ourRef}
       style={{
-        position: "relative",
+        position: "absolute",
         overflow: "hidden",
       }}
       variants={headingVariants}
       initial="spacedOut"
-      animate="normalSpace"
+      animate={projectHeadingControls}
       transition={{ duration: 1 }}
     >
       {children}
