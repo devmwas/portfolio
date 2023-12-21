@@ -10,12 +10,12 @@ function Project({ project, reverse }) {
 
   return (
     <div
-      style={{ position: "relative" }}
+      style={{ position: "relative", borderRadius: "2%", overflow: "hidden" }}
       className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto lg:justify-center`}
     >
       <div
         style={{ maxWidth: "500px" }}
-        className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
+        className="w-full flex justify-center mx-auto  opacity-70 hover:opacity-90 overflow-hidden"
       >
         {/* Project Image */}
         <a href={`${project.liveLink}`} target="blank">
@@ -29,8 +29,8 @@ function Project({ project, reverse }) {
 
       {/* This will contain everything else about the project apart from the image */}
       <div
-        className="flex flex-col relative justify-center bg-green-300 mx-auto lg:w-1/2"
-        style={{ maxWidth: "500px", borderRadius: "2%" }}
+        className="flex flex-col relative justify-center bg-slate-300 mx-auto lg:w-1/2"
+        style={{ maxWidth: "500px" }}
       >
         {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
         {/* This will only show on large devices and above */}
@@ -96,7 +96,7 @@ function Project({ project, reverse }) {
             <div
               className={`text-center ${
                 reverse ? "lg:text-start" : "lg:-left-1/3 lg:text-end"
-              } mx-auto p-2 bg-green-400 font-mono text-xs md:text-sm hidden lg:block`}
+              } mx-auto p-2 font-mono text-xs md:text-sm hidden lg:block`}
               style={{
                 position: "relative",
                 borderRadius: "2%",
@@ -112,7 +112,7 @@ function Project({ project, reverse }) {
           {/* We pass the offset which is literally the marginTop of our Title element */}
           <BigTextAnimation offSet={"32px"} direction={"right"}>
             <div
-              className="text-center bg-slate-300 font-mono mx-auto px-2 text-xs lg:hidden"
+              className="text-center font-mono mx-auto px-2 text-xs lg:hidden"
               style={{
                 position: "relative",
                 width: "100%",
