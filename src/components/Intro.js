@@ -2,6 +2,7 @@ import { Button, Hidden } from "@mui/material";
 import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
+import BigTextAnimation from "./animations/BigTextAnimation";
 
 function Intro({ setIsMessageOpen }) {
   return (
@@ -17,7 +18,7 @@ function Intro({ setIsMessageOpen }) {
     >
       <div className="my-auto">
         <div className="flex relative" style={{ height: "70vh" }}>
-          <div className="my-auto z-30">
+          <div className="my-auto sm:w-5/6 z-30">
             {/* We'll include several divs containing the same items for responsiveness */}
             {/* This will only show on large devices and above */}
             <div
@@ -107,59 +108,70 @@ function Intro({ setIsMessageOpen }) {
             </IntroHeadingAnimation>
 
             {/* This will only show on large screens and above */}
-
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-                wordSpacing: "6px",
-                marginTop: "56px",
-              }}
-              className="hidden lg:block"
-            >
-              Welcome to my digital realm, where I engineer captivating and
-              responsive frontend experiences. With a passion for quality, I
-              seamlessly blend creativity with cutting-edge technologies to
-              redefine the standards of frontend excellence. Explore my
-              portfolio, and let's elevate your online presence together.
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"56px"} direction="right">
+              <div
+                style={{
+                  fontSize: "16px",
+                  lineHeight: "27px",
+                  letterSpacing: "3px",
+                  wordSpacing: "6px",
+                  marginTop: "56px",
+                }}
+                className="hidden lg:block"
+              >
+                Welcome to my digital realm, where I engineer captivating and
+                responsive frontend experiences. With a passion for quality, I
+                seamlessly blend creativity with cutting-edge technologies to
+                redefine the standards of frontend excellence. Explore my
+                portfolio, and let's elevate your online presence together.
+              </div>
+            </BigTextAnimation>
 
             {/* This will show on small and medium-sized devices  */}
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-                wordSpacing: "4px",
-                marginTop: "56px",
-              }}
-              className="hidden sm:block lg:hidden"
-            >
-              Welcome to my digital realm, where I engineer captivating and
-              responsive frontend experiences. With a passion for quality, I
-              seamlessly blend creativity with cutting-edge technologies to
-              redefine the standards of frontend excellence. Explore my
-              portfolio, and let's elevate your online presence together.
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"56px"} direction="right">
+              <div
+                style={{
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  letterSpacing: "2px",
+                  wordSpacing: "4px",
+                  marginTop: "56px",
+                }}
+                className="hidden sm:block lg:hidden"
+              >
+                Welcome to my digital realm, where I engineer captivating and
+                responsive frontend experiences. With a passion for quality, I
+                seamlessly blend creativity with cutting-edge technologies to
+                redefine the standards of frontend excellence. Explore my
+                portfolio, and let's elevate your online presence together.
+              </div>
+            </BigTextAnimation>
 
             {/* This will show on mobile phones and smaller devices  */}
-            <div
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-                wordSpacing: "2px",
-                marginTop: "56px",
-              }}
-              className="sm:hidden"
-            >
-              Welcome to my digital realm, where I engineer captivating and
-              responsive frontend experiences. With a passion for quality, I
-              seamlessly blend creativity with cutting-edge technologies to
-              redefine the standards of frontend excellence. Explore my
-              portfolio, and let's elevate your online presence together.
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"56px"} direction="right">
+              <div
+                style={{
+                  fontSize: "14px",
+                  lineHeight: "21px",
+                  letterSpacing: "1px",
+                  wordSpacing: "2px",
+                  marginTop: "56px",
+                }}
+                className="sm:hidden"
+              >
+                Welcome to my digital realm, where I engineer captivating and
+                responsive frontend experiences. With a passion for quality, I
+                seamlessly blend creativity with cutting-edge technologies to
+                redefine the standards of frontend excellence. Explore my
+                portfolio, and let's elevate your online presence together.
+              </div>
+            </BigTextAnimation>
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}

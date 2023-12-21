@@ -2,6 +2,7 @@ import React from "react";
 import TechStack from "./TechStack";
 import Lines from "./Lines";
 import AboutHeadingAnimation from "./animations/AboutHeadingAnimation";
+import BigTextAnimation from "./animations/BigTextAnimation";
 
 function About() {
   let points = [];
@@ -63,7 +64,7 @@ function About() {
 
       <div className="flex flex-col justify-center" style={{ height: "70vh" }}>
         <div className="flex justify-end">
-          <div className="sm:w-3/4 z-30">
+          <div className="sm:w-5/6 z-30">
             {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
@@ -121,61 +122,73 @@ function About() {
             </AboutHeadingAnimation>
 
             {/* This will only show on large devices and above */}
-            <div
-              className="text-right hidden lg:block"
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-                wordSpacing: "6px",
-                marginTop: "27px",
-              }}
-            >
-              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
-              Software Engineering graduate with a flair for web development. I
-              bring a solid foundation in computer science, channeling it into
-              crafting sleek, user-centric interfaces for various applications.
-              Let's collaborate and bring innovation to the forefront of web
-              development!
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"27px"} direction="left">
+              <div
+                className="text-right hidden lg:block"
+                style={{
+                  fontSize: "16px",
+                  lineHeight: "27px",
+                  letterSpacing: "3px",
+                  wordSpacing: "6px",
+                  marginTop: "27px",
+                }}
+              >
+                Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+                Software Engineering graduate with a flair for web development.
+                I bring a solid foundation in computer science, channeling it
+                into crafting sleek, user-centric interfaces for various
+                applications. Let's collaborate and bring innovation to the
+                forefront of web development!
+              </div>
+            </BigTextAnimation>
 
             {/* This will only show on small and medium-sized devices */}
-            <div
-              className="text-right hidden sm:block lg:hidden"
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-                wordSpacing: "4px",
-                marginTop: "24px",
-              }}
-            >
-              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
-              Software Engineering graduate with a flair for web development. I
-              bring a solid foundation in computer science, channeling it into
-              crafting sleek, user-centric interfaces for various applications.
-              Let's collaborate and bring innovation to the forefront of web
-              development!
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"24px"} direction="left">
+              <div
+                className="text-right hidden sm:block lg:hidden"
+                style={{
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  letterSpacing: "2px",
+                  wordSpacing: "4px",
+                  marginTop: "24px",
+                }}
+              >
+                Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+                Software Engineering graduate with a flair for web development.
+                I bring a solid foundation in computer science, channeling it
+                into crafting sleek, user-centric interfaces for various
+                applications. Let's collaborate and bring innovation to the
+                forefront of web development!
+              </div>
+            </BigTextAnimation>
 
             {/* This will only show on mobile phones and smaller devices */}
-            <div
-              className="text-right sm:hidden"
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-                wordSpacing: "2px",
-                marginTop: "21px",
-              }}
-            >
-              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
-              Software Engineering graduate with a flair for web development. I
-              bring a solid foundation in computer science, channeling it into
-              crafting sleek, user-centric interfaces for various applications.
-              Let's collaborate and bring innovation to the forefront of web
-              development!
-            </div>
+            {/* We include Framer Motion animations to make it fancy */}
+            {/* We pass the offset which is literally the marginTop of our Title element */}
+            <BigTextAnimation offSet={"21px"} direction="left">
+              <div
+                className="text-right sm:hidden"
+                style={{
+                  fontSize: "14px",
+                  lineHeight: "21px",
+                  letterSpacing: "1px",
+                  wordSpacing: "2px",
+                  marginTop: "21px",
+                }}
+              >
+                Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+                Software Engineering graduate with a flair for web development.
+                I bring a solid foundation in computer science, channeling it
+                into crafting sleek, user-centric interfaces for various
+                applications. Let's collaborate and bring innovation to the
+                forefront of web development!
+              </div>
+            </BigTextAnimation>
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}

@@ -63,6 +63,7 @@ function Projects() {
 
       <div style={{ marginTop: "54px" }}>
         {projects.map((project, index) => {
+          // Reverse will be false for all items whose index is divisible by 2
           index % 2 === 0 ? (reverse = false) : (reverse = true);
           return <Project project={project} key={index} reverse={reverse} />;
         })}
