@@ -3,7 +3,13 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
-function BigTextAnimation({ children, offSet, direction, left, width }) {
+function ProjectDescriptionAnimation({
+  children,
+  offSet,
+  direction,
+  left,
+  width,
+}) {
   // These variables will enable us to control the animations programatically
   const bigTextControls = useAnimation();
   const coloredScreenControls = useAnimation();
@@ -35,11 +41,12 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
   // This will animate the colored screen element
   const coloredScreenVariants = {
     visible: {
-      left: "0%",
+      // We use the direction prop to know where to start our left as
+      left: direction === "left" ? "0px" : "-50%",
     },
     hidden: {
       // The direction property controls where the colored screen goes horizotally
-      left: direction === "left" ? "-100%" : "100%",
+      left: direction === "left" ? "-150%" : "100%",
     },
   };
 
@@ -51,7 +58,6 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
         animate={bigTextControls}
         variants={bigTextVariants}
         transition={{ duration: 1, delay: 0 }}
-        style={{ overflow: "hidden" }}
       >
         {children}
 
@@ -64,7 +70,7 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
             bottom: 0,
             right: 0,
             top: `${offSet}`,
-            width: "100%",
+            width: "150%",
             height: `calc(100% - ${offSet})`,
             backgroundColor: "orange",
             zIndex: 1,
@@ -79,4 +85,4 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
   );
 }
 
-export default BigTextAnimation;
+export default ProjectDescriptionAnimation;

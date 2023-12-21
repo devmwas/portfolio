@@ -2,7 +2,7 @@ import React from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ProjectTitleAnimation from "./animations/ProjectTitleAnimation";
-import BigTextAnimation from "./animations/BigTextAnimation";
+import ProjectDescriptionAnimation from "./animations/ProjectDescriptionAnimation";
 
 function Project({ project, reverse }) {
   // We want to alter the order of project image and project details
@@ -15,7 +15,7 @@ function Project({ project, reverse }) {
     >
       <div
         style={{ maxWidth: "500px" }}
-        className="w-full flex justify-center mx-auto  opacity-70 hover:opacity-90 overflow-hidden"
+        className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
       >
         {/* Project Image */}
         <a href={`${project.liveLink}`} target="blank">
@@ -89,28 +89,29 @@ function Project({ project, reverse }) {
           {/* This will render only on larger screens and above */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* We pass the offset which is literally the marginTop of our Title element */}
-          <BigTextAnimation
-            offSet={"35px"}
+          <ProjectDescriptionAnimation
+            offSet={"0px"}
             direction={reverse ? "left" : "right"}
           >
             <div
-              className={`text-center ${
-                reverse ? "lg:text-start" : "lg:-left-1/3 lg:text-end"
+              className={`text-center bg-slate-300 ${
+                reverse ? "lg:text-start" : "lg:-left-1/2 lg:text-end"
               } mx-auto p-2 font-mono text-xs md:text-sm hidden lg:block`}
               style={{
                 position: "relative",
                 borderRadius: "2%",
                 marginTop: "35px",
+                width: "150%",
               }}
             >
               {project.description}
             </div>
-          </BigTextAnimation>
+          </ProjectDescriptionAnimation>
 
           {/* This will render on medium devices and lower */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* We pass the offset which is literally the marginTop of our Title element */}
-          <BigTextAnimation offSet={"32px"} direction={"right"}>
+          <ProjectDescriptionAnimation offSet={"32px"} direction={"right"}>
             <div
               className="text-center font-mono mx-auto px-2 text-xs lg:hidden"
               style={{
@@ -122,7 +123,7 @@ function Project({ project, reverse }) {
             >
               {project.description}
             </div>
-          </BigTextAnimation>
+          </ProjectDescriptionAnimation>
 
           {/* Tech stacks */}
           <div

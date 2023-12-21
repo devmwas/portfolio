@@ -53,7 +53,7 @@ function IntroHeadingAnimation({
       variants={headingVariants}
       initial="spacedOut"
       animate={headingControls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5 }}
     >
       {children}
     </motion.div>

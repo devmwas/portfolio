@@ -36,7 +36,7 @@ function DelayAnimation({ children, delay }) {
       initial="hidden"
       animate={delayAnimationControls}
       variants={delayAnimationVariants}
-      transition={{ delay, duration: 0.7 }}
+      transition={{ delay, duration: 0.5 }}
     >
       {children}
     </motion.div>

@@ -50,7 +50,7 @@ function ProjectTitleAnimation({
       initial="spacedOut"
       variants={projectTitleVariants}
       animate={projectTitleControls}
-      transition={{ duration: 3 }}
+      transition={{ duration: 1.5 }}
     >
       {children}
     </motion.div>
