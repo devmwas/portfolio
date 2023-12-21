@@ -24,17 +24,21 @@ function ImageAnimation({ children }) {
       transform: "scale(.5)",
     },
     show: {
-      transform: "scale(2)",
+      transform: "scale(1.5)",
     },
   };
 
   return (
     <motion.div
       ref={ourRef}
+      style={{
+        opacity: 0.6,
+      }}
       initial="hidden"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
       transition={{ duration: 5 }}
+      whileHover={{ opacity: 0.8 }}
     >
       {children}
     </motion.div>

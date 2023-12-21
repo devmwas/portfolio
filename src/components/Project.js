@@ -16,16 +16,12 @@ function Project({ project, reverse }) {
     >
       <div
         style={{ maxWidth: "500px" }}
-        className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
+        className="w-full flex justify-center mx-auto overflow-hidden"
       >
         {/* Project Image */}
         <ImageAnimation>
           <a href={`${project.liveLink}`} target="blank">
-            <img
-              src={`${project.screenshot}`}
-              className="hover:scale-105"
-              alt="Project Screenshot"
-            />
+            <img src={`${project.screenshot}`} alt="Project Screenshot" />
           </a>
         </ImageAnimation>
       </div>
