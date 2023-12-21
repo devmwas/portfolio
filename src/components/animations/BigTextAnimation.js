@@ -25,12 +25,10 @@ function BigTextAnimation({ children, offSet, direction, left }) {
   // This will animate the Big Text element
   const bigTextVariants = {
     hidden: {
-      y: "40px",
-      //   opacity: 0.5,
+      y: "20px",
     },
     visible: {
       y: "0px",
-      //   opacity: 1,
     },
   };
 
