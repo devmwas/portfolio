@@ -1,4 +1,4 @@
-import { Button, Hidden } from "@mui/material";
+import { Button } from "@mui/material";
 import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";

@@ -10,14 +10,14 @@ function Project({ project, reverse }) {
 
   return (
     <div
-      style={{ borderRadius: "2%", position: "relative" }}
-      className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto bg-white-600 lg:justify-center`}
+      style={{ position: "relative" }}
+      className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto lg:justify-center`}
     >
-      {/* Project Image */}
       <div
-        style={{ maxWidth: "750px" }}
+        style={{ maxWidth: "500px" }}
         className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
       >
+        {/* Project Image */}
         <a href={`${project.liveLink}`} target="blank">
           <img
             src={`${project.screenshot}`}
@@ -29,8 +29,8 @@ function Project({ project, reverse }) {
 
       {/* This will contain everything else about the project apart from the image */}
       <div
-        className="flex flex-col relative justify-center bg-red-300 mx-auto lg:w-1/2"
-        style={{ maxWidth: "500px" }}
+        className="flex flex-col relative justify-center bg-green-300 mx-auto lg:w-1/2"
+        style={{ maxWidth: "500px", borderRadius: "2%" }}
       >
         {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
         {/* This will only show on large devices and above */}
