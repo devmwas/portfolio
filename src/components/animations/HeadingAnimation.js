@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-function ProjectsHeadingAnimation({
+function HeadingAnimation({
   children,
   fontSize,
   lineHeight,
   letterSpacing,
   wordSpacing,
   left,
+  top,
 }) {
   // Creating a ref for our element
   const ourRef = useRef(null);
@@ -39,7 +40,7 @@ function ProjectsHeadingAnimation({
       lineHeight,
       letterSpacing,
       wordSpacing,
-      left: left,
+      left,
     },
   };
 
@@ -49,15 +50,16 @@ function ProjectsHeadingAnimation({
       style={{
         position: "absolute",
         overflow: "hidden",
+        top,
       }}
       variants={headingVariants}
       initial="spacedOut"
       animate={projectHeadingControls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5 }}
     >
       {children}
     </motion.div>
   );
 }
 
-export default ProjectsHeadingAnimation;
+export default HeadingAnimation;

@@ -63,7 +63,10 @@ function App() {
         />
         <About />
         <Projects />
-        <div className="mx-auto px-2 md:p-0" style={{ maxWidth: "750px" }}>
+        <div
+          className="mx-auto px-2 md:p-0 lg:w-4/5"
+          style={{ maxWidth: "750px" }}
+        >
           <Education />
         </div>
         <Footer setIsMessageOpen={setIsMessageOpen} />

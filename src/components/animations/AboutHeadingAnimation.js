@@ -50,7 +50,7 @@ function AboutHeadingAnimation({
       variants={headingVariants}
       initial="spacedOut"
       animate={aboutHeadingControls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5 }}
     >
       {children}
     </motion.div>

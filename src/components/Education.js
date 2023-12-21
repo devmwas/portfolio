@@ -8,6 +8,7 @@ import { Chip } from "@mui/material";
 import { institutionsData } from "../data/education";
 import { useState } from "react";
 import DelayAnimation from "./animations/DelayAnimation";
+import HeadingAnimation from "./animations/HeadingAnimation";
 
 // Tab panels for our tab
 function TabPanel(props) {
@@ -125,19 +126,58 @@ export default function Education() {
   return (
     <DelayAnimation delay={0}>
       <Box
+        id="education"
         sx={{
           bgcolor: "background.paper",
           display: "flex",
           height: "240px",
           marginBottom: "50px",
-          marginTop: "80px",
+          marginTop: "100px",
           marginX: "auto",
           position: "relative",
         }}
       >
-        <div className="absolute -top-7 h-7" id="education">
-          Education
-        </div>
+        {/* We will include the same element multiple times and only show them at the intended breakpoints  */}
+        {/* This will only show on large devices and above */}
+        <HeadingAnimation
+          fontSize="18px"
+          lineHeight="27px"
+          letterSpacing="3px"
+          wordSpacing="6px"
+          left={"-10%"}
+          top="-40px"
+        >
+          <div className="text-sky-400 font-semibold hidden lg:block">
+            Education
+          </div>
+        </HeadingAnimation>
+
+        {/* This will only show on small and medium-sized devices */}
+        <HeadingAnimation
+          fontSize="16px"
+          lineHeight="24px"
+          letterSpacing="2px"
+          wordSpacing="4px"
+          left={"0%"}
+          top="-40px"
+        >
+          <div className="text-sky-400 font-semibold hidden sm:block lg:hidden">
+            Education
+          </div>
+        </HeadingAnimation>
+
+        {/* This will only show on mobile phones and smaller devices */}
+        <HeadingAnimation
+          fontSize="14px"
+          lineHeight="21px"
+          letterSpacing="1px"
+          wordSpacing="2px"
+          top="-40px"
+          left="2px"
+        >
+          <div className="text-sky-400 font-semibold sm:hidden">Education</div>
+        </HeadingAnimation>
+
         <Tabs
           orientation="vertical"
           variant="scrollable"

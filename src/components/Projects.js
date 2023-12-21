@@ -1,7 +1,7 @@
 import React from "react";
 import { projects } from "../data/projects";
 import Project from "./Project";
-import ProjectsHeadingAnimation from "./animations/ProjectsHeadingAnimation";
+import HeadingAnimation from "./animations/HeadingAnimation";
 
 function Projects() {
   let reverse = null;
@@ -25,41 +25,41 @@ function Projects() {
 
       {/* We will include the same element multiple times and only show them at the intended breakpoints  */}
       {/* This will only show on large devices and above */}
-      <ProjectsHeadingAnimation
+      <HeadingAnimation
         fontSize="18px"
         lineHeight="27px"
         letterSpacing="3px"
         wordSpacing="6px"
-        left={10}
+        left={"16px"}
       >
-        <div className="text-sky-400 pl-24 font-semibold hidden lg:block">
+        <div className="text-sky-400 font-semibold hidden lg:block">
           My Projects
         </div>
-      </ProjectsHeadingAnimation>
+      </HeadingAnimation>
 
       {/* This will only show on small and medium-sized devices */}
-      <ProjectsHeadingAnimation
+      <HeadingAnimation
         fontSize="16px"
         lineHeight="24px"
         letterSpacing="2px"
         wordSpacing="4px"
-        left={10}
+        left="8px"
       >
         <div className="text-sky-400 font-semibold hidden sm:block lg:hidden">
           My Projects
         </div>
-      </ProjectsHeadingAnimation>
+      </HeadingAnimation>
 
       {/* This will only show on mobile phones and smaller devices */}
-      <ProjectsHeadingAnimation
+      <HeadingAnimation
         fontSize="14px"
         lineHeight="21px"
         letterSpacing="1px"
         wordSpacing="2px"
-        left={10}
+        left="8px"
       >
         <div className="text-sky-400 font-semibold sm:hidden">My Projects</div>
-      </ProjectsHeadingAnimation>
+      </HeadingAnimation>
 
       <div style={{ marginTop: "54px" }}>
         {projects.map((project, index) => {

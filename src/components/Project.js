@@ -3,6 +3,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ProjectTitleAnimation from "./animations/ProjectTitleAnimation";
 import ProjectDescriptionAnimation from "./animations/ProjectDescriptionAnimation";
+import ImageAnimation from "./animations/ImageAnimation";
 
 function Project({ project, reverse }) {
   // We want to alter the order of project image and project details
@@ -18,13 +19,15 @@ function Project({ project, reverse }) {
         className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
       >
         {/* Project Image */}
-        <a href={`${project.liveLink}`} target="blank">
-          <img
-            src={`${project.screenshot}`}
-            className="hover:scale-105"
-            alt="Project Screenshot"
-          />
-        </a>
+        <ImageAnimation>
+          <a href={`${project.liveLink}`} target="blank">
+            <img
+              src={`${project.screenshot}`}
+              className="hover:scale-105"
+              alt="Project Screenshot"
+            />
+          </a>
+        </ImageAnimation>
       </div>
 
       {/* This will contain everything else about the project apart from the image */}
@@ -111,7 +114,7 @@ function Project({ project, reverse }) {
           {/* This will render on medium devices and lower */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* We pass the offset which is literally the marginTop of our Title element */}
-          <ProjectDescriptionAnimation offSet={"32px"} direction={"right"}>
+          <ProjectDescriptionAnimation offSet={"0px"} direction={"right"}>
             <div
               className="text-center font-mono mx-auto px-2 text-xs lg:hidden"
               style={{
