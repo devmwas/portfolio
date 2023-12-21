@@ -24,7 +24,7 @@ function ImageAnimation({ children }) {
       transform: "scale(.5)",
     },
     show: {
-      transform: "scale(1.5)",
+      transform: "scale(1.2)",
     },
   };
 
