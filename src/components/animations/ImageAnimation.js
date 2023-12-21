@@ -38,7 +38,7 @@ function ImageAnimation({ children }) {
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
       transition={{ duration: 5 }}
-      whileHover={{ opacity: 0 }}
+      whileHover={{ opacity: 1, duration: 3 }}
     >
       {children}
     </motion.div>
