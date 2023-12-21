@@ -70,6 +70,7 @@ function BigTextAnimation({
             top: 0,
             left: 0,
             bottom: 0,
+            right: 0,
             top: `${offSet}`,
             width: "100%",
             height: `calc(100% - ${offSet})`,
