@@ -3,13 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
-function BigTextAnimation({
-  children,
-  offSet,
-  direction,
-  width = "100%",
-  left,
-}) {
+function BigTextAnimation({ children, offSet, direction, left }) {
   // These variables will enable us to control the animations programatically
   const bigTextControls = useAnimation();
   const coloredScreenControls = useAnimation();
@@ -58,7 +52,7 @@ function BigTextAnimation({
         initial="hidden"
         animate="visible"
         variants={bigTextVariants}
-        transition={{ duration: 1, delay: 0.25 }}
+        transition={{ duration: 1, delay: 0 }}
         style={{ overflow: "hidden" }}
       >
         {children}
@@ -80,7 +74,7 @@ function BigTextAnimation({
           initial="visible"
           animate="hidden"
           variants={coloredScreenVariants}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.5, ease: "backIn" }}
         ></motion.div>
       </motion.div>
     </div>

@@ -15,7 +15,7 @@ function Project({ project, reverse }) {
     >
       {/* Project Image */}
       <div
-        style={{ maxWidth: "500px" }}
+        style={{ maxWidth: "750px" }}
         className="w-full flex justify-center mx-auto opacity-70 hover:opacity-90 overflow-hidden"
       >
         <a href={`${project.liveLink}`} target="blank">
@@ -27,8 +27,9 @@ function Project({ project, reverse }) {
         </a>
       </div>
 
+      {/* This will contain everything else about the project apart from the image */}
       <div
-        className="flex flex-col relative justify-center bg-green-300 mx-auto lg:w-1/2"
+        className="flex flex-col relative justify-center bg-red-300 mx-auto lg:w-1/2"
         style={{ maxWidth: "500px" }}
       >
         {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
@@ -111,11 +112,11 @@ function Project({ project, reverse }) {
           {/* We pass the offset which is literally the marginTop of our Title element */}
           <BigTextAnimation offSet={"32px"} direction={"right"}>
             <div
-              className="text-center md:text-end bg-slate-300 font-mono mx-auto px-2 text-xs lg:hidden"
+              className="text-center bg-slate-300 font-mono mx-auto px-2 text-xs lg:hidden"
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "400px",
+                maxWidth: "500px",
                 marginTop: "32px",
               }}
             >
