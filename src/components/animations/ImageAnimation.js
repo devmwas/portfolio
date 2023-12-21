@@ -14,17 +14,21 @@ function ImageAnimation({ children }) {
   // We execute this effect whenever our element is in view
   useEffect(() => {
     if (isInView) {
-      imageAnimationControls.start("show");
+      //   imageAnimationControls.start("zoomed");
+      imageAnimationControls.start("normal");
     }
   }, [isInView]);
 
   // Our Variants
   const imageAnimationVariants = {
-    hidden: {
+    minimized: {
       transform: "scale(.5)",
     },
-    show: {
+    zoomed: {
       transform: "scale(1.2)",
+    },
+    normal: {
+      transform: "scale(1)",
     },
   };
 
