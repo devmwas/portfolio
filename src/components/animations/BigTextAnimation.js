@@ -9,7 +9,7 @@ function BigTextAnimation({ children, offSet, direction, left }) {
   const coloredScreenControls = useAnimation();
 
   // We grab our element
-  const ourRef = useRef();
+  const ourRef = useRef(null);
 
   //   To help us know whenever our element is in view
   const isInView = useInView(ourRef, { once: true });
@@ -26,11 +26,11 @@ function BigTextAnimation({ children, offSet, direction, left }) {
   const bigTextVariants = {
     hidden: {
       y: "40px",
-      opacity: 0,
+      //   opacity: 0.5,
     },
     visible: {
       y: "0px",
-      opacity: 1,
+      //   opacity: 1,
     },
   };
 
@@ -50,7 +50,7 @@ function BigTextAnimation({ children, offSet, direction, left }) {
       {/* Here we'll animate our Big Text element */}
       <motion.div
         initial="hidden"
-        animate="visible"
+        animate={bigTextControls}
         variants={bigTextVariants}
         transition={{ duration: 1, delay: 0 }}
         style={{ overflow: "hidden" }}
@@ -72,7 +72,7 @@ function BigTextAnimation({ children, offSet, direction, left }) {
             zIndex: 1,
           }}
           initial="visible"
-          animate="hidden"
+          animate={coloredScreenControls}
           variants={coloredScreenVariants}
           transition={{ duration: 1.5, ease: "backIn" }}
         ></motion.div>
