@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ExpandedMenu from "./components/navbar/ExpandedMenu";
 import SendMessageStatus from "./components/SendMessageStatus";
 import MessageModal from "./components/MessageModal";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -46,17 +47,30 @@ function App() {
       />
       <div className="lg:w-2/3 mx-auto bg-black">
         {/* This will be the message component users will use to send us messages */}
-        <MessageModal
-          isMessageOpen={isMessageOpen}
-          setIsMessageOpen={setIsMessageOpen}
-          setSent={setSent}
-        />
+        {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
+        <AnimatePresence initial={false} mode="wait">
+          {isMessageOpen && (
+            <MessageModal
+              isMessageOpen={isMessageOpen}
+              setIsMessageOpen={setIsMessageOpen}
+              setSent={setSent}
+            />
+          )}
+        </AnimatePresence>
+
         {/* This will inform the user whether their message has been sent or not */}
         <SendMessageStatus sent={sent} setSent={setSent} />
-        <ExpandedMenu
-          setShowExpandedMenu={setShowExpandedMenu}
-          showExpandedMenu={showExpandedMenu}
-        />
+
+        {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
+        <AnimatePresence initial={false} mode="wait">
+          {showExpandedMenu && (
+            <ExpandedMenu
+              setShowExpandedMenu={setShowExpandedMenu}
+              showExpandedMenu={showExpandedMenu}
+            />
+          )}
+        </AnimatePresence>
+
         <Intro
           isMessageOpen={isMessageOpen}
           setIsMessageOpen={setIsMessageOpen}

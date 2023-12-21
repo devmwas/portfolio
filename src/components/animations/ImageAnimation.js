@@ -43,6 +43,7 @@ function ImageAnimation({ children }) {
       variants={imageAnimationVariants}
       transition={{ duration: 5 }}
       whileHover={{ opacity: 1, duration: 3 }}
+      onTap={{ transform: "scale(0.9), duration: 0.2" }}
     >
       {children}
     </motion.div>

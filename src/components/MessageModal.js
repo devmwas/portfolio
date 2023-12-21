@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import emailJS from "@emailjs/browser";
+import MessageAnimation from "./animations/MessageAnimation";
 
 function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   const [messageData, setMessageData] = useState({
@@ -195,178 +196,184 @@ function MessageModal({ isMessageOpen, setIsMessageOpen, setSent }) {
   if (!isMessageOpen) return null;
 
   return createPortal(
-    <div className="fixed top-0 left-0 right-0 bottom-0 opacity-100 z-40">
-      <div
-        className={`bg-white ${messageModalMarginTop} md:mt-20 opacity-100 space-y-4 p-2 sm:p-4 m-2 sm:mx-auto`}
-        style={{
-          maxWidth: "500px",
-          borderRadius: "2%",
-          backgroundImage:
-            "linear-gradient(to bottom right, white, #eee, white)",
-        }}
+    <div className="fixed top-0 left-0 right-0 bottom-0 opacity-100 z-50">
+      {/* We add framer motion animations for more fanciness */}
+      <MessageAnimation
+        isMessageOpen={isMessageOpen}
+        setIsMessageOpen={setIsMessageOpen}
       >
-        <div className="flex justify-between">
-          <div className="text-blue-400 font-bold">Send Me a Message</div>
-          {/* We set the icon color to red on hovering it */}
-          {isCloseIconHovered ? (
-            <div
-              className="bg cursor-pointer"
-              onMouseEnter={() => setIsCloseIconHovered(true)}
-              onMouseLeave={() => setIsCloseIconHovered(false)}
-            >
-              <CloseIcon
-                sx={{ color: "red" }}
-                onClick={() => {
-                  setIsMessageOpen(false);
-                  setIsCloseIconHovered(false);
-                }}
+        <div
+          className={`bg-white ${messageModalMarginTop} md:mt-20 opacity-100 space-y-4 p-2 sm:p-4 m-2 sm:mx-auto`}
+          style={{
+            maxWidth: "500px",
+            borderRadius: "2%",
+            backgroundImage:
+              "linear-gradient(to bottom right, white, #eee, white)",
+          }}
+        >
+          <div className="flex justify-between">
+            <div className="text-blue-400 font-bold">Send Me a Message</div>
+            {/* We set the icon color to red on hovering it */}
+            {isCloseIconHovered ? (
+              <div
+                className="bg cursor-pointer"
+                onMouseEnter={() => setIsCloseIconHovered(true)}
+                onMouseLeave={() => setIsCloseIconHovered(false)}
+              >
+                <CloseIcon
+                  sx={{ color: "red" }}
+                  onClick={() => {
+                    setIsMessageOpen(false);
+                    setIsCloseIconHovered(false);
+                  }}
+                />
+              </div>
+            ) : (
+              <div
+                className="cursor-pointer"
+                onMouseEnter={() => setIsCloseIconHovered(true)}
+                onMouseLeave={() => setIsCloseIconHovered(false)}
+              >
+                <CloseIcon
+                  onClick={() => {
+                    setIsMessageOpen(false);
+                    setIsCloseIconHovered(false);
+                  }}
+                />
+              </div>
+            )}
+          </div>
+          <div>
+            {nameError ? (
+              <TextField
+                label="Your Name"
+                fullWidth
+                size="small"
+                name="name"
+                error
+                helperText="Please provide a valid name."
+                value={messageData.name}
+                onChange={handleChange}
               />
-            </div>
-          ) : (
-            <div
-              className="cursor-pointer"
-              onMouseEnter={() => setIsCloseIconHovered(true)}
-              onMouseLeave={() => setIsCloseIconHovered(false)}
-            >
-              <CloseIcon
-                onClick={() => {
-                  setIsMessageOpen(false);
-                  setIsCloseIconHovered(false);
-                }}
+            ) : (
+              <TextField
+                label="Name"
+                fullWidth
+                size="small"
+                name="name"
+                value={messageData.name}
+                onChange={handleChange}
               />
-            </div>
-          )}
+            )}
+          </div>
+          <div>
+            {emailError ? (
+              <TextField
+                label="Email"
+                fullWidth
+                size="small"
+                name="email"
+                error
+                helperText="Please provide a valid email."
+                value={messageData.email}
+                onChange={handleChange}
+              />
+            ) : (
+              <TextField
+                label="Email"
+                fullWidth
+                size="small"
+                name="email"
+                value={messageData.email}
+                onChange={handleChange}
+              />
+            )}
+          </div>
+          <div>
+            {subjectError ? (
+              <TextField
+                label="Subject"
+                select
+                size="small"
+                fullWidth
+                name="subject"
+                error
+                helperText="Please provide a valid subject."
+                onChange={handleChange}
+                value={messageData.subject}
+              >
+                {subjects.map((subject, index) => {
+                  return (
+                    <MenuItem key={index} value={subject}>
+                      {subject}
+                    </MenuItem>
+                  );
+                })}
+              </TextField>
+            ) : (
+              <TextField
+                label="Subject"
+                select
+                size="small"
+                fullWidth
+                name="subject"
+                onChange={handleChange}
+                value={messageData.subject}
+              >
+                {subjects.map((subject, index) => {
+                  return (
+                    <MenuItem key={index} value={subject}>
+                      {subject}
+                    </MenuItem>
+                  );
+                })}
+              </TextField>
+            )}
+          </div>
+          <div>
+            {messageError ? (
+              <TextField
+                label="Message"
+                multiline
+                name="message"
+                error
+                helperText="Please provide a valid message."
+                onFocus={handleFocus}
+                value={messageData.message}
+                onChange={handleChange}
+                rows={4}
+                fullWidth
+                size="small"
+              />
+            ) : (
+              <TextField
+                label="Message"
+                multiline
+                name="message"
+                onFocus={handleFocus}
+                value={messageData.message}
+                onChange={handleChange}
+                rows={4}
+                fullWidth
+                size="small"
+              />
+            )}
+          </div>
+          <div className="text-center">
+            {checkErrorsOrUndefined() ? (
+              // We disable Sending button if we have any errors or any undefined variables
+              <Button variant="contained" disabled onClick={handleSendMessage}>
+                {sendingMessageStatus}
+              </Button>
+            ) : (
+              //  We only enable he send button if we don't have any undefineds or errors
+              <Button variant="contained" onClick={handleSendMessage}>
+                {sendingMessageStatus}
+              </Button>
+            )}
+          </div>
         </div>
-        <div>
-          {nameError ? (
-            <TextField
-              label="Your Name"
-              fullWidth
-              size="small"
-              name="name"
-              error
-              helperText="Please provide a valid name."
-              value={messageData.name}
-              onChange={handleChange}
-            />
-          ) : (
-            <TextField
-              label="Name"
-              fullWidth
-              size="small"
-              name="name"
-              value={messageData.name}
-              onChange={handleChange}
-            />
-          )}
-        </div>
-        <div>
-          {emailError ? (
-            <TextField
-              label="Email"
-              fullWidth
-              size="small"
-              name="email"
-              error
-              helperText="Please provide a valid email."
-              value={messageData.email}
-              onChange={handleChange}
-            />
-          ) : (
-            <TextField
-              label="Email"
-              fullWidth
-              size="small"
-              name="email"
-              value={messageData.email}
-              onChange={handleChange}
-            />
-          )}
-        </div>
-        <div>
-          {subjectError ? (
-            <TextField
-              label="Subject"
-              select
-              size="small"
-              fullWidth
-              name="subject"
-              error
-              helperText="Please provide a valid subject."
-              onChange={handleChange}
-              value={messageData.subject}
-            >
-              {subjects.map((subject, index) => {
-                return (
-                  <MenuItem key={index} value={subject}>
-                    {subject}
-                  </MenuItem>
-                );
-              })}
-            </TextField>
-          ) : (
-            <TextField
-              label="Subject"
-              select
-              size="small"
-              fullWidth
-              name="subject"
-              onChange={handleChange}
-              value={messageData.subject}
-            >
-              {subjects.map((subject, index) => {
-                return (
-                  <MenuItem key={index} value={subject}>
-                    {subject}
-                  </MenuItem>
-                );
-              })}
-            </TextField>
-          )}
-        </div>
-        <div>
-          {messageError ? (
-            <TextField
-              label="Message"
-              multiline
-              name="message"
-              error
-              helperText="Please provide a valid message."
-              onFocus={handleFocus}
-              value={messageData.message}
-              onChange={handleChange}
-              rows={4}
-              fullWidth
-              size="small"
-            />
-          ) : (
-            <TextField
-              label="Message"
-              multiline
-              name="message"
-              onFocus={handleFocus}
-              value={messageData.message}
-              onChange={handleChange}
-              rows={4}
-              fullWidth
-              size="small"
-            />
-          )}
-        </div>
-        <div className="text-center">
-          {checkErrorsOrUndefined() ? (
-            // We disable Sending button if we have any errors or any undefined variables
-            <Button variant="contained" disabled onClick={handleSendMessage}>
-              {sendingMessageStatus}
-            </Button>
-          ) : (
-            //  We only enable he send button if we don't have any undefineds or errors
-            <Button variant="contained" onClick={handleSendMessage}>
-              {sendingMessageStatus}
-            </Button>
-          )}
-        </div>
-      </div>
+      </MessageAnimation>
     </div>,
     document.querySelector("#messagePortal")
   );

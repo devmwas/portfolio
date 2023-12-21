@@ -3,6 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { createPortal } from "react-dom";
 import { Button } from "@mui/material";
 import Resume from "../../Files/Resume.pdf";
+import ExpandedMenuAnimation from "../animations/ExpandedMenuAnimation";
 
 function ExpandedMenu({ setShowExpandedMenu, showExpandedMenu }) {
   if (!showExpandedMenu) return null;
@@ -21,47 +22,53 @@ function ExpandedMenu({ setShowExpandedMenu, showExpandedMenu }) {
       }}
     >
       <div>
-        <div
-          className="cursor-pointer text-center"
-          onClick={() => {
-            setShowExpandedMenu(false);
-          }}
+        {/* We add framer motion animations for more fanciness */}
+        <ExpandedMenuAnimation
+          setShowExpandedMenu={setShowExpandedMenu}
+          showExpandedMenu={showExpandedMenu}
         >
-          <CloseIcon fontSize="large" color="primary" />
-        </div>
-        <div className="text-center text-sky-400">
-          <div className="cursor-pointer">
-            <a href="#home" onClick={() => setShowExpandedMenu(false)}>
-              Home
-            </a>
+          <div
+            className="cursor-pointer text-center"
+            onClick={() => {
+              setShowExpandedMenu(false);
+            }}
+          >
+            <CloseIcon fontSize="large" color="primary" />
           </div>
-          <div className="cursor-pointer">
-            <a href="#about" onClick={() => setShowExpandedMenu(false)}>
-              About
-            </a>
+          <div className="text-center text-sky-400">
+            <div className="cursor-pointer">
+              <a href="#home" onClick={() => setShowExpandedMenu(false)}>
+                Home
+              </a>
+            </div>
+            <div className="cursor-pointer">
+              <a href="#about" onClick={() => setShowExpandedMenu(false)}>
+                About
+              </a>
+            </div>
+            <div className="cursor-pointer">
+              <a href="#projects" onClick={() => setShowExpandedMenu(false)}>
+                Projects
+              </a>
+            </div>
+            <div className="cursor-pointer">
+              <a href="#education" onClick={() => setShowExpandedMenu(false)}>
+                Education
+              </a>
+            </div>
+            <div className="cursor-pointer mt-2" style={{}}>
+              <a
+                href={Resume}
+                target="blank"
+                onClick={() => setShowExpandedMenu(false)}
+              >
+                <Button variant="outlined" size="small">
+                  Resume
+                </Button>
+              </a>
+            </div>
           </div>
-          <div className="cursor-pointer">
-            <a href="#projects" onClick={() => setShowExpandedMenu(false)}>
-              Projects
-            </a>
-          </div>
-          <div className="cursor-pointer">
-            <a href="#education" onClick={() => setShowExpandedMenu(false)}>
-              Education
-            </a>
-          </div>
-          <div className="cursor-pointer mt-2" style={{}}>
-            <a
-              href={Resume}
-              target="blank"
-              onClick={() => setShowExpandedMenu(false)}
-            >
-              <Button variant="outlined" size="small">
-                Resume
-              </Button>
-            </a>
-          </div>
-        </div>
+        </ExpandedMenuAnimation>
       </div>
     </div>,
     document.querySelector("#expandedMenuPortal")
