@@ -41,7 +41,7 @@ function ImageAnimation({ children }) {
       initial="hidden"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
-      transition={{ duration: 5 }}
+      transition={{ duration: 3 }}
       whileHover={{ opacity: 1, duration: 3 }}
       onTap={{ transform: "scale(0.9), duration: 0.2" }}
     >
