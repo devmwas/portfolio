@@ -24,12 +24,13 @@ function ImageAnimation({ children }) {
     minimized: {
       transform: "scale(.5)",
     },
-    zoomed: {
-      transform: "scale(1.2)",
-    },
     normal: {
       transform: "scale(1)",
     },
+    // squeezed: {
+    //   transform: "scale(0.9)",
+    //   transition: { duration: 0.5 },
+    // },
   };
 
   return (
@@ -41,9 +42,9 @@ function ImageAnimation({ children }) {
       initial="hidden"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
+      exit="squeezed"
       transition={{ duration: 3 }}
       whileHover={{ opacity: 1, duration: 3 }}
-      onTap={{ transform: "scale(0.9), duration: 0.2" }}
     >
       {children}
     </motion.div>

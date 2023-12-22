@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-function ExpandedMenuAnimation({
-  children,
-  showExpandedMenu,
-  setShowExpandedMenu,
-}) {
+function ExpandedMenuAnimation({ children, showExpandedMenu }) {
   // We create refs to grab our animation element
   const ourRef = useRef(null);
 
@@ -24,11 +20,9 @@ function ExpandedMenuAnimation({
   const ExpandedMenuAnimationVariants = {
     show: {
       y: "0vh",
-      //   left: "20vw",
     },
     hide: {
       y: "-100vh",
-      //   left: "100vw",
     },
   };
 

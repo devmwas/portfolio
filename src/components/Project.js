@@ -8,6 +8,7 @@ import ImageAnimation from "./animations/ImageAnimation";
 function Project({ project, reverse }) {
   // We want to alter the order of project image and project details
   let reverseClass = reverse ? "flex-row-reverse" : "";
+  // This will help us animate the project image even after the user has clicked on the link to view project in another tab
 
   return (
     <div
@@ -19,6 +20,7 @@ function Project({ project, reverse }) {
         className="w-full flex justify-center mx-auto overflow-hidden"
       >
         {/* Project Image */}
+        {/* We add Framer Motion animations for increased fanciness */}
         <ImageAnimation>
           <a href={`${project.liveLink}`} target="blank">
             <img src={`${project.screenshot}`} alt="Project Screenshot" />
