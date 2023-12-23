@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { createPortal } from "react-dom";
 import { Button } from "@mui/material";
-import Resume from "../../Files/Resume.pdf";
+import MwangisFrontendResume from "../../Files/MwangisFrontendResume.pdf";
 import ExpandedMenuAnimation from "../animations/ExpandedMenuAnimation";
 
 function ExpandedMenu({ setShowExpandedMenu, showExpandedMenu }) {
@@ -58,7 +58,7 @@ function ExpandedMenu({ setShowExpandedMenu, showExpandedMenu }) {
             </div>
             <div className="cursor-pointer mt-2" style={{}}>
               <a
-                href={Resume}
+                href={MwangisFrontendResume}
                 target="blank"
                 onClick={() => setShowExpandedMenu(false)}
               >

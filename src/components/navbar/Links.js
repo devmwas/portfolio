@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import Resume from "../../Files/Resume.pdf";
+import MwangisFrontendResume from "../../Files/MwangisFrontendResume.pdf";
 import { useState } from "react";
 
 function Links() {
@@ -72,7 +72,7 @@ function Links() {
           </div>
 
           <div className="cursor-pointer -mt-0.5" style={{ fontSize: "18px" }}>
-            <a href={Resume} target="blank">
+            <a href={MwangisFrontendResume} target="blank">
               <Button
                 variant="outlined"
                 size="small"
