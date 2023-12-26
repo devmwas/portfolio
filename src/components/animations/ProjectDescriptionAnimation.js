@@ -3,13 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
-function ProjectDescriptionAnimation({
-  children,
-  offSet,
-  direction,
-  left,
-  width,
-}) {
+function ProjectDescriptionAnimation({ children, offSet, direction }) {
   // These variables will enable us to control the animations programatically
   const bigTextControls = useAnimation();
   const coloredScreenControls = useAnimation();
@@ -42,16 +36,18 @@ function ProjectDescriptionAnimation({
   const coloredScreenVariants = {
     visible: {
       // We use the direction prop to know where to start our left as
-      left: direction === "left" ? "0px" : "-50%",
+      left: direction === "left" ? "-50%" : "0%",
+      opacity: 1,
     },
     hidden: {
       // The direction property controls where the colored screen goes horizotally
-      left: direction === "left" ? "-150%" : "100%",
+      left: direction === "left" ? "-200%" : "150%",
+      opacity: 0,
     },
   };
 
   return (
-    <div ref={ourRef} style={{ position: "relative", left }}>
+    <div ref={ourRef} style={{ position: "relative" }}>
       {/* Here we'll animate our Big Text element */}
       <motion.div
         initial="hidden"

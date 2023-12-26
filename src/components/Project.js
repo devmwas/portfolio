@@ -8,11 +8,10 @@ import ImageAnimation from "./animations/ImageAnimation";
 function Project({ project, reverse }) {
   // We want to alter the order of project image and project details
   let reverseClass = reverse ? "flex-row-reverse" : "";
-  // This will help us animate the project image even after the user has clicked on the link to view project in another tab
 
   return (
     <div
-      style={{ position: "relative", borderRadius: "2%", overflow: "hidden" }}
+      style={{ position: "relative", borderRadius: "2%" }}
       className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto lg:justify-center`}
     >
       <div
@@ -92,7 +91,7 @@ function Project({ project, reverse }) {
           {/* We pass the offset which is literally the marginTop of our Title element */}
           <ProjectDescriptionAnimation
             offSet={"0px"}
-            direction={reverse ? "left" : "right"}
+            direction={reverse ? "right" : "left"}
           >
             <div
               className={`text-center bg-slate-300 ${

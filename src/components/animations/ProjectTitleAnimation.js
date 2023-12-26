@@ -11,7 +11,7 @@ function ProjectTitleAnimation({
   const ourRef = useRef(null);
 
   // This will help us know whenever our Headings are in view for the first time
-  const isInView = useInView(ourRef, { once: false });
+  const isInView = useInView(ourRef, { once: true });
 
   // This variable will help us control the animation programatically
   const projectTitleControls = useAnimation();
