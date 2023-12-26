@@ -11,7 +11,7 @@ function Project({ project, reverse }) {
 
   return (
     <div
-      style={{ position: "relative", borderRadius: "2%" }}
+      style={{ position: "relative", borderRadius: "2%", overflow: "hidden" }}
       className={`lg:flex ${reverseClass} my-2 w-full lg:w-4/5 mx-auto lg:justify-center`}
     >
       <div
