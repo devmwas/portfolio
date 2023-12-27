@@ -67,6 +67,8 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
             width: "100%",
             height: `calc(100% - ${offSet})`,
             backgroundColor: "orange",
+            borderRadius: "2%",
+            overflow: "hidden",
             zIndex: 1,
           }}
           initial="visible"

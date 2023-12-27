@@ -47,7 +47,12 @@ function ProjectDescriptionAnimation({ children, offSet, direction }) {
   };
 
   return (
-    <div ref={ourRef} style={{ position: "relative" }}>
+    <div
+      ref={ourRef}
+      style={{
+        position: "relative",
+      }}
+    >
       {/* Here we'll animate our Big Text element */}
       <motion.div
         initial="hidden"
@@ -65,11 +70,12 @@ function ProjectDescriptionAnimation({ children, offSet, direction }) {
             left: direction === "right" ? "0%" : "-50%",
             right: "0%",
             bottom: 0,
-            // right: 0,
             top: `${offSet}`,
             width: "150%",
             height: `calc(100% - ${offSet})`,
             backgroundColor: "orange",
+            borderRadius: "2%",
+            overflow: "hidden",
             zIndex: 1,
           }}
           initial="visible"
