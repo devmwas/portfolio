@@ -132,6 +132,7 @@ function Intro({ setIsMessageOpen }) {
             {/* This will show on small and medium-sized devices  */}
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
+            {/* The direction prop will tell us which direction to animate our colored screen to */}
             <BigTextAnimation offSet={"56px"} direction="right">
               <div
                 style={{
