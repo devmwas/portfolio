@@ -37,12 +37,12 @@ function ProjectDescriptionAnimation({ children, offSet, direction }) {
     visible: {
       // We use the direction prop to know where to start our left as
       left: direction === "left" ? "-50%" : "0%",
-      opacity: 1,
+      width: "150%",
     },
     hidden: {
       // The direction property controls where the colored screen goes horizotally
-      left: direction === "left" ? "-200%" : "150%",
-      opacity: 0,
+      left: direction === "left" ? "-50%" : "150%",
+      width: "0%",
     },
   };
 
@@ -62,9 +62,10 @@ function ProjectDescriptionAnimation({ children, offSet, direction }) {
           style={{
             position: "absolute",
             top: 0,
-            left: 0,
+            left: direction === "right" ? "0%" : "-50%",
+            right: "0%",
             bottom: 0,
-            right: 0,
+            // right: 0,
             top: `${offSet}`,
             width: "150%",
             height: `calc(100% - ${offSet})`,
