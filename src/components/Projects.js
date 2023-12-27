@@ -4,6 +4,7 @@ import Project from "./Project";
 import HeadingAnimation from "./animations/HeadingAnimation";
 
 function Projects() {
+  // This will help us reverse the order of project information and project image
   let reverse = null;
   return (
     <div
