@@ -132,7 +132,7 @@ export default function Education() {
           display: "flex",
           height: "240px",
           marginBottom: "50px",
-          marginTop: "100px",
+          marginTop: "80px",
           marginX: "auto",
           position: "relative",
         }}

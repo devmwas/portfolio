@@ -2,7 +2,10 @@ import React from "react";
 
 function Lines({ angle }) {
   let lines = [];
-  for (let i = 0; i < 2000; i++) {
+  // We used to have 2,000 lines here till I noticed the impact on performance and
+  //  decided to reduce them to 0
+  // Might remove this component completely or replace it with a more ligher and fancier background
+  for (let i = 0; i < 0; i++) {
     lines.push(
       <div
         key={i}

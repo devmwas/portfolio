@@ -1,9 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
 function BigTextAnimation({ children, offSet, direction, left, width }) {
+  // This will help us remove this component from DOM once it'sfinished animating
+  // We do this to reduce DOM size which affects page speed
+  const [isVisible, setIsVisible] = useState(true);
+
   // These variables will enable us to control the animations programatically
   const bigTextControls = useAnimation();
   const coloredScreenControls = useAnimation();
@@ -19,6 +23,12 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
     if (isInView) {
       bigTextControls.start("visible");
       coloredScreenControls.start("hidden");
+
+      // We want to remove this component from DOM tree once it has finished animating (3 seconds maybe)
+      // we do this to decrease DOM size as a large DOM tree will load slowly
+      setTimeout(() => {
+        setIsVisible(false);
+      }, 3000);
     }
   }, [isInView]);
 
@@ -54,28 +64,30 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
         style={{ overflow: "hidden" }}
       >
         {children}
-
         {/* Here we'll have a colored screen move across the view port */}
-        <motion.div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            top: `${offSet}`,
-            width: "100%",
-            height: `calc(100% - ${offSet})`,
-            backgroundColor: "orange",
-            borderRadius: "2%",
-            overflow: "hidden",
-            zIndex: 1,
-          }}
-          initial="visible"
-          animate={coloredScreenControls}
-          variants={coloredScreenVariants}
-          transition={{ duration: 1.5, ease: "backIn" }}
-        ></motion.div>
+        {/* We want to remove this element from DM tree once it's finished animating */}
+        {isVisible ? (
+          <motion.div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              top: `${offSet}`,
+              width: "100%",
+              height: `calc(100% - ${offSet})`,
+              backgroundColor: "orange",
+              borderRadius: "2%",
+              overflow: "hidden",
+              zIndex: 1,
+            }}
+            initial="visible"
+            animate={coloredScreenControls}
+            variants={coloredScreenVariants}
+            transition={{ duration: 1.5, ease: "backIn" }}
+          ></motion.div>
+        ) : null}
       </motion.div>
     </div>
   );

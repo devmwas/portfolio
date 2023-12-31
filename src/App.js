@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import Intro from "./components/Intro";
-import Navbar from "./components/navbar/Navbar";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Education from "./components/Education";
-import Footer from "./components/Footer";
-import ExpandedMenu from "./components/navbar/ExpandedMenu";
-import SendMessageStatus from "./components/SendMessageStatus";
-import MessageModal from "./components/MessageModal";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
+const Intro = lazy(() => import("./components/Intro"));
+const Navbar = lazy(() => import("./components/navbar/Navbar"));
+const About = lazy(() => import("./components/About"));
+const Projects = lazy(() => import("./components/Projects"));
+const Education = lazy(() => import("./components/Education"));
+const Footer = lazy(() => import("./components/Footer"));
+const ExpandedMenu = lazy(() => import("./components/navbar/ExpandedMenu"));
+const SendMessageStatus = lazy(() => import("./components/SendMessageStatus"));
+const MessageModal = lazy(() => import("./components/MessageModal"));
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -41,49 +41,71 @@ function App() {
 
   return (
     <div style={{ overflow: "hidden" }} className="text-white bg-black w-full">
-      <Navbar
-        setShowExpandedMenu={setShowExpandedMenu}
-        showNavbar={showNavbar}
-      />
+      {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+      <Suspense>
+        <Navbar
+          setShowExpandedMenu={setShowExpandedMenu}
+          showNavbar={showNavbar}
+        />
+      </Suspense>
       <div className="lg:w-2/3 mx-auto bg-black">
         {/* This will be the message component users will use to send us messages */}
         {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
-        <AnimatePresence initial={false} mode="wait">
-          {isMessageOpen && (
-            <MessageModal
-              isMessageOpen={isMessageOpen}
-              setIsMessageOpen={setIsMessageOpen}
-              setSent={setSent}
-            />
-          )}
-        </AnimatePresence>
+        <Suspense>
+          <AnimatePresence initial={false} mode="wait">
+            {isMessageOpen && (
+              <MessageModal
+                isMessageOpen={isMessageOpen}
+                setIsMessageOpen={setIsMessageOpen}
+                setSent={setSent}
+              />
+            )}
+          </AnimatePresence>
+        </Suspense>
 
         {/* This will inform the user whether their message has been sent or not */}
-        <SendMessageStatus sent={sent} setSent={setSent} />
+        <Suspense>
+          <SendMessageStatus sent={sent} setSent={setSent} />
+        </Suspense>
 
         {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
-        <AnimatePresence initial={false} mode="wait">
-          {showExpandedMenu && (
-            <ExpandedMenu
-              setShowExpandedMenu={setShowExpandedMenu}
-              showExpandedMenu={showExpandedMenu}
-            />
-          )}
-        </AnimatePresence>
+        <Suspense>
+          <AnimatePresence initial={false} mode="wait">
+            {showExpandedMenu && (
+              <ExpandedMenu
+                setShowExpandedMenu={setShowExpandedMenu}
+                showExpandedMenu={showExpandedMenu}
+              />
+            )}
+          </AnimatePresence>
+        </Suspense>
 
-        <Intro
-          isMessageOpen={isMessageOpen}
-          setIsMessageOpen={setIsMessageOpen}
-        />
-        <About />
-        <Projects />
+        <Suspense>
+          <Intro
+            isMessageOpen={isMessageOpen}
+            setIsMessageOpen={setIsMessageOpen}
+          />
+        </Suspense>
+
+        <Suspense>
+          <About />
+        </Suspense>
+
+        <Suspense>
+          <Projects />
+        </Suspense>
+
         <div
           className="mx-auto px-2 md:p-0 lg:w-4/5"
           style={{ maxWidth: "750px" }}
         >
-          <Education />
+          <Suspense>
+            <Education />
+          </Suspense>
         </div>
-        <Footer setIsMessageOpen={setIsMessageOpen} />
+        <Suspense>
+          <Footer setIsMessageOpen={setIsMessageOpen} />
+        </Suspense>
       </div>
     </div>
   );
