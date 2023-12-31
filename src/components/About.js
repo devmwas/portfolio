@@ -5,16 +5,6 @@ import AboutHeadingAnimation from "./animations/AboutHeadingAnimation";
 import BigTextAnimation from "./animations/BigTextAnimation";
 
 function About() {
-  let points = [];
-  for (let i = 0; i < 800; i++) {
-    points.push(
-      <div
-        key={i}
-        style={{ height: 5, width: 5, opacity: 0.2, borderRadius: 5 }}
-        className="m-2 bg-sky-400"
-      ></div>
-    );
-  }
   return (
     <div
       style={{
