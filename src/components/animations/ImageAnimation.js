@@ -22,15 +22,11 @@ function ImageAnimation({ children }) {
   // Our Variants
   const imageAnimationVariants = {
     minimized: {
-      transform: "scale(.5)",
+      transform: "scale(.8)",
     },
     normal: {
       transform: "scale(1)",
     },
-    // squeezed: {
-    //   transform: "scale(0.9)",
-    //   transition: { duration: 0.5 },
-    // },
   };
 
   return (
@@ -43,8 +39,8 @@ function ImageAnimation({ children }) {
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
       exit="squeezed"
-      transition={{ duration: 3 }}
-      whileHover={{ opacity: 1, duration: 3 }}
+      transition={{ duration: 2 }}
+      whileHover={{ opacity: 1, duration: 2 }}
     >
       {children}
     </motion.div>
