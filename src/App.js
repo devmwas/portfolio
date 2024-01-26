@@ -1,15 +1,18 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import Fallback from "./components/Fallback";
+import ExpandedMenu from "./components/navbar/ExpandedMenu";
+import MessageModal from "./components/MessageModal";
 const Intro = lazy(() => import("./components/Intro"));
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const About = lazy(() => import("./components/About"));
 const Projects = lazy(() => import("./components/Projects"));
 const Education = lazy(() => import("./components/Education"));
 const Footer = lazy(() => import("./components/Footer"));
-const ExpandedMenu = lazy(() => import("./components/navbar/ExpandedMenu"));
 const SendMessageStatus = lazy(() => import("./components/SendMessageStatus"));
-const MessageModal = lazy(() => import("./components/MessageModal"));
+// Lazy importig the following two components was leading to bad UI\UX and so I quit it
+// const ExpandedMenu = lazy(() => import("./components/navbar/ExpandedMenu"));
+// const MessageModal = lazy(() => import("./components/MessageModal"));
 
 function App() {
   const [showExpandedMenu, setShowExpandedMenu] = useState(false);
@@ -42,7 +45,7 @@ function App() {
 
   return (
     <div style={{ overflow: "hidden" }} className="text-white bg-black w-full">
-      {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+      {/* We include a fallback UI using Suspense which will show while component is being imported */}
       <Navbar
         setShowExpandedMenu={setShowExpandedMenu}
         showNavbar={showNavbar}
@@ -50,40 +53,40 @@ function App() {
 
       <div className="lg:w-2/3 mx-auto bg-black">
         {/* This will be the message component users will use to send us messages */}
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
-        <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}>
-          {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
-          <AnimatePresence initial={false} mode="wait">
-            {isMessageOpen && (
-              <MessageModal
-                isMessageOpen={isMessageOpen}
-                setIsMessageOpen={setIsMessageOpen}
-                setSent={setSent}
-              />
-            )}
-          </AnimatePresence>
-        </Suspense>
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
+        {/* <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}> */}
+        {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
+        <AnimatePresence initial={false} mode="wait">
+          {isMessageOpen && (
+            <MessageModal
+              isMessageOpen={isMessageOpen}
+              setIsMessageOpen={setIsMessageOpen}
+              setSent={setSent}
+            />
+          )}
+        </AnimatePresence>
+        {/* </Suspense> */}
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"30px"} width={"240px"} />}>
           {/* This will inform the user whether their message has been sent or not */}
           <SendMessageStatus sent={sent} setSent={setSent} />
         </Suspense>
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
-        <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}>
-          {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
-          <AnimatePresence initial={false} mode="wait">
-            {showExpandedMenu && (
-              <ExpandedMenu
-                setShowExpandedMenu={setShowExpandedMenu}
-                showExpandedMenu={showExpandedMenu}
-              />
-            )}
-          </AnimatePresence>
-        </Suspense>
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
+        {/* <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}> */}
+        {/* Animate Presence will help us animate the exit/unmount behaviour of our component */}
+        <AnimatePresence initial={false} mode="wait">
+          {showExpandedMenu && (
+            <ExpandedMenu
+              setShowExpandedMenu={setShowExpandedMenu}
+              showExpandedMenu={showExpandedMenu}
+            />
+          )}
+        </AnimatePresence>
+        {/* </Suspense> */}
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}>
           <Intro
             isMessageOpen={isMessageOpen}
@@ -91,12 +94,12 @@ function App() {
           />
         </Suspense>
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}>
           <About />
         </Suspense>
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"100%"} width={"100%"} />}>
           <Projects />
         </Suspense>
@@ -105,13 +108,13 @@ function App() {
           className="mx-auto px-2 md:p-0 lg:w-4/5"
           style={{ maxWidth: "750px" }}
         >
-          {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+          {/* We include a fallback UI using Suspense which will show while component is being imported */}
           <Suspense fallback={<Fallback height={"240px"} width={"100%"} />}>
             <Education />
           </Suspense>
         </div>
 
-        {/* We include a fallback UI using Suspense which will show while component is bring imported */}
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"90px"} width={"100%"} />}>
           <Footer setIsMessageOpen={setIsMessageOpen} />
         </Suspense>
