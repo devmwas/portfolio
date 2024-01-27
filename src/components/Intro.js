@@ -3,168 +3,58 @@ import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
 import BigTextAnimation from "./animations/BigTextAnimation";
+import NameAnimation from "./animations/NameAnimation";
 
 function Intro({ setIsMessageOpen }) {
   return (
     <div
-      className="p-2 flex flex-col"
+      className="p-2 flex flex-col h-[100vh] max-w-[100%]"
       style={{
-        height: "100vh",
-        maxWidth: "100%",
         backgroundImage:
           "linear-gradient(to bottom right, darkBlue, black, darkBlue)",
       }}
       id="home"
     >
+      {/* Contaner for our Intro component's contents */}
       <div className="my-auto">
         <div className="flex relative" style={{ height: "70vh" }}>
           <div className="my-auto sm:w-5/6 z-30">
-            {/* We'll include several divs containing the same items for responsiveness */}
-            {/* This will only show on large devices and above */}
+            {/* Greetings */}
             <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "27px",
-                letterSpacing: "3px",
-              }}
-              className="text-sky-400 hidden lg:block"
+              // Here, we'll set the text size(text), line height(leading) and letter spacing(tracking)
+              // for different screen sizes using one giant TailwindCSS class name
+              className="text-sky-400 text-[14px] sm:text[16px] lg:text-[16px] leading-[21px]
+              sm:leading-[24px] lg:leading-[27px] tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
             >
               Hello. It's your
             </div>
 
-            {/* This will show on small and medium-sized devices  */}
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "2px",
-              }}
-              className="text-sky-400 hidden sm:block lg:hidden"
-            >
-              Hello. It's your
-            </div>
-
-            {/* This will show on mobile phones and smaller devices  */}
-            <div
-              style={{
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "1px",
-              }}
-              className="text-sky-400 sm:hidden"
-            >
-              Hello. It's your
-            </div>
-
-            {/* This will show on large screens */}
             {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="40px"
-              letterSpacing="-1px"
-              lineHeight="44px"
-              left={0}
-              startingLeft={"-16.5%"}
-            >
-              <div className="font-extrabold hidden lg:block">
-                Frontend Web Developer
-                <div style={{ display: "inline-block", color: "orange" }}>
-                  .
-                </div>
-              </div>
-            </IntroHeadingAnimation>
-
-            {/* This will show on small and medium-sized screens */}
-            {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="32px"
-              letterSpacing=".64px"
-              lineHeight="35.2px"
-              left={0}
-              startingLeft={"-16.5%"}
-            >
-              <div className="font-extrabold hidden sm:block lg:hidden">
-                Frontend Web Developer
-                <div style={{ display: "inline-block", color: "orange" }}>
-                  .
-                </div>
-              </div>
-            </IntroHeadingAnimation>
-
-            {/* This will show on mobile phones and smaller devices */}
-            {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="24px"
-              letterSpacing="-.48px"
-              lineHeight="26.4px"
-              left={0}
-              startingLeft={"-16.5%"}
-            >
-              <div className="font-extrabold sm:hidden">
-                Frontend Web Developer
-                <div style={{ display: "inline-block", color: "orange" }}>
-                  .
-                </div>
-              </div>
-            </IntroHeadingAnimation>
-
-            {/* This will only show on large screens and above */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* We pass the offset which is literally the marginTop of our Title element */}
-            <BigTextAnimation offSet={"56px"} direction="right">
+            <IntroHeadingAnimation>
               <div
-                style={{
-                  fontSize: "16px",
-                  lineHeight: "27px",
-                  letterSpacing: "3px",
-                  wordSpacing: "6px",
-                  marginTop: "56px",
-                }}
-                className="hidden lg:block"
+                // Tracking didnt support letter-spacing animations so I had to remove it
+                // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
+                className="font-extrabold text-[24px] sm:text-32px] lg:text-[40px]
+                leading-[26.4px] sm:leading-[35.2px] lg:leading-[44px]"
               >
-                Welcome to my digital realm, where I engineer captivating and
-                responsive frontend experiences. With a passion for quality, I
-                seamlessly blend creativity with cutting-edge technologies to
-                redefine the standards of frontend excellence. Explore my
-                portfolio, and let's elevate your online presence together.
+                Frontend Web Developer
+                <div style={{ display: "inline-block", color: "orange" }}>
+                  .
+                </div>
               </div>
-            </BigTextAnimation>
+            </IntroHeadingAnimation>
 
-            {/* This will show on small and medium-sized devices  */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* We pass the offset which is literally the marginTop of our Title element */}
-            {/* The direction prop will tell us which direction to animate our colored screen to */}
-            <BigTextAnimation offSet={"56px"} direction="right">
-              <div
-                style={{
-                  fontSize: "16px",
-                  lineHeight: "24px",
-                  letterSpacing: "2px",
-                  wordSpacing: "4px",
-                  marginTop: "56px",
-                }}
-                className="hidden sm:block lg:hidden"
-              >
-                Welcome to my digital realm, where I engineer captivating and
-                responsive frontend experiences. With a passion for quality, I
-                seamlessly blend creativity with cutting-edge technologies to
-                redefine the standards of frontend excellence. Explore my
-                portfolio, and let's elevate your online presence together.
-              </div>
-            </BigTextAnimation>
-
-            {/* This will show on mobile phones and smaller devices  */}
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
             <BigTextAnimation offSet={"56px"} direction="right">
               <div
                 style={{
-                  fontSize: "14px",
-                  lineHeight: "21px",
-                  letterSpacing: "1px",
-                  wordSpacing: "2px",
-                  marginTop: "56px",
+                  // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
+                  // trade-off beween fanciness and functionality and code cleanliness
+                  wordSpacing: "3px",
                 }}
-                className="sm:hidden"
+                className="text-[14px] mt-[56px] sm:text-[16px] lg:text-[16px] leading-[27px] sm:leading-[24px] 
+                lg:leading-[21px] tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
               >
                 Welcome to my digital realm, where I engineer captivating and
                 responsive frontend experiences. With a passion for quality, I
@@ -176,86 +66,25 @@ function Intro({ setIsMessageOpen }) {
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="16px"
-              lineHeight="27px"
-              letterSpacing="3px"
-              left={0}
-              startingLeft={"-100px"}
-            >
-              <div className="text-sky-400 hidden lg:block mt-2">- Devmwas</div>
-            </IntroHeadingAnimation>
-
-            {/* This will show on small and medium-sized devices  */}
-            {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="16px"
-              lineHeight="24px"
-              letterSpacing="2px"
-              left={0}
-              startingLeft={"-100px"}
-            >
-              <div className="text-sky-400 hidden sm:block lg:hidden">
+            <NameAnimation>
+              <div
+                // Tracking didnt support letter-spacing animations so I had to remove it
+                // tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
+                className="text-sky-400 mt-2 text-[14px] sm:text-[16px] lg:text-[16px] 
+                leading-[21px] sm:leading-[24px] lg:leading-[27px]"
+              >
                 - Devmwas
               </div>
-            </IntroHeadingAnimation>
+            </NameAnimation>
 
-            {/* This will show on mobile phones and smaller devices  */}
-            {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation
-              fontSize="14px"
-              lineHeight="21px"
-              letterSpacing="1px"
-              left={0}
-              startingLeft={"-100px"}
-            >
-              <div className="text-sky-400 sm:hidden">- Devmwas</div>
-            </IntroHeadingAnimation>
-
-            {/* This will only show on large devices and above */}
-            <div
-              style={{ marginTop: "56px" }}
-              className="mt-20 hidden lg:block"
-            >
+            {/* Call To Action button - (LET'S TALK BUTTON) */}
+            <div style={{ marginTop: "56px" }} className="mt-12 sm:mt-20">
               {/* We include Framer Motion animations to make it fancy */}
               <IntroButtonAnimation>
                 <Button
+                  fullWidth
                   variant="outlined"
                   color="primary"
-                  size="large"
-                  onClick={() => setIsMessageOpen(true)}
-                >
-                  <div className="font-bold">Let's Talk</div>
-                </Button>
-              </IntroButtonAnimation>
-            </div>
-
-            {/* This will show on small and medium-sized devices  */}
-            <div
-              style={{ marginTop: "56px" }}
-              className="mt-20 hidden sm:block lg:hidden"
-            >
-              {/* We include Framer Motion animations to make it fancy */}
-              <IntroButtonAnimation>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size="medium"
-                  onClick={() => setIsMessageOpen(true)}
-                >
-                  <div className="font-bold">Let's Talk</div>
-                </Button>
-              </IntroButtonAnimation>
-            </div>
-
-            {/* These BUTTON will only show on mobile phones and smaller devices  */}
-            <div style={{ marginTop: "56px" }} className="mt-12 sm:hidden">
-              {/* We include Framer Motion animations to make it fancy */}
-              <IntroButtonAnimation>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size="small"
                   onClick={() => setIsMessageOpen(true)}
                 >
                   <div className="font-bold">Let's Talk</div>
@@ -264,39 +93,14 @@ function Intro({ setIsMessageOpen }) {
             </div>
           </div>
 
-          {/* These points will be only visible on larger devices and higher */}
+          {/* This is just for aesthetics*/}
           <div
             style={{
-              position: "absolute",
-              // Width is 70% of container width(2/3) for some reason
-              width: "46.667vw",
-              height: "70vh",
-              overflow: "hidden",
-              borderRadius: "2%",
-              right: "1vw",
-              opacity: 0.6,
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
             }}
-            className="lg:flex flex-wrap hidden z-0"
-          >
-            <Lines />
-          </div>
-
-          {/* These lines will be visible on medium-sized devices and lower */}
-          <div
-            style={{
-              position: "absolute",
-              right: "1vw",
-              width: "48vw",
-              height: "70vh",
-              overflow: "hidden",
-              borderRadius: "2%",
-              opacity: 0.6,
-              backgroundImage:
-                "linear-gradient(to top right, black, darkBlue, black)",
-            }}
-            className="flex flex-wrap lg:hidden"
+            className="absolute right-[2vh] h-[70vh] overflow-hidden rounded-[2%] opacity-60 
+            flex flex-wrap z-0 w-[48vw] lg:w-[46.667vw] "
           >
             <Lines />
           </div>

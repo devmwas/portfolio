@@ -32,6 +32,7 @@ function IntroButtonAnimation({ children }) {
 
   return (
     <motion.div
+      className="rounded-md w-1/4 min-w-[200px]"
       ref={ourRef}
       initial="hidden"
       animate={introButtonControls}

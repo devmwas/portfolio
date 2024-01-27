@@ -1,7 +1,7 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-function IntroHeadingAnimation({ children, letterSpacing = null }) {
+function NameAnimation({ children }) {
   // Creating a ref for our element
   const ourRef = useRef(null);
 
@@ -23,12 +23,12 @@ function IntroHeadingAnimation({ children, letterSpacing = null }) {
     spacedOut: {
       letterSpacing: "24px",
       width: "300vw",
-      left: "-16.5%",
+      left: "-100px",
     },
     normalSpace: {
-      letterSpacing: letterSpacing || "-1px",
+      letterSpacing: "3px",
       width: "fit-content",
-      left: 0,
+      left: "0px",
     },
   };
 
@@ -50,4 +50,4 @@ function IntroHeadingAnimation({ children, letterSpacing = null }) {
   );
 }
 
-export default IntroHeadingAnimation;
+export default NameAnimation;

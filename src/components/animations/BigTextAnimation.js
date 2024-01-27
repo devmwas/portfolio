@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
-function BigTextAnimation({ children, offSet, direction, left, width }) {
+function BigTextAnimation({ children, offSet, direction }) {
   // This will help us remove this component from DOM once it'sfinished animating
   // We do this to reduce DOM size which affects page speed
   const [isVisible, setIsVisible] = useState(true);
@@ -35,7 +35,7 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
   // This will animate the Big Text element
   const bigTextVariants = {
     hidden: {
-      y: "20px",
+      y: "0px",
     },
     visible: {
       y: "0px",
@@ -54,7 +54,7 @@ function BigTextAnimation({ children, offSet, direction, left, width }) {
   };
 
   return (
-    <div ref={ourRef} style={{ position: "relative", left }}>
+    <div ref={ourRef} style={{ position: "relative" }}>
       {/* Here we'll animate our Big Text element */}
       <motion.div
         initial="hidden"
