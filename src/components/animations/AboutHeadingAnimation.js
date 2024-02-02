@@ -1,13 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-function AboutHeadingAnimation({
-  children,
-  fontSize,
-  letterSpacing,
-  lineHeight,
-  right,
-}) {
+function AboutHeadingAnimation({ children }) {
   // We create refs to grab our animation element
   const ourRef = useRef(null);
 
@@ -27,16 +21,12 @@ function AboutHeadingAnimation({
   // Our Variants
   const headingVariants = {
     spacedOut: {
-      fontSize,
-      lineHeight,
       right: "-100px",
       letterSpacing: "24px",
     },
     normalSpace: {
-      right,
-      fontSize,
-      lineHeight,
-      letterSpacing,
+      right: "10px",
+      letterSpacing: "3px",
     },
   };
 

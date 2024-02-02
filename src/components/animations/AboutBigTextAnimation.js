@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 /* We use the offset to remove the height of the job title since its absolutely positioned */
 // We use left to either animate the colored screen to the left or right
-function BigTextAnimation({ children, offSet, direction }) {
+function AboutBigTextAnimation({ children, offSet, direction }) {
   // This will help us remove this component from DOM once it'sfinished animating
   // We do this to reduce DOM size which affects page speed
   const [isVisible, setIsVisible] = useState(true);
@@ -28,7 +28,7 @@ function BigTextAnimation({ children, offSet, direction }) {
       // we do this to decrease DOM size as a large DOM tree will load slowly
       setTimeout(() => {
         setIsVisible(false);
-      }, 3000);
+      }, 2000);
     }
   }, [isInView]);
 
@@ -60,7 +60,7 @@ function BigTextAnimation({ children, offSet, direction }) {
         initial="hidden"
         animate={bigTextControls}
         variants={bigTextVariants}
-        transition={{ duration: 1, delay: 0 }}
+        transition={{ duration: 2, delay: 0 }}
         style={{ overflow: "hidden" }}
       >
         {children}
@@ -85,7 +85,7 @@ function BigTextAnimation({ children, offSet, direction }) {
             initial="visible"
             animate={coloredScreenControls}
             variants={coloredScreenVariants}
-            transition={{ duration: 1.5, ease: "backIn" }}
+            transition={{ duration: 2, ease: "backIn" }}
           ></motion.div>
         ) : null}
       </motion.div>
@@ -93,4 +93,4 @@ function BigTextAnimation({ children, offSet, direction }) {
   );
 }
 
-export default BigTextAnimation;
+export default AboutBigTextAnimation;

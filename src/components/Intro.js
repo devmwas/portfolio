@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
-import BigTextAnimation from "./animations/BigTextAnimation";
+import IntroBigTextAnimation from "./animations/IntroBigTextAnimation";
 import NameAnimation from "./animations/NameAnimation";
 
 function Intro({ setIsMessageOpen }) {
@@ -46,7 +46,7 @@ function Intro({ setIsMessageOpen }) {
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
-            <BigTextAnimation offSet={"56px"} direction="right">
+            <IntroBigTextAnimation offSet={"56px"} direction="right">
               <div
                 style={{
                   // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
@@ -62,7 +62,7 @@ function Intro({ setIsMessageOpen }) {
                 redefine the standards of frontend excellence. Explore my
                 portfolio, and let's elevate your online presence together.
               </div>
-            </BigTextAnimation>
+            </IntroBigTextAnimation>
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
@@ -93,14 +93,14 @@ function Intro({ setIsMessageOpen }) {
             </div>
           </div>
 
-          {/* This is just for aesthetics*/}
+          {/* This is just a fancy background for aesthetics*/}
           <div
             style={{
               backgroundImage:
                 "linear-gradient(to top right, black, darkBlue, black)",
             }}
             className="absolute right-[2vh] h-[70vh] overflow-hidden rounded-[2%] opacity-60 
-            flex flex-wrap z-0 w-[48vw] lg:w-[46.667vw] "
+            flex flex-wrap z-0 w-[48vw] lg:w-[46.667vw]"
           >
             <Lines />
           </div>
