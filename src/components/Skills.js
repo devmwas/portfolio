@@ -52,6 +52,7 @@ function Skills() {
         <div>
           <div>Docker</div>
           <div>Kubernetes</div>
+          <div>GitHub Pages</div>
         </div>
       </div>
     </div>
