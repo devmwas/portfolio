@@ -57,10 +57,10 @@ function Intro({ setIsMessageOpen }) {
                 lg:leading-[21px] tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
               >
                 Welcome to my digital realm, where I engineer captivating and
-                responsive frontend experiences. With a passion for quality, I
-                seamlessly blend creativity with cutting-edge technologies to
-                redefine the standards of frontend excellence. Explore my
-                portfolio, and let's elevate your online presence together.
+                responsive frontend experiences. I seamlessly blend creativity
+                with cutting-edge technologies to redefine the standards of
+                frontend excellence. Explore my portfolio, and let's elevate
+                your online presence together.
               </div>
             </IntroBigTextAnimation>
 

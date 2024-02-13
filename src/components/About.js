@@ -2,7 +2,7 @@ import React from "react";
 import Lines from "./Lines";
 import AboutHeadingAnimation from "./animations/AboutHeadingAnimation";
 import AboutBigTextAnimation from "./animations/AboutBigTextAnimation";
-import TechStack from "./Techstack";
+import TechStack from "./TechStack";
 
 function About() {
   return (

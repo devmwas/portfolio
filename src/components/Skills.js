@@ -1,62 +1,26 @@
 import React from "react";
+import { skillsData } from "../data/skills";
 
 function Skills() {
-  return (
-    <div>
-      <div>Skills</div>
+  const SkillsComponents = skillsData.map((skill, index) => {
+    // The Specific Skills for Current Stack/Niche
+    const SkillItems = skill.map((skillItem, index) => {
+      return <div>{skillItem}</div>;
+    });
 
-      {/* Frontend Development Technologies */}
-      <div>
-        <div className="font-bold text-xl">Frontend Development</div>
-        <div>ReactJS</div>
-        <div>Redux and Redux Toolkit</div>
-        <div>Material UI</div>
-        <div>TailwindCSS</div>
-        <div>Framer Motion</div>
-      </div>
-
-      {/* Backend Development Technologies */}
-      <div>
-        <div className="font-bold text-xl">Backend Development</div>
-        <div>Firebase Realtime Database</div>
-        <div>Firebase Firestore Database</div>
-        <div>Node JS</div>
-        <div>Mongo DB</div>
-        <div>Express</div>
-        <div>Django</div>
-      </div>
-
-      {/* Python Programming Technologies */}
-      <div>
-        <div className="font-bold text-xl">Python Programming</div>
+    // Specific Skill on a certain niche e.g frontend development with all it's details
+    return (
+      <div key={index}>
+        {/* the name of the niche/field of study */}
+        <div className="font-bold text-xl">{skill.name}</div>
         <div>
-          <div>Django</div>
-          <div>Pandas</div>
-          <div>NumPy</div>
-          <div>Selenium</div>
+          {/* The Specific Skill Items on the Current Stack/Niche */}
+          {SkillItems}
         </div>
       </div>
+    );
+  });
 
-      {/* Git and GitHub Development Technologies */}
-      <div className="font-bold text-xl">
-        <div>Git and GitHub Development</div>
-        <div>
-          <div>Deployment of Static Pages to GitHub Pages</div>
-          <div>Software Development Collaboration on GitHub</div>
-        </div>
-      </div>
-
-      {/* Deployment Technologies */}
-      <div className="font-bold text-xl">
-        <div>Deployment</div>
-        <div>
-          <div>Docker</div>
-          <div>Kubernetes</div>
-          <div>GitHub Pages</div>
-        </div>
-      </div>
-    </div>
-  );
+  // All Skills Components. Every Skill type is a component
+  return <div>{SkillsComponents}</div>;
 }
-
-export default Skills;
