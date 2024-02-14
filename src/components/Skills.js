@@ -63,7 +63,7 @@ function Skills() {
           Skills & Competence
         </div>
       </SkillsAndCompetenceHeadingAnimation>
-      <div className=" ml-4 md:pl-8 mt-10">{SkillsComponents}</div>
+      <div className="mx-4 md:mx-8 mt-10">{SkillsComponents}</div>
     </div>
   );
 }
