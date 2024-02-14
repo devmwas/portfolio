@@ -38,7 +38,7 @@ function About() {
               <div
                 // Tracking didnt support letter-spacing animations so I had to remove it
                 // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
-                className="text-right text-sky-400 font-semibold right-[10px] hidden lg:block
+                className="text-right text-sky-400 font-semibold right-[10px] 
                 text-[14px] leading-[21px] sm:text-[16px] sm:leading-[24px] 
                 lg:text-[16px] lg:leading-[27px]"
                 style={{

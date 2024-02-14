@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Fallback from "./components/Fallback";
 import ExpandedMenu from "./components/navbar/ExpandedMenu";
 import MessageModal from "./components/MessageModal";
+const Skills = lazy(() => import("./components/Skills"));
 const Intro = lazy(() => import("./components/Intro"));
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const About = lazy(() => import("./components/About"));
@@ -97,6 +98,11 @@ function App() {
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
         <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}>
           <About />
+        </Suspense>
+
+        {/* We include a fallback UI using Suspense which will show while component is being imported */}
+        <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}>
+          <Skills />
         </Suspense>
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
