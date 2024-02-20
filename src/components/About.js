@@ -52,25 +52,25 @@ function About() {
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
-            <AboutBigTextAnimation offSet={"27px"} direction="left">
-              <div
-                className="text-right mt-[21px] text-[14px] leading-[21px] tracking-[1px]
+            {/* <AboutBigTextAnimation offSet={"27px"} direction="left"> */}
+            <div
+              className="text-right mt-[21px] text-[14px] leading-[21px] tracking-[1px]
                 sm:mt-[24px] sm:text-[16px] sm:leading-[24px] sm:tracking-[2px]
                 lg:mt-[27px] lg:text-[16px] lg:leading-[27px] lg:tracking-[3px]"
-                style={{
-                  // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
-                  // trade-off beween fanciness and functionality and code cleanliness
-                  wordSpacing: "3px",
-                }}
-              >
-                Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
-                Software Engineering graduate with a flair for web development.
-                I bring a solid foundation in computer science, channeling it
-                into crafting sleek, user-centric interfaces for various
-                applications. Let's collaborate and bring innovation to the
-                forefront of web development!
-              </div>
-            </AboutBigTextAnimation>
+              style={{
+                // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
+                // trade-off beween fanciness and functionality and code cleanliness
+                wordSpacing: "3px",
+              }}
+            >
+              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
+              Software Engineering graduate with a flair for web development. I
+              bring a solid foundation in computer science, channeling it into
+              crafting sleek, user-centric interfaces for various applications.
+              Let's collaborate and bring innovation to the forefront of web
+              development!
+            </div>
+            {/* </AboutBigTextAnimation> */}
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}

@@ -46,23 +46,23 @@ function Intro({ setIsMessageOpen }) {
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
-            <IntroBigTextAnimation offSet={"56px"} direction="right">
-              <div
-                style={{
-                  // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
-                  // trade-off beween fanciness and functionality and code cleanliness
-                  wordSpacing: "3px",
-                }}
-                className="text-[14px] mt-[56px] sm:text-[16px] lg:text-[16px] leading-[27px] sm:leading-[24px] 
+            {/* <IntroBigTextAnimation offSet={"56px"} direction="right"> */}
+            <div
+              style={{
+                // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
+                // trade-off beween fanciness and functionality and code cleanliness
+                wordSpacing: "3px",
+              }}
+              className="text-[14px] mt-[56px] sm:text-[16px] lg:text-[16px] leading-[27px] sm:leading-[24px] 
                 lg:leading-[21px] tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
-              >
-                Welcome to my digital realm, where I engineer captivating and
-                responsive frontend experiences. I seamlessly blend creativity
-                with cutting-edge technologies to redefine the standards of
-                frontend excellence. Explore my portfolio, and let's elevate
-                your online presence together.
-              </div>
-            </IntroBigTextAnimation>
+            >
+              Welcome to my digital realm, where I engineer captivating and
+              responsive frontend experiences. I seamlessly blend creativity
+              with cutting-edge technologies to redefine the standards of
+              frontend excellence. Explore my portfolio, and let's elevate your
+              online presence together.
+            </div>
+            {/* </IntroBigTextAnimation> */}
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}

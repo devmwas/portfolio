@@ -124,7 +124,7 @@ export default function Education() {
 
   // This is our tab (our Education Component)
   return (
-    <DelayAnimation delay={0}>
+    <DelayAnimation delay={0} duration={2}>
       <Box
         id="education"
         sx={{

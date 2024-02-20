@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-function DelayAnimation({ children, delay }) {
+function DelayAnimation({ children, duration = 1, delay }) {
   // We create refs to grab our animation element
   const ourRef = useRef(null);
 
@@ -36,7 +36,7 @@ function DelayAnimation({ children, delay }) {
       initial="hidden"
       animate={delayAnimationControls}
       variants={delayAnimationVariants}
-      transition={{ delay, duration: 0.5 }}
+      transition={{ delay, duration }}
     >
       {children}
     </motion.div>
