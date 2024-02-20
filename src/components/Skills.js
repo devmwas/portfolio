@@ -23,7 +23,7 @@ function Skills() {
     return (
       <div key={index} className="">
         {/* the name of the niche/field of study */}
-        <div className="mb-2  italic">{skill.name}</div>
+        <div className="mb-2 italic">{skill.name}</div>
         <div className="flex space-x-2 overflow-x-scroll">
           {/* The Specific Skill Items on the Current Stack/Niche */}
           {SkillItems}
