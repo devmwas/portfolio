@@ -33,7 +33,8 @@ function Footer({ setIsMessageOpen }) {
               wordSpacing: "2px",
             }}
           >
-            Copyright <Copyright fontSize="small" /> Devmwas 2023
+            Copyright <Copyright fontSize="small" /> Devmwas{" "}
+            {new Date().getFullYear()}
           </div>
         </div>
       </DelayAnimation>
