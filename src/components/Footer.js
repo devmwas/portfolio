@@ -34,7 +34,7 @@ function Footer({ setIsMessageOpen }) {
             }}
           >
             Copyright <Copyright fontSize="small" /> Devmwas{" "}
-            {new Date().getFullYear()}dmore
+            {new Date().getFullYear()}
           </div>
         </div>
       </DelayAnimation>
