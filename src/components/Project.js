@@ -152,10 +152,15 @@ function Project({ project, reverse }) {
                 <LaunchIcon fontSize="small" />
               </a>
             </div>
+            {/* We don't show the GitHub icon if the project is a private repo */}
             <div>
-              <a href={`${project.githubLink}`} target="blank">
-                <GitHubIcon fontSize="small" />
-              </a>
+              {project.private ? (
+                ""
+              ) : (
+                <a href={`${project.githubLink}`} target="blank">
+                  <GitHubIcon fontSize="small" />
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ function Intro({ setIsMessageOpen }) {
                 className="font-extrabold text-[24px] sm:text-32px] lg:text-[40px]
                 leading-[26.4px] sm:leading-[35.2px] lg:leading-[44px]"
               >
-                Frontend Web Developer
+                Fullstack Web Developer
                 <div style={{ display: "inline-block", color: "orange" }}>
                   .
                 </div>
@@ -56,11 +56,11 @@ function Intro({ setIsMessageOpen }) {
               className="text-[14px] mt-[56px] sm:text-[16px] lg:text-[16px] leading-[27px] sm:leading-[24px] 
                 lg:leading-[21px] tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
             >
-              Welcome to my digital realm, where I engineer captivating and
-              responsive frontend experiences. I seamlessly blend creativity
-              with cutting-edge technologies to redefine the standards of
-              frontend excellence. Explore my portfolio, and let's elevate your
-              online presence together.
+              I craft dynamic, responsive, and scalable web solutions. I
+              seamlessly integrate creativity with cutting-edge fullstack
+              technologies to build robust web applications. My portfolio is
+              testament to my vast array of experience, spanning both the
+              frontend and the backend domains. Have a look!
             </div>
             {/* </IntroBigTextAnimation> */}
 

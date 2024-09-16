@@ -1,6 +1,16 @@
 // This is the data for all my projects. Adding an item(object) in this list will add anwe project on the website
 export const projects = [
   {
+    title: "Verbot UI",
+    description:
+      "This is the User Interface for a web scrapping bot (Verbot). Using this website, users can configure the bot as well as purchase subscriptions using a popular payment method in Kenya, M-PESA. It's a fullstack website made using React on the Frontend and Firebase on the backend.",
+    screenshot: "verbotui_screenshot.png",
+    techStack: ["React", "Firebase", "Express", "MPESA"],
+    githubLink: "https://github.com/devmwas/verbot_ui",
+    liveLink: "https://verbot-ui.web.app/",
+    private: true,
+  },
+  {
     title: "Know Thy Weather",
     description:
       "Want to know the weather data of virtually any city on earth? I worked with two APIs to enable just that. Forecast data is presented elegantly, something that's not common in many weather apps out there. Have a look! ",
@@ -8,6 +18,7 @@ export const projects = [
     techStack: ["React", "MUI", "Tailwind", "Fetch"],
     githubLink: "https://github.com/devmwas/weather_app",
     liveLink: "https://devmwas.github.io/weather_app/",
+    private: false,
   },
   {
     title: "Calculator App",
@@ -17,6 +28,7 @@ export const projects = [
     techStack: ["React", "Redux", "MUI", "Tailwind"],
     githubLink: "https://github.com/devmwas/calculator_app",
     liveLink: "https://devmwas.github.io/calculator_app/",
+    private: false,
   },
   {
     title: "Todos App",
@@ -26,6 +38,7 @@ export const projects = [
     techStack: ["React", "MUI", "Tailwind"],
     githubLink: "https://github.com/devmwas/todos",
     liveLink: "https://devmwas.github.io/todos/",
+    private: false,
   },
   {
     title: "Personal Portfolio",
@@ -35,5 +48,6 @@ export const projects = [
     techStack: ["React", "MUI", "Tailwind", "EmailJS"],
     githubLink: "https://github.com/devmwas/portfolio",
     liveLink: "https://devmwas.github.io/portfolio/",
+    private: false,
   },
 ];

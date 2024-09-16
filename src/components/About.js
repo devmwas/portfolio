@@ -63,12 +63,13 @@ function About() {
                 wordSpacing: "3px",
               }}
             >
-              Hello! I'm Mwangi Morris Kinuthia, also known as Devmwas, a
-              Software Engineering graduate with a flair for web development. I
-              bring a solid foundation in computer science, channeling it into
-              crafting sleek, user-centric interfaces for various applications.
-              Let's collaborate and bring innovation to the forefront of web
-              development!
+              Hello! I'm Mwangi Morris Kinuthia alias Devmwas, a Software
+              Engineering graduate with a flair for web development. With a
+              solid foundation in computer science, I specialize in building
+              both sleek, user-centric frontend interfaces as well as powerful,
+              efficient backend systems. I design intuitive user experiences and
+              scalable backend architectures, all while being an excellent team
+              player and collaborator.
             </div>
             {/* </AboutBigTextAnimation> */}
 

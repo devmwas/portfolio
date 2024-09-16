@@ -21,6 +21,20 @@ function TechStack() {
         </div>
       </Tooltip>
 
+      {/* Firebase Logo */}
+      <Tooltip title="Firebase" arrow>
+        <div className="flex space-x-2 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 cursor-pointer">
+          <img alt="Firebase Logo" src="firebase_logo.png" />
+        </div>
+      </Tooltip>
+
+      {/* Express JS Logo */}
+      <Tooltip title="Express JS" arrow>
+        <div className="flex space-x-2 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 cursor-pointer">
+          <img alt="Express JS Logo" src="express_logo.png" />
+        </div>
+      </Tooltip>
+
       {/* Redux Logo */}
       <Tooltip title="Redux" arrow>
         <div className="flex space-x-2 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 cursor-pointer">
