@@ -124,82 +124,45 @@ export default function Education() {
 
   // This is our tab (our Education Component)
   return (
-    <DelayAnimation delay={0} duration={2}>
-      <Box
-        id="education"
-        sx={{
-          bgcolor: "background.paper",
-          display: "flex",
-          height: "240px",
-          marginBottom: "50px",
-          marginTop: "80px",
-          marginX: "auto",
-          position: "relative",
-        }}
-      >
-        {/* We will include the same element multiple times and only show them at the intended breakpoints  */}
-        {/* This will only show on large devices and above */}
-        <HeadingAnimation
-          fontSize="18px"
-          lineHeight="27px"
-          letterSpacing="3px"
-          wordSpacing="6px"
-          left={"-10%"}
-          top="-40px"
-        >
-          <div className="text-sky-400 font-semibold hidden lg:block">
-            Education
-          </div>
-        </HeadingAnimation>
+    <div>
+      <div className="text-sky-400 font-semibold mt-[80px]">Education</div>
 
-        {/* This will only show on small and medium-sized devices */}
-        <HeadingAnimation
-          fontSize="16px"
-          lineHeight="24px"
-          letterSpacing="2px"
-          wordSpacing="4px"
-          left={"0%"}
-          top="-40px"
-        >
-          <div className="text-sky-400 font-semibold hidden sm:block lg:hidden">
-            Education
-          </div>
-        </HeadingAnimation>
-
-        {/* This will only show on mobile phones and smaller devices */}
-        <HeadingAnimation
-          fontSize="14px"
-          lineHeight="21px"
-          letterSpacing="1px"
-          wordSpacing="2px"
-          top="-40px"
-          left="2px"
-        >
-          <div className="text-sky-400 font-semibold sm:hidden">Education</div>
-        </HeadingAnimation>
-
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Vertical tabs example"
+      <DelayAnimation delay={0} duration={1}>
+        <Box
+          id="education"
           sx={{
-            borderRight: 1,
-            borderColor: "divider",
-            minWidth: "100px",
-            bgcolor: "darkGreen",
+            bgcolor: "background.paper",
+            display: "flex",
+            height: "240px",
+            marginBottom: "50px",
+            marginTop: "8px",
+            marginX: "auto",
+            position: "relative",
           }}
         >
-          <Tab label="University" {...a11yProps(0)} />
-          <Tab label="Secondary" {...a11yProps(1)} />
-          <Tab label="Primary" {...a11yProps(2)} />
-          <Tab label="YouTube" {...a11yProps(3)} />
-          <Tab label="Petanns" {...a11yProps(4)} />
-        </Tabs>
-        {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
-        {tabPanels}
-      </Box>
-    </DelayAnimation>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            sx={{
+              borderRight: 1,
+              borderColor: "divider",
+              minWidth: "100px",
+              bgcolor: "darkGreen",
+            }}
+          >
+            <Tab label="University" {...a11yProps(0)} />
+            <Tab label="Secondary" {...a11yProps(1)} />
+            <Tab label="Primary" {...a11yProps(2)} />
+            <Tab label="YouTube" {...a11yProps(3)} />
+            <Tab label="Petanns" {...a11yProps(4)} />
+          </Tabs>
+          {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
+          {tabPanels}
+        </Box>
+      </DelayAnimation>
+    </div>
   );
 }

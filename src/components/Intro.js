@@ -2,7 +2,6 @@ import { Button } from "@mui/material";
 import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
-import IntroBigTextAnimation from "./animations/IntroBigTextAnimation";
 import NameAnimation from "./animations/NameAnimation";
 
 function Intro({ setIsMessageOpen }) {
@@ -30,19 +29,17 @@ function Intro({ setIsMessageOpen }) {
             </div>
 
             {/* We include Framer Motion animations to make it fancy */}
-            <IntroHeadingAnimation>
-              <div
-                // Tracking didnt support letter-spacing animations so I had to remove it
-                // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
-                className="font-extrabold text-[24px] sm:text-32px] lg:text-[40px]
+            {/* <IntroHeadingAnimation> */}
+            <div
+              // Tracking didnt support letter-spacing animations so I had to remove it
+              // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
+              className="font-extrabold text-[24px] sm:text-32px] lg:text-[40px]
                 leading-[26.4px] sm:leading-[35.2px] lg:leading-[44px]"
-              >
-                Fullstack Web Developer
-                <div style={{ display: "inline-block", color: "orange" }}>
-                  .
-                </div>
-              </div>
-            </IntroHeadingAnimation>
+            >
+              Fullstack Web Developer
+              <div style={{ display: "inline-block", color: "orange" }}>.</div>
+            </div>
+            {/* </IntroHeadingAnimation> */}
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
@@ -66,16 +63,16 @@ function Intro({ setIsMessageOpen }) {
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
-            <NameAnimation>
-              <div
-                // Tracking didnt support letter-spacing animations so I had to remove it
-                // tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
-                className="text-sky-400 mt-2 text-[14px] sm:text-[16px] lg:text-[16px] 
+            {/* <NameAnimation> */}
+            <div
+              // Tracking didnt support letter-spacing animations so I had to remove it
+              // tracking-[1px] sm:tracking-[2px] lg:tracking-[3px]"
+              className="text-sky-400 mt-2 text-[14px] sm:text-[16px] lg:text-[16px] 
                 leading-[21px] sm:leading-[24px] lg:leading-[27px]"
-              >
-                - Devmwas
-              </div>
-            </NameAnimation>
+            >
+              - Devmwas
+            </div>
+            {/* </NameAnimation> */}
 
             {/* Call To Action button - (LET'S TALK BUTTON) */}
             <div style={{ marginTop: "56px" }} className="mt-12 sm:mt-20">

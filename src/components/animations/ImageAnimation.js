@@ -33,13 +33,12 @@ function ImageAnimation({ children }) {
     <motion.div
       ref={ourRef}
       style={{
-        opacity: 0.6,
+        opacity: 0.9,
       }}
-      initial="hidden"
+      initial="minimized"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
-      exit="squeezed"
-      transition={{ duration: 2 }}
+      transition={{ duration: 1 }}
       whileHover={{ opacity: 1, duration: 2 }}
     >
       {children}

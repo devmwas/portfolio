@@ -37,7 +37,7 @@ function IntroButtonAnimation({ children }) {
       initial="hidden"
       animate={introButtonControls}
       variants={introButtonVariants}
-      transition={{ duration: 0.5, delay: 1.5 }}
+      transition={{ duration: 0.5, delay: 1 }}
     >
       {children}
     </motion.div>

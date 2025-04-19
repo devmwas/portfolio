@@ -43,27 +43,27 @@ function Skills() {
     >
       {/* This will only show on large devices and above  */}
       {/* We include Framer Motion animations to make it fancy */}
-      <SkillsAndCompetenceHeadingAnimation
+      {/* <SkillsAndCompetenceHeadingAnimation
         fontSize="16px"
         lineHeight="27px"
         letterSpacing="3px"
         right={10}
-      >
-        <div
-          // Tracking didnt support letter-spacing animations so I had to remove it
-          // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
-          className="mb-4 text-sky-400 font-semibold 
+      > */}
+      <div
+        // Tracking didnt support letter-spacing animations so I had to remove it
+        // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
+        className="mb-4 text-sky-400 font-semibold 
                 text-[14px] leading-[21px] sm:text-[16px] sm:leading-[24px] 
                 lg:text-[16px] lg:leading-[27px]"
-          style={{
-            top: "0px",
-            wordSpacing: "6px",
-          }}
-        >
-          Skills & Competence
-        </div>
-      </SkillsAndCompetenceHeadingAnimation>
-      <div className="mx-4 md:mx-8 mt-10">{SkillsComponents}</div>
+        style={{
+          top: "0px",
+          wordSpacing: "6px",
+        }}
+      >
+        Skills & Competence
+      </div>
+      {/* </SkillsAndCompetenceHeadingAnimation> */}
+      <div className="mx-4 md:mx-8 mt-4">{SkillsComponents}</div>
     </div>
   );
 }

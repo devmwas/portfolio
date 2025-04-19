@@ -34,29 +34,29 @@ function About() {
             {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
-            <AboutHeadingAnimation>
-              <div
-                // Tracking didnt support letter-spacing animations so I had to remove it
-                // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
-                className="text-right text-sky-400 font-semibold right-[10px] 
+            {/* <AboutHeadingAnimation> */}
+            <div
+              // Tracking didnt support letter-spacing animations so I had to remove it
+              // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
+              className="text-right text-sky-400 font-semibold right-[10px] 
                 text-[14px] leading-[21px] sm:text-[16px] sm:leading-[24px] 
                 lg:text-[16px] lg:leading-[27px]"
-                style={{
-                  top: "0px",
-                  wordSpacing: "6px",
-                }}
-              >
-                About Me
-              </div>
-            </AboutHeadingAnimation>
+              style={{
+                top: "0px",
+                wordSpacing: "6px",
+              }}
+            >
+              About Me
+            </div>
+            {/* </AboutHeadingAnimation> */}
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}
             {/* <AboutBigTextAnimation offSet={"27px"} direction="left"> */}
             <div
-              className="text-right mt-[21px] text-[14px] leading-[21px] tracking-[1px]
-                sm:mt-[24px] sm:text-[16px] sm:leading-[24px] sm:tracking-[2px]
-                lg:mt-[27px] lg:text-[16px] lg:leading-[27px] lg:tracking-[3px]"
+              className="text-right  text-[14px] leading-[21px] tracking-[1px]
+                sm:text-[16px] sm:leading-[24px] sm:tracking-[2px]
+                mt-[8px] lg:text-[16px] lg:leading-[27px] lg:tracking-[3px]"
               style={{
                 // This used to be lg:6px md:4px 2px for lower devices. But then I had to make a
                 // trade-off beween fanciness and functionality and code cleanliness
@@ -75,57 +75,57 @@ function About() {
 
             {/* This will only show on large devices and above */}
             {/* We include Framer Motion animations to make it fancy */}
-            <AboutHeadingAnimation
+            {/* <AboutHeadingAnimation
               fontSize="16px"
               lineHeight="27px"
               letterSpacing="3px"
               right={10}
+            > */}
+            <div
+              className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden lg:block"
+              style={{
+                wordSpacing: "6px",
+              }}
             >
-              <div
-                className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden lg:block"
-                style={{
-                  wordSpacing: "6px",
-                }}
-              >
-                Tech Stack
-              </div>
-            </AboutHeadingAnimation>
+              Tech Stack
+            </div>
+            {/* </AboutHeadingAnimation> */}
 
             {/* This will only show on small and medium-sized devices */}
             {/* We include Framer Motion animations to make it fancy */}
-            <AboutHeadingAnimation
+            {/* <AboutHeadingAnimation
               fontSize="16px"
               lineHeight="24px"
               letterSpacing="2px"
               right={10}
+            > */}
+            <div
+              className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden sm:block lg:hidden"
+              style={{
+                wordSpacing: "4px",
+              }}
             >
-              <div
-                className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden sm:block lg:hidden"
-                style={{
-                  wordSpacing: "4px",
-                }}
-              >
-                Tech Stack
-              </div>
-            </AboutHeadingAnimation>
+              Tech Stack
+            </div>
+            {/* </AboutHeadingAnimation> */}
 
             {/* This will only show on mobile phones and smaller devices */}
             {/* We include Framer Motion animations to make it fancy */}
-            <AboutHeadingAnimation
+            {/* <AboutHeadingAnimation
               fontSize="14px"
               lineHeight="21px"
               letterSpacing="1px"
               right={10}
+            > */}
+            <div
+              className="text-right text-sky-400 mt-6 mb-2 font-semibold sm:hidden"
+              style={{
+                wordSpacing: "2px",
+              }}
             >
-              <div
-                className="text-right text-sky-400 mt-6 mb-2 font-semibold sm:hidden"
-                style={{
-                  wordSpacing: "2px",
-                }}
-              >
-                Tech Stack
-              </div>
-            </AboutHeadingAnimation>
+              Tech Stack
+            </div>
+            {/* </AboutHeadingAnimation> */}
 
             {/* TechStack Images */}
             <TechStack />

@@ -73,7 +73,7 @@ function ProjectDescriptionAnimation({ children, offSet, direction }) {
         {children}
 
         {/* Here we'll have a colored screen move across the view port */}
-        {/* We want to remove this element from DM tree once it's finished animating */}
+        {/* We want to remove this element from DOM tree once it's finished animating */}
         {isVisible ? (
           <motion.div
             style={{

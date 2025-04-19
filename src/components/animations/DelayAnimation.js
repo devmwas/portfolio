@@ -22,7 +22,7 @@ function DelayAnimation({ children, duration = 1, delay }) {
   const delayAnimationVariants = {
     hidden: {
       opacity: 0,
-      transform: "scale(0)",
+      transform: "scale(.8)",
     },
     show: {
       opacity: 1,

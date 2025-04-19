@@ -37,93 +37,93 @@ function Project({ project, reverse }) {
         {/* We include Framer Motion animations to make it fancy */}
         {/* Project Title */}
         <div style={{ position: "relative" }}>
-          <ProjectTitleAnimation
+          {/* <ProjectTitleAnimation
             letterSpacing="0px"
             fontSize="16px"
             lineHeight="27px"
+          > */}
+          <div
+            className={`hidden lg:flex m-2 justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
           >
-            <div
-              className={`hidden lg:flex m-2 justify-center ${
-                reverse ? "lg:justify-start" : "lg:justify-end"
-              } font-bold font-mono`}
-            >
-              {project.title}
-            </div>
-          </ProjectTitleAnimation>
+            {project.title}
+          </div>
+          {/* </ProjectTitleAnimation> */}
 
           {/* This will only show on small and medium-sized devices */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* This will show on small devices and medium-sized devices */}
-          <ProjectTitleAnimation
+          {/* <ProjectTitleAnimation
             letterSpacing="0px"
             fontSize="16px"
             lineHeight="24px"
+          > */}
+          <div
+            className={`hidden sm:flex m-2 lg:hidden justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
           >
-            <div
-              className={`hidden sm:flex m-2 lg:hidden justify-center ${
-                reverse ? "lg:justify-start" : "lg:justify-end"
-              } font-bold font-mono`}
-            >
-              {project.title}
-            </div>
-          </ProjectTitleAnimation>
+            {project.title}
+          </div>
+          {/* </ProjectTitleAnimation> */}
 
           {/* This will only show on mobile phones and smaller devices */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* This will only show on mobile phones */}
-          <ProjectTitleAnimation
+          {/* <ProjectTitleAnimation
             letterSpacing="0px"
             fontSize="14px"
             lineHeight="21px"
+          > */}
+          <div
+            className={`flex sm:hidden m-2 justify-center ${
+              reverse ? "lg:justify-start" : "lg:justify-end"
+            } font-bold font-mono`}
           >
-            <div
-              className={`flex sm:hidden m-2 justify-center ${
-                reverse ? "lg:justify-start" : "lg:justify-end"
-              } font-bold font-mono`}
-            >
-              {project.title}
-            </div>
-          </ProjectTitleAnimation>
+            {project.title}
+          </div>
+          {/* </ProjectTitleAnimation> */}
 
           {/* We'll create two decriptions and only render them depending on the screen size */}
           {/* This will render only on larger screens and above */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* We pass the offset which is literally the marginTop of our Title element */}
-          <ProjectDescriptionAnimation
+          {/* <ProjectDescriptionAnimation
             offSet={"0px"}
             direction={reverse ? "right" : "left"}
+          > */}
+          <div
+            className={`text-center bg-slate-300 ${
+              reverse ? "lg:text-start" : "lg:-left-1/2 lg:text-end"
+            } mx-auto p-2 font-mono text-xs md:text-sm hidden lg:block`}
+            style={{
+              position: "relative",
+              borderRadius: "2%",
+              marginTop: "35px",
+              width: "150%",
+            }}
           >
-            <div
-              className={`text-center bg-slate-300 ${
-                reverse ? "lg:text-start" : "lg:-left-1/2 lg:text-end"
-              } mx-auto p-2 font-mono text-xs md:text-sm hidden lg:block`}
-              style={{
-                position: "relative",
-                borderRadius: "2%",
-                marginTop: "35px",
-                width: "150%",
-              }}
-            >
-              {project.description}
-            </div>
-          </ProjectDescriptionAnimation>
+            {project.description}
+          </div>
+          {/* </ProjectDescriptionAnimation> */}
 
           {/* This will render on medium devices and lower */}
           {/* We include Framer Motion animations to make it fancy */}
           {/* We pass the offset which is literally the marginTop of our Title element */}
-          <ProjectDescriptionAnimation offSet={"0px"} direction={"right"}>
-            <div
-              className="text-center font-mono mx-auto px-2 text-xs lg:hidden"
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "500px",
-                marginTop: "32px",
-              }}
-            >
-              {project.description}
-            </div>
-          </ProjectDescriptionAnimation>
+          {/* <ProjectDescriptionAnimation offSet={"0px"} direction={"right"}> */}
+          <div
+            className="text-center font-mono mx-auto px-2 text-xs lg:hidden"
+            style={{
+              position: "relative",
+              width: "100%",
+              maxWidth: "500px",
+              marginTop: "32px",
+            }}
+          >
+            {project.description}
+          </div>
+          {/* </ProjectDescriptionAnimation> */}
 
           {/* Tech stacks */}
           <div

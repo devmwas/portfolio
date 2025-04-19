@@ -4,7 +4,7 @@ import React from "react";
 function TechStack() {
   return (
     <div
-      style={{ marginTop: "54px" }}
+      style={{ marginTop: "8px" }}
       className="flex flex-wrap justify-end space-x-2"
     >
       {/* Javascript Logo */}
