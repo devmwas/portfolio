@@ -21,11 +21,9 @@ function DelayAnimation({ children, duration = 1, delay }) {
   // Our Variants
   const delayAnimationVariants = {
     hidden: {
-      opacity: 0,
       transform: "scale(.8)",
     },
     show: {
-      opacity: 1,
       transform: "scale(1)",
     },
   };

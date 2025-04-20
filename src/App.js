@@ -3,6 +3,9 @@ import { AnimatePresence } from "framer-motion";
 import Fallback from "./components/Fallback";
 import ExpandedMenu from "./components/navbar/ExpandedMenu";
 import MessageModal from "./components/MessageModal";
+import MoveUp from "./components/animations/MoveUp";
+import MoveDown from "./components/animations/MoveDown";
+import ZoomIn from "./components/animations/ZoomIn";
 const Skills = lazy(() => import("./components/Skills"));
 const Intro = lazy(() => import("./components/Intro"));
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
@@ -11,7 +14,8 @@ const Projects = lazy(() => import("./components/Projects"));
 const Education = lazy(() => import("./components/Education"));
 const Footer = lazy(() => import("./components/Footer"));
 const SendMessageStatus = lazy(() => import("./components/SendMessageStatus"));
-// Lazy importig the following two components was leading to bad UI\UX and so I quit it
+
+// Lazy importing the following two components was leading to bad UI\UX and so I quit it
 // const ExpandedMenu = lazy(() => import("./components/navbar/ExpandedMenu"));
 // const MessageModal = lazy(() => import("./components/MessageModal"));
 
@@ -88,42 +92,50 @@ function App() {
         {/* </Suspense> */}
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
-        <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}>
+        {/* <Suspense fallback={<Fallback height={"100vh"} width={"100%"} />}> */}
+        <ZoomIn>
           <Intro
             isMessageOpen={isMessageOpen}
             setIsMessageOpen={setIsMessageOpen}
           />
-        </Suspense>
+        </ZoomIn>
+        {/* </Suspense> */}
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
-        <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}>
+        {/* <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}> */}
+        <ZoomIn>
           <About />
-        </Suspense>
+        </ZoomIn>
+        {/* </Suspense> */}
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
-        <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}>
+        {/* <Suspense fallback={<Fallback height={"80vh"} width={"100%"} />}> */}
+        <ZoomIn>
           <Skills />
-        </Suspense>
+        </ZoomIn>
+        {/* </Suspense> */}
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
-        <Suspense fallback={<Fallback height={"100%"} width={"100%"} />}>
-          <Projects />
-        </Suspense>
+        {/* <Suspense fallback={<Fallback height={"100%"} width={"100%"} />}> */}
+        <Projects />
+        {/* </Suspense> */}
 
         <div
           className="mx-auto px-2 md:p-0 lg:w-4/5"
           style={{ maxWidth: "750px" }}
         >
           {/* We include a fallback UI using Suspense which will show while component is being imported */}
-          <Suspense fallback={<Fallback height={"240px"} width={"100%"} />}>
-            <Education />
-          </Suspense>
+          {/* <Suspense fallback={<Fallback height={"240px"} width={"100%"} />}> */}
+          {/* <MoveDown> */}
+          <Education />
+          {/* </MoveDown> */}
+          {/* </Suspense> */}
         </div>
 
         {/* We include a fallback UI using Suspense which will show while component is being imported */}
-        <Suspense fallback={<Fallback height={"90px"} width={"100%"} />}>
-          <Footer setIsMessageOpen={setIsMessageOpen} />
-        </Suspense>
+        {/* <Suspense fallback={<Fallback height={"90px"} width={"100%"} />}> */}
+        <Footer setIsMessageOpen={setIsMessageOpen} />
+        {/* </Suspense> */}
       </div>
     </div>
   );

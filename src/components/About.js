@@ -3,6 +3,8 @@ import Lines from "./Lines";
 import AboutHeadingAnimation from "./animations/AboutHeadingAnimation";
 import AboutBigTextAnimation from "./animations/AboutBigTextAnimation";
 import TechStack from "./TechStack";
+import { MoveDown } from "@mui/icons-material";
+import MoveUp from "./animations/MoveUp";
 
 function About() {
   return (
@@ -71,61 +73,12 @@ function About() {
               scalable backend architectures, all while being an excellent team
               player and collaborator.
             </div>
-            {/* </AboutBigTextAnimation> */}
 
-            {/* This will only show on large devices and above */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* <AboutHeadingAnimation
-              fontSize="16px"
-              lineHeight="27px"
-              letterSpacing="3px"
-              right={10}
-            > */}
-            <div
-              className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden lg:block"
-              style={{
-                wordSpacing: "6px",
-              }}
-            >
+            {/* <MoveUp> */}
+            <div className="text-right text-sky-400 mt-6 mb-2 font-semibold tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]">
               Tech Stack
             </div>
-            {/* </AboutHeadingAnimation> */}
-
-            {/* This will only show on small and medium-sized devices */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* <AboutHeadingAnimation
-              fontSize="16px"
-              lineHeight="24px"
-              letterSpacing="2px"
-              right={10}
-            > */}
-            <div
-              className="text-right text-sky-400 mt-6 mb-2 font-semibold hidden sm:block lg:hidden"
-              style={{
-                wordSpacing: "4px",
-              }}
-            >
-              Tech Stack
-            </div>
-            {/* </AboutHeadingAnimation> */}
-
-            {/* This will only show on mobile phones and smaller devices */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* <AboutHeadingAnimation
-              fontSize="14px"
-              lineHeight="21px"
-              letterSpacing="1px"
-              right={10}
-            > */}
-            <div
-              className="text-right text-sky-400 mt-6 mb-2 font-semibold sm:hidden"
-              style={{
-                wordSpacing: "2px",
-              }}
-            >
-              Tech Stack
-            </div>
-            {/* </AboutHeadingAnimation> */}
+            {/* </MoveUp> */}
 
             {/* TechStack Images */}
             <TechStack />
