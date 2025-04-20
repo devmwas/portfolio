@@ -33,10 +33,6 @@ function About() {
       <div className="flex flex-col justify-center" style={{ height: "70vh" }}>
         <div className="flex justify-end">
           <div className="sm:w-5/6 z-30">
-            {/* We will include the same elements multiple times and only show them at the intended breakpoints  */}
-            {/* This will only show on large devices and above */}
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* <AboutHeadingAnimation> */}
             <div
               // Tracking didnt support letter-spacing animations so I had to remove it
               // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
@@ -50,11 +46,7 @@ function About() {
             >
               About Me
             </div>
-            {/* </AboutHeadingAnimation> */}
 
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* We pass the offset which is literally the marginTop of our Title element */}
-            {/* <AboutBigTextAnimation offSet={"27px"} direction="left"> */}
             <div
               className="text-right  text-[14px] leading-[21px] tracking-[1px]
                 sm:text-[16px] sm:leading-[24px] sm:tracking-[2px]

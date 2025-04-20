@@ -7,8 +7,7 @@ import Box from "@mui/material/Box";
 import { Chip } from "@mui/material";
 import { institutionsData } from "../data/education";
 import { useState } from "react";
-import DelayAnimation from "./animations/DelayAnimation";
-import HeadingAnimation from "./animations/HeadingAnimation";
+import ZoomIn from "./animations/ZoomIn";
 
 // Tab panels for our tab
 function TabPanel(props) {
@@ -127,7 +126,7 @@ export default function Education() {
     <div>
       <div className="text-sky-400 font-semibold mt-[80px]">Education</div>
 
-      <DelayAnimation delay={0} duration={1}>
+      <ZoomIn>
         <Box
           id="education"
           sx={{
@@ -162,7 +161,7 @@ export default function Education() {
           {/* I consider this implementation a masterpiece. Updating anything here will be abreeze in the future */}
           {tabPanels}
         </Box>
-      </DelayAnimation>
+      </ZoomIn>
     </div>
   );
 }
