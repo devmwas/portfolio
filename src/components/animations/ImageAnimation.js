@@ -38,8 +38,9 @@ function ImageAnimation({ children }) {
       initial="minimized"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
-      transition={{ duration: 1 }}
-      whileHover={{ opacity: 1, duration: 2 }}
+      transition={{ duration: 1, ease: "backIn" }}
+      whileHover={{ scale: 2, duration: 1 }}
+      whileTap={{ scale: 0.9, duration: 2 }}
     >
       {children}
     </motion.div>

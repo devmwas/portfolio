@@ -32,7 +32,7 @@ function ZoomIn({ children }) {
       initial="squeezed"
       animate={zoomInControls}
       variants={zoomInVariants}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
     >
       {children}
     </motion.div>

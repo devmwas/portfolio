@@ -3,6 +3,7 @@ import Lines from "./Lines";
 import IntroHeadingAnimation from "./animations/IntroHeadingAnimation";
 import IntroButtonAnimation from "./animations/IntroButtonAnimation";
 import NameAnimation from "./animations/NameAnimation";
+import { MoveUp } from "@mui/icons-material";
 
 function Intro({ setIsMessageOpen }) {
   return (
@@ -28,8 +29,6 @@ function Intro({ setIsMessageOpen }) {
               Hello. It's your
             </div>
 
-            {/* We include Framer Motion animations to make it fancy */}
-            {/* <IntroHeadingAnimation> */}
             <div
               // Tracking didnt support letter-spacing animations so I had to remove it
               // tracking-[-0.48px] sm:tracking-[-0.64px] lg:tracking-[-1px]
@@ -39,7 +38,6 @@ function Intro({ setIsMessageOpen }) {
               Fullstack Web Developer
               <div style={{ display: "inline-block", color: "orange" }}>.</div>
             </div>
-            {/* </IntroHeadingAnimation> */}
 
             {/* We include Framer Motion animations to make it fancy */}
             {/* We pass the offset which is literally the marginTop of our Title element */}

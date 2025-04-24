@@ -32,7 +32,7 @@ function MoveUp({ children }) {
       initial="bottom"
       animate={projectAnimationControls}
       variants={projectAnimationVariants}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1, ease: "easeIn" }}
     >
       {children}
     </motion.div>

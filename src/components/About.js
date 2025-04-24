@@ -66,11 +66,9 @@ function About() {
               player and collaborator.
             </div>
 
-            {/* <MoveUp> */}
             <div className="text-right text-sky-400 mt-6 mb-2 font-semibold tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]">
               Tech Stack
             </div>
-            {/* </MoveUp> */}
 
             {/* TechStack Images */}
             <TechStack />

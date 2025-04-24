@@ -47,7 +47,7 @@ export const projects = [
     screenshot: "portfolio_screenshot.png",
     techStack: ["React", "MUI", "Tailwind", "EmailJS"],
     githubLink: "https://github.com/devmwas/portfolio",
-    liveLink: "https://devmwas.github.io/portfolio/",
+    liveLink: "https://portfolio-6c5a1.web.app/",
     private: false,
   },
 ];
