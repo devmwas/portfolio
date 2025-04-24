@@ -37,7 +37,7 @@ function MessageAnimation({ children, isMessageOpen }) {
       animate={messageAnimationControls}
       exit={"up"}
       variants={messageAnimationVariants}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "backIn" }}
     >
       {children}
     </motion.div>

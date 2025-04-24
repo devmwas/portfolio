@@ -33,7 +33,7 @@ function ExpandedMenuAnimation({ children, showExpandedMenu }) {
       animate={ExpandedMenuAnimationControls}
       variants={ExpandedMenuAnimationVariants}
       exit={"hide"}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "backIn" }}
     >
       {children}
     </motion.div>

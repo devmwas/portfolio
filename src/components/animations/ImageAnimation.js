@@ -32,15 +32,10 @@ function ImageAnimation({ children }) {
   return (
     <motion.div
       ref={ourRef}
-      style={{
-        opacity: 0.9,
-      }}
       initial="minimized"
       animate={imageAnimationControls}
       variants={imageAnimationVariants}
-      transition={{ duration: 1, ease: "backIn" }}
-      whileHover={{ scale: 2, duration: 1 }}
-      whileTap={{ scale: 0.9, duration: 2 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
     >
       {children}
     </motion.div>
